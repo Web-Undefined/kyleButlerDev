@@ -3,41 +3,24 @@
 <html>
 
 <head>
-    <title>Whats For Dinner</title>
+    <title>Alpine.js Practice</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
     <link rel="stylesheet" href="main.css" />
     <link rel="shortcut icon" type="image/png" href="../assets/kyleDevIcon.png" />
 </head>
 
-<body class="is-preload">
+<body x-data="{'isModalOpen': false}" x-on:keydown.escape="isModalOpen=false" class="is-preload">
 
     <!-- Header -->
     <div id="header">
-        <h1 id="logo"><a href="index.html">Whats For Dinner</a></h1>
+        <h1 id="logo"><a href="index.html">Alpine.js REST API</a></h1>
         <nav id="nav">
             <ul>
-                <!-- <li><a href="index.html">Home</a></li> -->
-                <!-- <li>
-					<a href="#">Layouts</a>
-					<ul>
-						<li><a href="left-sidebar.html">Left Sidebar</a></li>
-						<li><a href="right-sidebar.html">Right Sidebar</a></li>
-						<li><a href="no-sidebar.html">No Sidebar</a></li>
-						<li>
-							<a href="#">Submenu</a>
-							<ul>
-								<li><a href="#">Option 1</a></li>
-								<li><a href="#">Option 2</a></li>
-								<li><a href="#">Option 3</a></li>
-								<li><a href="#">Option 4</a></li>
-							</ul>
-						</li>
-					</ul>
-				</li> -->
-                <li><a href="#">Lets Eat</a></li>
-                <!-- <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="calendar.html">Calendar</a></li> -->
+                <li><a href="#">Alpine.js Components</a></li>
             </ul>
         </nav>
     </div>
@@ -46,156 +29,469 @@
     <section id="main" class="gradient-backdrop">
         <div class="container">
             <header class="major">
-                <h2>Yum (11/14)</h2>
-                <!-- <p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p> -->
+
+                <h2>Users</h2>
+
             </header>
 
             <!-- Content -->
             <section id="content">
-                <div class="innerTest">
-                    <div class="rowTest">
-                        <div class="colTest">
-                            <div class="testimonial">
-                                <div class="name">Monday</div>
-                                <h1>Title</h1>
-                                <p>Description</p>
-                                <ul class="actions" style="display: block; margin: 0 auto;">
-                                    <li style="padding: 0;"><a href="#" class="button">Recipe</a></li>
-                                </ul>
+
+                <div class="table-wrapper" x-data="{users:[]}"
+                    x-init="users = await (await fetch('https://jsonplaceholder.typicode.com/users')).json()">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone Number</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <template x-for="user in users">
+                                <tr>
+                                    <td x-text="user.id"></td>
+                                    <td x-text="user.name"></td>
+                                    <td x-text="user.email"></td>
+                                    <td x-text="user.phone"></td>
+                                </tr>
+                            </template>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td><b>Total Users:</b></td>
+                                <td x-text="users.length"></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+
+                <header class="major">
+
+                    <h2>Populated Accordion</h2>
+
+                </header>
+
+                <div x-data="{ active: 1, users:[] }"
+                    x-init="users = await (await fetch('https://jsonplaceholder.typicode.com/users')).json()">
+                    <template x-for="user in users">
+                        <div x-data="{
+                            id: user.id,
+                            get expanded() {
+                                return this.active === this.id
+                            },
+                            set expanded(value) {
+                                this.active = value ? this.id : null
+                            },
+                        }" role="region">
+                            <h2 class="centered accordion">
+                                <button x-on:click="expanded = !expanded" :aria-expanded="expanded"
+                                    class="centered primary accordion-header">
+                                    <span x-text="user.name"></span>
+                                    <span x-show="expanded" aria-hidden="true">&minus;</span>
+                                    <span x-show="!expanded" aria-hidden="true">&plus;</span>
+                                </button>
+                            </h2>
+                            <div x-show="expanded" x-collapse>
+                                <div class="accordion-content">
+                                    <p x-text="user.email"></p>
+                                    <p x-text="user.phone"></p>
+                                </div>
                             </div>
                         </div>
-                        <div class="colTest">
-                            <div class="testimonial">
-                                <div class="name">Tuesday</div>
-                                <h1>Title</h1>
-                                <p>Description</p>
-                                <ul class="actions" style="display: block; margin: 0 auto;">
-                                    <li style="padding: 0;"><a href="#" class="button">Recipe</a></li>
+                    </template>
+                </div>
+
+                <header class="major">
+                    <h2 style="margin-top: 3em;">Components</h2>
+                </header>
+
+                <div class="row">
+                    <div class="col-6">
+
+                        <h3 class="centered">Dropdown</h3>
+
+                        <div>
+                            <div x-data="{
+                                            open: false,
+                                            toggle() {
+                                                if (this.open) {
+                                                    return this.close()
+                                                }
+                            
+                                                this.$refs.button.focus()
+                            
+                                                this.open = true
+                                            },
+                                            close(focusAfter) {
+                                                if (! this.open) return
+                            
+                                                this.open = false
+                            
+                                                focusAfter && focusAfter.focus()
+                                            }
+                                        }" x-on:keydown.escape.prevent.stop="close($refs.button)"
+                                x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
+                                x-id="['dropdown-button']" class="relative">
+                                <!-- Button -->
+                                <ul class="actions centered" style="margin-bottom: 0;">
+                                    <li><a x-ref="button" x-on:click="toggle()" :aria-expanded="open"
+                                            :aria-controls="$id('dropdown-button')" type="button"
+                                            class="button primary">Options</a></li>
                                 </ul>
-                            </div>
-                        </div>
-                        <div class="colTest">
-                            <div class="testimonial">
-                                <div class="name">Wednesday</div>
-                                <h1>Title</h1>
-                                <p>Description</p>
-                                <ul class="actions" style="display: block; margin: 0 auto;">
-                                    <li style="padding: 0;"><a href="#" class="button">Recipe</a></li>
-                                </ul>
+                                <!-- Panel -->
+                                <div x-ref="panel" x-show="open" x-transition.origin.top.left
+                                    x-on:click.outside="close($refs.button)" :id="$id('dropdown-button')"
+                                    style="display: none;" class="flex absolute">
+                                    <a href="#" class="dropped">
+                                        New User
+                                    </a>
+                                    <a href="#" class="dropped">
+                                        Edit User
+                                    </a>
+                                    <a href="#" class="dropped">
+                                        <span style="color: rgb(218, 20, 20);">Delete User</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="rowTest">
-                        <div class="colTest">
-                            <div class="testimonial">
-                                <div class="name">Thursday</div>
-                                <h1>Title</h1>
-                                <p>Description</p>
-                                <ul class="actions" style="display: block; margin: 0 auto;">
-                                    <li style="padding: 0;"><a href="#" class="button">Recipe</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="colTest">
-                            <div class="testimonial">
-                                <div class="name">Friday</div>
-                                <h1>Title</h1>
-                                <p>Description</p>
-                                <ul class="actions" style="display: block; margin: 0 auto;">
-                                    <li style="padding: 0;"><a href="#" class="button">Recipe</a></li>
-                                </ul>
-                            </div>
-                        </div>
+                    <div class="col-6">
+                        <h3 class="centered">Modal</h3>
+                        <ul class="actions centered">
+                            <li><a x-on:click="isModalOpen = true" type="button" class="button primary">Open Modal</a>
+                            </li>
+                        </ul>
+                        <div class="overlay" x-show="isModalOpen" x-cloak></div>
                     </div>
                 </div>
+
+                <div class="modals" role="dialog" tabindex="-1" x-show="isModalOpen"
+                    x-on:click.away="isModalOpen = false" x-cloak x-transition>
+                    <div class="model-inner">
+                        <div class="modal-header">
+                            <h3>Open Modal</h3>
+                            <button aria-label="Close" x-on:click="isModalOpen=false">✖</button>
+                        </div>
+                        <p style="margin-top: 2em; margin-bottom: 1em;">
+                            Click the X, hit escape, or click outside of the modal to close.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+                        <h3 class="centered">Accordion</h3>
+                        <div x-data="{ active: 1 }">
+                            <div x-data="{
+                                id: 1,
+                                get expanded() {
+                                    return this.active === this.id
+                                },
+                                set expanded(value) {
+                                    this.active = value ? this.id : null
+                                },
+                            }" role="region">
+                                <h2 class="centered accordion">
+                                    <button x-on:click="expanded = !expanded" :aria-expanded="expanded"
+                                        class="centered primary accordion-header">
+                                        <span>Question #1</span>
+                                        <span x-show="expanded" aria-hidden="true">&minus;</span>
+                                        <span x-show="!expanded" aria-hidden="true">&plus;</span>
+                                    </button>
+                                </h2>
+
+                                <div x-show="expanded" x-collapse>
+                                    <div class="accordion-content">Lorem ipsum dolor sit amet consectetur adipisicing
+                                        elit. In
+                                        magnam quod natus deleniti architecto eaque consequuntur ex, illo neque iste
+                                        repellendus modi, quasi ipsa commodi saepe? Provident ipsa nulla earum.</div>
+                                </div>
+                            </div>
+
+                            <div x-data="{
+                                id: 2,
+                                get expanded() {
+                                    return this.active === this.id
+                                },
+                                set expanded(value) {
+                                    this.active = value ? this.id : null
+                                },
+                            }" role="region" style="margin-bottom: 2em;">
+                                <h2 class="centered accordion">
+                                    <button x-on:click="expanded = !expanded" :aria-expanded="expanded"
+                                        class="centered accordion-header">
+                                        <span>Question #2</span>
+                                        <span x-show="expanded" aria-hidden="true">&minus;</span>
+                                        <span x-show="!expanded" aria-hidden="true">&plus;</span>
+                                    </button>
+                                </h2>
+
+                                <div x-show="expanded" x-collapse>
+                                    <div class="accordion-content">Lorem ipsum dolor sit amet consectetur adipisicing
+                                        elit. In
+                                        magnam quod natus deleniti architecto eaque consequuntur ex, illo neque iste
+                                        repellendus modi, quasi ipsa commodi saepe? Provident ipsa nulla earum.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <h3 class="centered">Tooltip</h3>
+
+                        <script src="https://unpkg.com/@popperjs/core@2"></script>
+                        <script src="https://unpkg.com/tippy.js@6"></script>
+
+                        <!-- Usage -->
+                        <div class="flex spaced">
+                            <button x-data x-tooltip="I am a tooltip!" type="button" class="primary">
+                                Hover over me
+                            </button>
+
+                            <button x-data @click="$tooltip('I am a tooltip!')" type="button">
+                                Click me
+                            </button>
+                        </div>
+
+                        <!-- Source -->
+                        <script>
+                            document.addEventListener('alpine:init', () => {
+                                // Magic: $tooltip
+                                Alpine.magic('tooltip', el => message => {
+                                    let instance = tippy(el, { content: message, trigger: 'manual' })
+
+                                    instance.show()
+
+                                    setTimeout(() => {
+                                        instance.hide()
+
+                                        setTimeout(() => instance.destroy(), 150)
+                                    }, 2000)
+                                })
+
+                                // Directive: x-tooltip
+                                Alpine.directive('tooltip', (el, { expression }) => {
+                                    tippy(el, { content: expression })
+                                })
+                            })
+                        </script>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+                        <h3 class="centered">Tabs</h3>
+                        <div x-data="{
+        selectedId: null,
+        init() {
+            // Set the first available tab on the page on page load.
+            this.$nextTick(() => this.select(this.$id('tab', 1)))
+        },
+        select(id) {
+            this.selectedId = id
+        },
+        isSelected(id) {
+            return this.selectedId === id
+        },
+        whichChild(el, parent) {
+            return Array.from(parent.children).indexOf(el) + 1
+        }
+    }" x-id="['tab']">
+                            <!-- Tab List -->
+                            <ul x-ref="tablist" @keydown.right.prevent.stop="$focus.wrap().next()"
+                                @keydown.home.prevent.stop="$focus.first()"
+                                @keydown.page-up.prevent.stop="$focus.first()"
+                                @keydown.left.prevent.stop="$focus.wrap().prev()"
+                                @keydown.end.prevent.stop="$focus.last()"
+                                @keydown.page-down.prevent.stop="$focus.last()" role="tablist"
+                                class="flexed actions tab-top">
+                                <!-- Tab -->
+                                <li>
+                                    <button :id="$id('tab', whichChild($el.parentElement, $refs.tablist))"
+                                        @click="select($el.id)" @mousedown.prevent @focus="select($el.id)" type="button"
+                                        :tabindex="isSelected($el.id) ? 0 : -1" :aria-selected="isSelected($el.id)"
+                                        :class="isSelected($el.id) ? 'border-gray-200 bg-white' : 'border-transparent'"
+                                        style="border-bottom-left-radius: 0; border-bottom-right-radius: 0; z-index: 9;"
+                                        role="tab">Tab 1</button>
+                                </li>
+
+                                <li style="padding: 0 0 0 0.25em;">
+                                    <button :id="$id('tab', whichChild($el.parentElement, $refs.tablist))"
+                                        @click="select($el.id)" @mousedown.prevent @focus="select($el.id)" type="button"
+                                        :tabindex="isSelected($el.id) ? 0 : -1" :aria-selected="isSelected($el.id)"
+                                        :class="isSelected($el.id) ? 'border-gray-200 bg-white' : 'border-transparent'"
+                                        style="border-bottom-left-radius: 0; border-bottom-right-radius: 0;"
+                                        role="tab">Tab 2</button>
+                                </li>
+                            </ul>
+
+                            <!-- Panels -->
+                            <div role="tabpanels" style="margin-bottom: 2em;">
+                                <!-- Panel -->
+                                <section x-show="isSelected($id('tab', whichChild($el, $el.parentElement)))"
+                                    :aria-labelledby="$id('tab', whichChild($el, $el.parentElement))" role="tabpanel"
+                                    class="tab-content">
+                                    <h3>Tab 1 Content</h3>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing
+                                        elit. Optio, quo sequi error quibusdam quas temporibus animi sapiente eligendi!
+                                        Deleniti minima velit recusandae iure.</p>
+                                </section>
+
+                                <section x-show="isSelected($id('tab', whichChild($el, $el.parentElement)))"
+                                    :aria-labelledby="$id('tab', whichChild($el, $el.parentElement))" role="tabpanel"
+                                    class="tab-content">
+                                    <h3>Tab 2 Content</h3>
+                                    <p>Fugiat odit alias, eaque optio quas nobis minima
+                                        reiciendis voluptate dolorem nisi facere debitis ea laboriosam vitae omnis ut
+                                        voluptatum eos. Fugiat?</p>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <h3 class="centered">Notifications</h3>
+                        <div x-data="{
+        notifications: [],
+        add(e) {
+            this.notifications.push({
+                id: e.timeStamp,
+                type: e.detail.type,
+                content: e.detail.content,
+            })
+        },
+        remove(notification) {
+            this.notifications = this.notifications.filter(i => i.id !== notification.id)
+        },
+    }" @notify.window="add($event)" class="notification flex" role="status" aria-live="polite">
+                            <!-- Notification -->
+                            <template x-for="notification in notifications" :key="notification.id">
+                                <div x-data="{
+                show: false,
+                init() {
+                    this.$nextTick(() => this.show = true)
+ 
+                    setTimeout(() => this.transitionOut(), 2000)
+                },
+                transitionOut() {
+                    this.show = false
+ 
+                    setTimeout(() => this.remove(this.notification), 500)
+                },
+            }" x-show="show" x-transition.duration.500ms>
+                                    <div class="notifications">
+                                        <!-- Icons -->
+                                        <div x-show="notification.type === 'info'" class="centered"
+                                            style="background-color: yellow;">
+                                            <span aria-hidden="true">!</span>
+                                            <span class="centered">Information:</span>
+                                        </div>
+
+                                        <div x-show="notification.type === 'success'" class="centered"
+                                            style="background-color: rgb(89, 235, 89);">
+                                            <span aria-hidden="true">&check;</span>
+                                            <span>Success:</span>
+                                        </div>
+
+                                        <div x-show="notification.type === 'error'" class="centered"
+                                            style="background-color: rgb(219, 110, 110);">
+                                            <span aria-hidden="true" style="color: black;">&times;</span>
+                                            <span style="color: black;">Error:</span>
+                                        </div>
+
+                                        <!-- Text -->
+                                        <div class="">
+                                            <p x-text="notification.content" style="margin-bottom: 0.5em;"></p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+
+                        <!-- Examples of how to dispatch the `notify` event with variable text and type -->
+                        <form x-data="{
+        content: 'Notifications in Apline.js',
+        type: 'info',
+    }" x-on:submit.prevent="$dispatch('notify', { content, type })">
+                            <div>
+                                <label for="message">
+                                    Message
+                                </label>
+
+                                <input id="message" x-model="content" type="text">
+                            </div>
+
+                            <div>
+                                <label for="type" style="margin-top: 1em;">
+                                    Type
+                                </label>
+
+                                <select id="type" x-model="type" type="text">
+                                    <option value="info">Info</option>
+                                    <option value="success">Success</option>
+                                    <option value="error">Error</option>
+                                </select>
+                            </div>
+
+                            <button style="margin-top: 1em;">
+                                Dispatch notification
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- <div class="row">
+                    <div class="col-6">
+                        <h3 class="centered">Radio Group</h3>
+
+                    </div>
+                    <div class="col-6">
+                        <h3 class="centered">Toggle</h3>
+                        <div x-data="{ value: false }" class="flex-row" x-id="['toggle-label']">
+                            <input type="hidden" name="sendNotifications" :value="value">
+
+                            
+                            <label @click="$refs.toggle.click(); $refs.toggle.focus()" :id="$id('toggle-label')"
+                                class="text-gray-900 font-medium">
+                                Send notifications
+                            </label>
+
+                            
+                            <button x-ref="toggle" @click="value = ! value" type="button" role="switch"
+                                :aria-checked="value" :aria-labelledby="$id('toggle-label')"
+                                :class="value ? 'bg-slate-400' : 'bg-slate-300'"
+                                class="relative ml-4 inline-flex w-14 rounded-full py-1 transition">
+                                <span :class="value ? 'translate-x-7' : 'translate-x-1'"
+                                    class="bg-white h-6 w-6 rounded-full transition shadow-md"
+                                    aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div> -->
+
             </section>
 
         </div>
     </section>
 
     <!-- Footer -->
-    <!-- <div id="footer">
-        <div class="container">
-            <div class="row gtr-200 gtr-uniform">
-                <section class="col-4 col-12-medium col-12-small">
-                    <header class="major">
-                        <h3>About</h3>
-                    </header>
-                    <p>Pretty Titties! is compiled from the individual prints of 36 women’s breasts painted then pressed
-                        to paper to make Boobie Prints. This six by six grid like construction, organized by color
-                        includes prints from women of various sizes, spanning an over 70 year age gap. The Boobie Prints
-                        Process is a playful embrace of femininity.</p>
-                    <ul class="actions">
-                        <li><a href="index.html#one" class="button alt scrolly">Learn more</a></li>
-                    </ul>
-                </section>
-                <section class="col-4 col-6-medium col-12-small">
-                    <header class="major">
-                        <h3>Contact Us</h3>
-                    </header>
-                    <form method="post" action="#">
-                        <div class="row gtr-uniform gtr-50">
-                            <div class="col-6 col-12-small">
-                                <input type="text" name="name" id="name" value="" placeholder="Name" />
-                            </div>
-                            <div class="col-6 col-12-small">
-                                <input type="email" name="email" id="email" value="" placeholder="Email" />
-                            </div>
-                            <div class="col-12">
-                                <textarea name="message" id="message" placeholder="Enter your message"
-                                    rows="6"></textarea>
-                            </div>
-                            <div class="col-12">
-                                <ul class="actions">
-                                    <li><input type="submit" value="Send Message" class="primary" /></li>
-                                    <li><input type="reset" value="Reset" /></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </form>
-                </section>
-                <section class="col-4 col-6-medium col-12-small">
-                    <header class="major">
-                        <h3>Contact</h3>
-                    </header>
-                    <ul class="labeled-icons">
-                        <li>
-                            <h4 class="icon solid fa-envelope"><span class="label">Email</span></h4>
-                            <a href="#">askWhich@email.com</a>
-                        </li>
-                        <li>
-                            <h4 class="icon solid fa-phone"><span class="label">Phone</span></h4>
-                            (000) 000-0000
-                        </li>
-                        <li>
-                            <h4 class="icon solid fa-home"><span class="label">Address</span></h4>
-                            1234 Somewhere Road, Suite #123
-                        </li>
-                        <li>
-                            <h4 class="icon brands fa-instagram"><span class="label">Instagram</span></h4>
-                            <a href="#">instagram.com/untitled</a>
-                        </li>
-                        <li>
-                            <h4 class="icon brands fa-facebook-f"><span class="label">Facebook</span></h4>
-                            <a href="#">facebook.com/untitled</a>
-                        </li>
-                    </ul>
-                </section>
-            </div>
+    <div id="footer" style="padding: 5em 0;">
+
+        <div class="copyright" style="margin-top: 0;">
+            <a href="https://alpinejs.dev/components">Alpine.js Components</a>
         </div>
-        <div class="copyright">
-            &copy; <a href="https://www.webundefined.com">Web Undefined, LLC.</a> All rights reserved.
-        </div>
-    </div> -->
+
+    </div>
 
     <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
+    <!-- <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.dropotron.min.js"></script>
     <script src="assets/js/jquery.poptrox.min.js"></script>
     <script src="assets/js/browser.min.js"></script>
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js"></script> -->
 
 </body>
 
