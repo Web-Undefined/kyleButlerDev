@@ -424,6 +424,24 @@ document.addEventListener('alpine:init', () => {
             this.currentCECard = this.CEcards[this.index];
         }
     },
+
+    backToCEStart() {
+        this.index = 0;
+        this.currentCECard = this.CEcards[this.index];
+    },
+
+    shuffleCECards() {
+        for (let i = this.CEcards.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [this.CEcards[i], this.CEcards[j]] = [this.CEcards[j], this.CEcards[i]];
+        }
+        this.index = 0;
+        this.currentCECard = this.CEcards[this.index];
+
+        this.CEcards.forEach(card => {
+            card.index = this.CEcards.indexOf(card)
+        })
+    },
     
   })
 })

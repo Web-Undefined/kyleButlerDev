@@ -1204,6 +1204,19 @@ input, select, textarea {
 		z-index: 3;
 	}
 
+	.progress {
+		height: 6px;
+		background: #c0c0c0;
+		margin: 0.5em 10em 0 10em;
+		border-radius: 9999px;
+	}
+
+	.bar {
+		height: 6px;
+		background: #576fdb;
+		box-shadow: 0 0 8px rgba(131, 138, 209, 0.651);
+	}
+
 		#wrapper:before {
 			content: '';
 			display: block;
@@ -1221,6 +1234,10 @@ input, select, textarea {
 
 			#wrapper {
 				padding: 2rem 1rem;
+			}
+			
+			.progress {
+				margin: 0.5em 7em 0 7em;
 			}
 
 		}
@@ -1825,10 +1842,10 @@ overflow: auto;
 
 
 @media screen and (min-width: 1200px) {
-/* adjust selector to match your card element: .card, .box, .panel, etc. */
-.business-card {
-min-width: 550px;
-margin-left: auto;
-margin-right: auto;
-}
+	/* adjust selector to match your card element: .card, .box, .panel, etc. */
+	.business-card {
+		min-width: 550px;
+		margin-left: auto;
+		margin-right: auto;
+	}
 }

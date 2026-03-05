@@ -32,12 +32,10 @@
 								<h1 style="text-transform: none;">CE Flashcards</h1>
 
 								<div class="card-carousel" aria-roledescription="carousel">
-									<button class="carousel-btn prev" aria-label="Previous" @click="previousCECard()">
-										<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-											<path fill="currentColor" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-										</svg>
-										<span class="sr-only">Previous</span>
-									</button>
+								
+									<ul class="icons" style="margin: 0;">
+										<li><a @click="previousCECard()" title="Previous Card" class="icon solid fa-chevron-left"></a></li>
+									</ul>
 
 									<div class="business-card" role="button" aria-pressed="false" tabindex="0" aria-label="Business card">
 										<div class="card-inner">
@@ -54,15 +52,31 @@
 										</div>
 									</div>
 
-									<button class="carousel-btn next" aria-label="Next" @click="nextCECard()">
-										<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-											<path fill="currentColor" d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/>
-										</svg>
-										<span class="sr-only">Next</span>
-									</button>
+									<ul class="icons" style="margin: 0;">
+										<li><a @click="nextCECard()" title="Next Card" class="icon solid fa-chevron-right"></a></li>
+									</ul>
 
 								</div>
-								<p class="card-counter">Card <span x-text="currentCECard.index + 1"></span> of <span x-text="CEcards.length"></span></p>
+
+								<div style="display: flex; justify-content: space-around; align-items: center; margin-top: 0.5rem;">
+									
+									<ul class="icons" style="margin: 0;">
+										<li><a @click="backToCEStart()" title="Back to Start" class="icon solid fa-fast-backward"></a></li>
+									</ul>
+
+									<p style="margin: 0" class="card-counter">Card <span x-text="currentCECard.index + 1"></span> of <span x-text="CEcards.length"></span></p>
+
+									<ul class="icons" style="margin: 0;">
+										<li><a @click="shuffleCECards()" title="Shuffle Cards" class="icon solid fa-random"></a></li>
+									</ul>
+									
+								</div>
+
+								<div class="progress">
+									<div class="bar"
+										:style="`width: ${(currentCECard.index+1)/CEcards.length*100}%; border-radius: 9999px; transition: width 0.3s ease; opacity: 1;`">
+									</div>
+								</div>
 							</div>
 							<div class="inner" x-show="currentExamType == 'PjM'">
 								<h1 style="text-transform: none;">PjM Flashcards</h1>
