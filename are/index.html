@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>ARE 5.0 Study Stuff</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+		<script defer src="assets/js/flashcards-store.js"></script>
+		<script defer src="assets/js/card-carousel.js"></script>
+
+		<!-- Alpine and Plugins -->
+
+		<script src="https://cdn.jsdelivr.net/npm/@alpinejs/persist@3.x.x/dist/cdn.min.js"></script>
+		<script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/morph@3.x.x/dist/cdn.min.js"></script>
+		<script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
+		<script defer src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+		<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+	</head>
+	<body class="is-preload" x-data="$store.flashcards">
+
+		<!-- Wrapper -->
+			<div id="wrapper" x-init="firstTry()">
+
+				<!-- Header -->
+					<header id="header">
+						
+						<div class="content">
+							<div class="inner" x-show="currentExamType == 'CE'">
+								<h1 style="text-transform: none;">CE Flashcards</h1>
+
+								<div class="card-carousel" aria-roledescription="carousel">
+									<button class="carousel-btn prev" aria-label="Previous" @click="previousCECard()">
+										<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+											<path fill="currentColor" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+										</svg>
+										<span class="sr-only">Previous</span>
+									</button>
+
+									<div class="business-card" role="button" aria-pressed="false" tabindex="0" aria-label="Business card">
+										<div class="card-inner">
+											<div class="card-face card-front">
+												<div class="card-content">
+													<div x-html="currentCECard.front"></div>
+												</div>
+											</div>
+											<div class="card-face card-back" aria-hidden="true">
+												<div class="card-content">
+													<div x-html="currentCECard.back"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<button class="carousel-btn next" aria-label="Next" @click="nextCECard()">
+										<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+											<path fill="currentColor" d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/>
+										</svg>
+										<span class="sr-only">Next</span>
+									</button>
+
+								</div>
+								<p class="card-counter">Card <span x-text="currentCECard.index + 1"></span> of <span x-text="CEcards.length"></span></p>
+							</div>
+							<div class="inner" x-show="currentExamType == 'PjM'">
+								<h1 style="text-transform: none;">PjM Flashcards</h1>
+								<p>Coming Soon</p>
+							</div>
+							<div class="inner" x-show="currentExamType == 'PA'">
+								<h1 style="text-transform: none;">PA Flashcards</h1>
+								<p>Coming Soon</p>
+							</div>
+							<div class="inner" x-show="currentExamType == 'PPD'">
+								<h1 style="text-transform: none;">PPD Flashcards</h1>
+								<p>Coming Soon</p>
+							</div>
+							<div class="inner" x-show="currentExamType == 'PDD'">
+								<h1 style="text-transform: none;">PDD Flashcards</h1>
+								<p>Coming Soon</p>
+							</div>
+						</div>
+						<nav>
+							<ul>
+								<li><a href="#" @click="setExamType('CE')">CE</a></li>
+								<li><a href="#" @click="setExamType('PjM')">PjM</a></li>
+								<li><a href="#" @click="setExamType('PA')">PA</a></li>
+								<li><a href="#" @click="setExamType('PPD')">PPD</a></li>
+								<li><a href="#" @click="setExamType('PDD')">PDD</a></li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright">&copy; Love you more than potatoes:)</p>
+					</footer>
+
+			</div>
+
+		<!-- BG -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
