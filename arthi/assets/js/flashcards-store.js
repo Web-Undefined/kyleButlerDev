@@ -673,266 +673,1516 @@ document.addEventListener('alpine:init', () => {
         
         if(this.CEcards3.length === 0) {
             this.CEcards3 = [
-                { index: 0, front: '<h3>The architect needs to clarify a detail without changing cost or time. Which document should be used?</h3>', back: '<p>Architect\u2019s Supplemental Instruction (ASI).</p>', markedAsCorrect: false },
-                { index: 1, front: '<h3>The owner and contractor agree to modify the contract sum and time. Which document should be used?</h3>', back: '<p>Change Order.</p>', markedAsCorrect: false },
-                { index: 2, front: '<h3>The architect directs work to proceed before cost is finalized. Which document should be used?</h3>', back: '<p>Construction Change Directive (CCD).</p>', markedAsCorrect: false },
-                { index: 3, front: '<h3>The contractor needs clarification about conflicting drawings. Which document should be used?</h3>', back: '<p>Request for Information (RFI).</p>', markedAsCorrect: false },
-                { index: 4, front: '<h3>The contractor proposes a different product than specified. Which document should be submitted?</h3>', back: '<p>Substitution request.</p>', markedAsCorrect: false },
-                { index: 5, front: '<h3>The contractor submits fabrication details for review. Which document is this?</h3>', back: '<p>Shop drawings.</p>', markedAsCorrect: false },
-                { index: 6, front: '<h3>The architect documents observations during a site visit. Which document should be produced?</h3>', back: '<p>Field report.</p>', markedAsCorrect: false },
-                { index: 7, front: '<h3>The architect confirms the building can be used for its intended purpose. Which document is issued?</h3>', back: '<p>Certificate of Substantial Completion.</p>', markedAsCorrect: false },
-                { index: 8, front: '<h3>The contractor requests payment for completed work. Which document is used?</h3>', back: '<p>Application for Payment.</p>', markedAsCorrect: false },
-                { index: 9, front: '<h3>The architect approves payment to the contractor. Which document is issued?</h3>', back: '<p>Certificate for Payment.</p>', markedAsCorrect: false },
-                { index: 10, front: '<h3>The contractor breaks down the contract sum into work categories. Which document is used?</h3>', back: '<p>Schedule of Values.</p>', markedAsCorrect: false },
-                { index: 11, front: '<h3>The architect lists items that must be corrected before final completion. Which document is used?</h3>', back: '<p>Punch list.</p>', markedAsCorrect: false },
-                { index: 12, front: '<h3>The contractor records actual installed conditions for the project. Which document is produced?</h3>', back: '<p>Record drawings.</p>', markedAsCorrect: false },
-                { index: 13, front: '<h3>The contractor provides equipment maintenance instructions. Which document is submitted?</h3>', back: '<p>O&M manual.</p>', markedAsCorrect: false },
-                { index: 14, front: '<h3>The contractor provides guarantee coverage for installed materials. Which document is submitted?</h3>', back: '<p>Warranty.</p>', markedAsCorrect: false },
-                { index: 15, front: '<h3>The architect records decisions from a construction meeting. Which document should be produced?</h3>', back: '<p>Meeting minutes.</p>', markedAsCorrect: false },
-                { index: 16, front: '<h3>The architect needs to clarify a detail without changing cost or time. Which document should be used?</h3>', back: '<p>Architect\u2019s Supplemental Instruction (ASI).</p>', markedAsCorrect: false },
-                { index: 17, front: '<h3>The owner and contractor agree to modify the contract sum and time. Which document should be used?</h3>', back: '<p>Change Order.</p>', markedAsCorrect: false },
-                { index: 18, front: '<h3>The architect directs work to proceed before cost is finalized. Which document should be used?</h3>', back: '<p>Construction Change Directive (CCD).</p>', markedAsCorrect: false },
-                { index: 19, front: '<h3>The contractor needs clarification about conflicting drawings. Which document should be used?</h3>', back: '<p>Request for Information (RFI).</p>', markedAsCorrect: false },
-                { index: 20, front: '<h3>The contractor proposes a different product than specified. Which document should be submitted?</h3>', back: '<p>Substitution request.</p>', markedAsCorrect: false },
-                { index: 21, front: '<h3>The contractor submits fabrication details for review. Which document is this?</h3>', back: '<p>Shop drawings.</p>', markedAsCorrect: false },
-                { index: 22, front: '<h3>The architect documents observations during a site visit. Which document should be produced?</h3>', back: '<p>Field report.</p>', markedAsCorrect: false },
-                { index: 23, front: '<h3>The architect confirms the building can be used for its intended purpose. Which document is issued?</h3>', back: '<p>Certificate of Substantial Completion.</p>', markedAsCorrect: false },
-                { index: 24, front: '<h3>The contractor requests payment for completed work. Which document is used?</h3>', back: '<p>Application for Payment.</p>', markedAsCorrect: false },
-                { index: 25, front: '<h3>The architect approves payment to the contractor. Which document is issued?</h3>', back: '<p>Certificate for Payment.</p>', markedAsCorrect: false },
-                { index: 26, front: '<h3>The contractor breaks down the contract sum into work categories. Which document is used?</h3>', back: '<p>Schedule of Values.</p>', markedAsCorrect: false },
-                { index: 27, front: '<h3>The architect lists items that must be corrected before final completion. Which document is used?</h3>', back: '<p>Punch list.</p>', markedAsCorrect: false },
-                { index: 28, front: '<h3>The contractor records actual installed conditions for the project. Which document is produced?</h3>', back: '<p>Record drawings.</p>', markedAsCorrect: false },
-                { index: 29, front: '<h3>The contractor provides equipment maintenance instructions. Which document is submitted?</h3>', back: '<p>O&M manual.</p>', markedAsCorrect: false },
-                { index: 30, front: '<h3>The contractor provides guarantee coverage for installed materials. Which document is submitted?</h3>', back: '<p>Warranty.</p>', markedAsCorrect: false },
-                { index: 31, front: '<h3>The architect records decisions from a construction meeting. Which document should be produced?</h3>', back: '<p>Meeting minutes.</p>', markedAsCorrect: false },
-                { index: 32, front: '<h3>The architect needs to clarify a detail without changing cost or time. Which document should be used?</h3>', back: '<p>Architect\u2019s Supplemental Instruction (ASI).</p>', markedAsCorrect: false },
-                { index: 33, front: '<h3>The owner and contractor agree to modify the contract sum and time. Which document should be used?</h3>', back: '<p>Change Order.</p>', markedAsCorrect: false },
-                { index: 34, front: '<h3>The architect directs work to proceed before cost is finalized. Which document should be used?</h3>', back: '<p>Construction Change Directive (CCD).</p>', markedAsCorrect: false },
-                { index: 35, front: '<h3>The contractor needs clarification about conflicting drawings. Which document should be used?</h3>', back: '<p>Request for Information (RFI).</p>', markedAsCorrect: false },
-                { index: 36, front: '<h3>The contractor proposes a different product than specified. Which document should be submitted?</h3>', back: '<p>Substitution request.</p>', markedAsCorrect: false },
-                { index: 37, front: '<h3>The contractor submits fabrication details for review. Which document is this?</h3>', back: '<p>Shop drawings.</p>', markedAsCorrect: false },
-                { index: 38, front: '<h3>The architect documents observations during a site visit. Which document should be produced?</h3>', back: '<p>Field report.</p>', markedAsCorrect: false },
-                { index: 39, front: '<h3>The architect confirms the building can be used for its intended purpose. Which document is issued?</h3>', back: '<p>Certificate of Substantial Completion.</p>', markedAsCorrect: false },
-                { index: 40, front: '<h3>The contractor requests payment for completed work. Which document is used?</h3>', back: '<p>Application for Payment.</p>', markedAsCorrect: false },
-                { index: 41, front: '<h3>The architect approves payment to the contractor. Which document is issued?</h3>', back: '<p>Certificate for Payment.</p>', markedAsCorrect: false },
-                { index: 42, front: '<h3>The contractor breaks down the contract sum into work categories. Which document is used?</h3>', back: '<p>Schedule of Values.</p>', markedAsCorrect: false },
-                { index: 43, front: '<h3>The architect lists items that must be corrected before final completion. Which document is used?</h3>', back: '<p>Punch list.</p>', markedAsCorrect: false },
-                { index: 44, front: '<h3>The contractor records actual installed conditions for the project. Which document is produced?</h3>', back: '<p>Record drawings.</p>', markedAsCorrect: false },
-                { index: 45, front: '<h3>The contractor provides equipment maintenance instructions. Which document is submitted?</h3>', back: '<p>O&M manual.</p>', markedAsCorrect: false },
-                { index: 46, front: '<h3>The contractor provides guarantee coverage for installed materials. Which document is submitted?</h3>', back: '<p>Warranty.</p>', markedAsCorrect: false },
-                { index: 47, front: '<h3>The architect records decisions from a construction meeting. Which document should be produced?</h3>', back: '<p>Meeting minutes.</p>', markedAsCorrect: false },
-                { index: 48, front: '<h3>The architect needs to clarify a detail without changing cost or time. Which document should be used?</h3>', back: '<p>Architect\u2019s Supplemental Instruction (ASI).</p>', markedAsCorrect: false },
-                { index: 49, front: '<h3>The owner and contractor agree to modify the contract sum and time. Which document should be used?</h3>', back: '<p>Change Order.</p>', markedAsCorrect: false },
-                { index: 50, front: '<h3>The architect directs work to proceed before cost is finalized. Which document should be used?</h3>', back: '<p>Construction Change Directive (CCD).</p>', markedAsCorrect: false },
-                { index: 51, front: '<h3>The contractor needs clarification about conflicting drawings. Which document should be used?</h3>', back: '<p>Request for Information (RFI).</p>', markedAsCorrect: false },
-                { index: 52, front: '<h3>The contractor proposes a different product than specified. Which document should be submitted?</h3>', back: '<p>Substitution request.</p>', markedAsCorrect: false },
-                { index: 53, front: '<h3>The contractor submits fabrication details for review. Which document is this?</h3>', back: '<p>Shop drawings.</p>', markedAsCorrect: false },
-                { index: 54, front: '<h3>The architect documents observations during a site visit. Which document should be produced?</h3>', back: '<p>Field report.</p>', markedAsCorrect: false },
-                { index: 55, front: '<h3>The architect confirms the building can be used for its intended purpose. Which document is issued?</h3>', back: '<p>Certificate of Substantial Completion.</p>', markedAsCorrect: false },
-                { index: 56, front: '<h3>The contractor requests payment for completed work. Which document is used?</h3>', back: '<p>Application for Payment.</p>', markedAsCorrect: false },
-                { index: 57, front: '<h3>The architect approves payment to the contractor. Which document is issued?</h3>', back: '<p>Certificate for Payment.</p>', markedAsCorrect: false },
-                { index: 58, front: '<h3>The contractor breaks down the contract sum into work categories. Which document is used?</h3>', back: '<p>Schedule of Values.</p>', markedAsCorrect: false },
-                { index: 59, front: '<h3>The architect lists items that must be corrected before final completion. Which document is used?</h3>', back: '<p>Punch list.</p>', markedAsCorrect: false },
-                { index: 60, front: '<h3>The contractor records actual installed conditions for the project. Which document is produced?</h3>', back: '<p>Record drawings.</p>', markedAsCorrect: false },
-                { index: 61, front: '<h3>The contractor provides equipment maintenance instructions. Which document is submitted?</h3>', back: '<p>O&M manual.</p>', markedAsCorrect: false },
-                { index: 62, front: '<h3>The contractor provides guarantee coverage for installed materials. Which document is submitted?</h3>', back: '<p>Warranty.</p>', markedAsCorrect: false },
-                { index: 63, front: '<h3>The architect records decisions from a construction meeting. Which document should be produced?</h3>', back: '<p>Meeting minutes.</p>', markedAsCorrect: false },
-                { index: 64, front: '<h3>The architect needs to clarify a detail without changing cost or time. Which document should be used?</h3>', back: '<p>Architect\u2019s Supplemental Instruction (ASI).</p>', markedAsCorrect: false },
-                { index: 65, front: '<h3>The owner and contractor agree to modify the contract sum and time. Which document should be used?</h3>', back: '<p>Change Order.</p>', markedAsCorrect: false },
-                { index: 66, front: '<h3>The architect directs work to proceed before cost is finalized. Which document should be used?</h3>', back: '<p>Construction Change Directive (CCD).</p>', markedAsCorrect: false },
-                { index: 67, front: '<h3>The contractor needs clarification about conflicting drawings. Which document should be used?</h3>', back: '<p>Request for Information (RFI).</p>', markedAsCorrect: false },
-                { index: 68, front: '<h3>The contractor proposes a different product than specified. Which document should be submitted?</h3>', back: '<p>Substitution request.</p>', markedAsCorrect: false },
-                { index: 69, front: '<h3>The contractor submits fabrication details for review. Which document is this?</h3>', back: '<p>Shop drawings.</p>', markedAsCorrect: false },
-                { index: 70, front: '<h3>The architect documents observations during a site visit. Which document should be produced?</h3>', back: '<p>Field report.</p>', markedAsCorrect: false },
-                { index: 71, front: '<h3>The architect confirms the building can be used for its intended purpose. Which document is issued?</h3>', back: '<p>Certificate of Substantial Completion.</p>', markedAsCorrect: false },
-                { index: 72, front: '<h3>The contractor requests payment for completed work. Which document is used?</h3>', back: '<p>Application for Payment.</p>', markedAsCorrect: false },
-                { index: 73, front: '<h3>The architect approves payment to the contractor. Which document is issued?</h3>', back: '<p>Certificate for Payment.</p>', markedAsCorrect: false },
-                { index: 74, front: '<h3>The contractor breaks down the contract sum into work categories. Which document is used?</h3>', back: '<p>Schedule of Values.</p>', markedAsCorrect: false },
-                { index: 75, front: '<h3>The architect lists items that must be corrected before final completion. Which document is used?</h3>', back: '<p>Punch list.</p>', markedAsCorrect: false },
-                { index: 76, front: '<h3>The contractor records actual installed conditions for the project. Which document is produced?</h3>', back: '<p>Record drawings.</p>', markedAsCorrect: false },
-                { index: 77, front: '<h3>The contractor provides equipment maintenance instructions. Which document is submitted?</h3>', back: '<p>O&M manual.</p>', markedAsCorrect: false },
-                { index: 78, front: '<h3>The contractor provides guarantee coverage for installed materials. Which document is submitted?</h3>', back: '<p>Warranty.</p>', markedAsCorrect: false },
-                { index: 79, front: '<h3>The architect records decisions from a construction meeting. Which document should be produced?</h3>', back: '<p>Meeting minutes.</p>', markedAsCorrect: false },
-                { index: 80, front: '<h3>The architect needs to clarify a detail without changing cost or time. Which document should be used?</h3>', back: '<p>Architect\u2019s Supplemental Instruction (ASI).</p>', markedAsCorrect: false },
-                { index: 81, front: '<h3>The owner and contractor agree to modify the contract sum and time. Which document should be used?</h3>', back: '<p>Change Order.</p>', markedAsCorrect: false },
-                { index: 82, front: '<h3>The architect directs work to proceed before cost is finalized. Which document should be used?</h3>', back: '<p>Construction Change Directive (CCD).</p>', markedAsCorrect: false },
-                { index: 83, front: '<h3>The contractor needs clarification about conflicting drawings. Which document should be used?</h3>', back: '<p>Request for Information (RFI).</p>', markedAsCorrect: false },
-                { index: 84, front: '<h3>The contractor proposes a different product than specified. Which document should be submitted?</h3>', back: '<p>Substitution request.</p>', markedAsCorrect: false },
-                { index: 85, front: '<h3>The contractor submits fabrication details for review. Which document is this?</h3>', back: '<p>Shop drawings.</p>', markedAsCorrect: false },
-                { index: 86, front: '<h3>The architect documents observations during a site visit. Which document should be produced?</h3>', back: '<p>Field report.</p>', markedAsCorrect: false },
-                { index: 87, front: '<h3>The architect confirms the building can be used for its intended purpose. Which document is issued?</h3>', back: '<p>Certificate of Substantial Completion.</p>', markedAsCorrect: false },
-                { index: 88, front: '<h3>The contractor requests payment for completed work. Which document is used?</h3>', back: '<p>Application for Payment.</p>', markedAsCorrect: false },
-                { index: 89, front: '<h3>The architect approves payment to the contractor. Which document is issued?</h3>', back: '<p>Certificate for Payment.</p>', markedAsCorrect: false },
-                { index: 90, front: '<h3>The contractor breaks down the contract sum into work categories. Which document is used?</h3>', back: '<p>Schedule of Values.</p>', markedAsCorrect: false },
-                { index: 91, front: '<h3>The architect lists items that must be corrected before final completion. Which document is used?</h3>', back: '<p>Punch list.</p>', markedAsCorrect: false },
-                { index: 92, front: '<h3>The contractor records actual installed conditions for the project. Which document is produced?</h3>', back: '<p>Record drawings.</p>', markedAsCorrect: false },
-                { index: 93, front: '<h3>The contractor provides equipment maintenance instructions. Which document is submitted?</h3>', back: '<p>O&M manual.</p>', markedAsCorrect: false },
-                { index: 94, front: '<h3>The contractor provides guarantee coverage for installed materials. Which document is submitted?</h3>', back: '<p>Warranty.</p>', markedAsCorrect: false },
-                { index: 95, front: '<h3>The architect records decisions from a construction meeting. Which document should be produced?</h3>', back: '<p>Meeting minutes.</p>', markedAsCorrect: false },
-                { index: 96, front: '<h3>The architect needs to clarify a detail without changing cost or time. Which document should be used?</h3>', back: '<p>Architect\u2019s Supplemental Instruction (ASI).</p>', markedAsCorrect: false },
-                { index: 97, front: '<h3>The owner and contractor agree to modify the contract sum and time. Which document should be used?</h3>', back: '<p>Change Order.</p>', markedAsCorrect: false },
-                { index: 98, front: '<h3>The architect directs work to proceed before cost is finalized. Which document should be used?</h3>', back: '<p>Construction Change Directive (CCD).</p>', markedAsCorrect: false },
-                { index: 99, front: '<h3>The contractor needs clarification about conflicting drawings. Which document should be used?</h3>', back: '<p>Request for Information (RFI).</p>', markedAsCorrect: false },
-                { index: 100, front: '<h3>The contractor proposes a different product than specified. Which document should be submitted?</h3>', back: '<p>Substitution request.</p>', markedAsCorrect: false },
-                { index: 101, front: '<h3>The contractor submits fabrication details for review. Which document is this?</h3>', back: '<p>Shop drawings.</p>', markedAsCorrect: false },
-                { index: 102, front: '<h3>The architect documents observations during a site visit. Which document should be produced?</h3>', back: '<p>Field report.</p>', markedAsCorrect: false },
-                { index: 103, front: '<h3>The architect confirms the building can be used for its intended purpose. Which document is issued?</h3>', back: '<p>Certificate of Substantial Completion.</p>', markedAsCorrect: false },
-                { index: 104, front: '<h3>The contractor requests payment for completed work. Which document is used?</h3>', back: '<p>Application for Payment.</p>', markedAsCorrect: false },
-                { index: 105, front: '<h3>The architect approves payment to the contractor. Which document is issued?</h3>', back: '<p>Certificate for Payment.</p>', markedAsCorrect: false },
-                { index: 106, front: '<h3>The contractor breaks down the contract sum into work categories. Which document is used?</h3>', back: '<p>Schedule of Values.</p>', markedAsCorrect: false },
-                { index: 107, front: '<h3>The architect lists items that must be corrected before final completion. Which document is used?</h3>', back: '<p>Punch list.</p>', markedAsCorrect: false },
-                { index: 108, front: '<h3>The contractor records actual installed conditions for the project. Which document is produced?</h3>', back: '<p>Record drawings.</p>', markedAsCorrect: false },
-                { index: 109, front: '<h3>The contractor provides equipment maintenance instructions. Which document is submitted?</h3>', back: '<p>O&M manual.</p>', markedAsCorrect: false },
-                { index: 110, front: '<h3>The contractor provides guarantee coverage for installed materials. Which document is submitted?</h3>', back: '<p>Warranty.</p>', markedAsCorrect: false },
-                { index: 111, front: '<h3>The architect records decisions from a construction meeting. Which document should be produced?</h3>', back: '<p>Meeting minutes.</p>', markedAsCorrect: false },
-                { index: 112, front: '<h3>The architect needs to clarify a detail without changing cost or time. Which document should be used?</h3>', back: '<p>Architect\u2019s Supplemental Instruction (ASI).</p>', markedAsCorrect: false },
-                { index: 113, front: '<h3>The owner and contractor agree to modify the contract sum and time. Which document should be used?</h3>', back: '<p>Change Order.</p>', markedAsCorrect: false },
-                { index: 114, front: '<h3>The architect directs work to proceed before cost is finalized. Which document should be used?</h3>', back: '<p>Construction Change Directive (CCD).</p>', markedAsCorrect: false },
-                { index: 115, front: '<h3>The contractor needs clarification about conflicting drawings. Which document should be used?</h3>', back: '<p>Request for Information (RFI).</p>', markedAsCorrect: false },
-                { index: 116, front: '<h3>The contractor proposes a different product than specified. Which document should be submitted?</h3>', back: '<p>Substitution request.</p>', markedAsCorrect: false },
-                { index: 117, front: '<h3>The contractor submits fabrication details for review. Which document is this?</h3>', back: '<p>Shop drawings.</p>', markedAsCorrect: false },
-                { index: 118, front: '<h3>The architect documents observations during a site visit. Which document should be produced?</h3>', back: '<p>Field report.</p>', markedAsCorrect: false },
-                { index: 119, front: '<h3>The architect confirms the building can be used for its intended purpose. Which document is issued?</h3>', back: '<p>Certificate of Substantial Completion.</p>', markedAsCorrect: false }
+                {
+                    "index": 0,
+                    "front": "<h3>During construction of the curtain wall installation, the contractor needs clarification about conflicting drawings. Which document should be used?</h3>",
+                    "back": "<p>Request for Information (RFI)</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 1,
+                    "front": "<h3>During construction of the curtain wall installation, the contractor requires minor clarification that will not affect cost or time. Which document should be used?</h3>",
+                    "back": "<p>Architect\u2019s Supplemental Instruction (ASI)</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 2,
+                    "front": "<h3>During construction of the curtain wall installation, the contractor must formally change contract cost and time after agreement. Which document should be used?</h3>",
+                    "back": "<p>Change Order</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 3,
+                    "front": "<h3>During construction of the curtain wall installation, the contractor must direct work before cost is agreed upon. Which document should be used?</h3>",
+                    "back": "<p>Construction Change Directive (CCD)</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 4,
+                    "front": "<h3>During construction of the curtain wall installation, the contractor proposes using a different manufacturer than specified. Which document should be used?</h3>",
+                    "back": "<p>Substitution request</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 5,
+                    "front": "<h3>During construction of the curtain wall installation, the contractor submits detailed fabrication diagrams for review. Which document should be used?</h3>",
+                    "back": "<p>Shop drawings</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 6,
+                    "front": "<h3>During construction of the curtain wall installation, the contractor must record conditions observed during a site visit. Which document should be used?</h3>",
+                    "back": "<p>Field report</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 7,
+                    "front": "<h3>During construction of the curtain wall installation, the contractor is requesting payment for completed work. Which document should be used?</h3>",
+                    "back": "<p>Application for Payment</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 8,
+                    "front": "<h3>During construction of the curtain wall installation, the contractor needs approval to substitute a specified product. Which document should be used?</h3>",
+                    "back": "<p>Substitution request</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 9,
+                    "front": "<h3>During construction of the curtain wall installation, the contractor documents final installed conditions differing from drawings. Which document should be used?</h3>",
+                    "back": "<p>Record drawings</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 10,
+                    "front": "<h3>During construction of the roof membrane installation, the contractor needs clarification about conflicting drawings. Which document should be used?</h3>",
+                    "back": "<p>Request for Information (RFI)</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 11,
+                    "front": "<h3>During construction of the roof membrane installation, the contractor requires minor clarification that will not affect cost or time. Which document should be used?</h3>",
+                    "back": "<p>Architect\u2019s Supplemental Instruction (ASI)</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 12,
+                    "front": "<h3>During construction of the roof membrane installation, the contractor must formally change contract cost and time after agreement. Which document should be used?</h3>",
+                    "back": "<p>Change Order</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 13,
+                    "front": "<h3>During construction of the roof membrane installation, the contractor must direct work before cost is agreed upon. Which document should be used?</h3>",
+                    "back": "<p>Construction Change Directive (CCD)</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 14,
+                    "front": "<h3>During construction of the roof membrane installation, the contractor proposes using a different manufacturer than specified. Which document should be used?</h3>",
+                    "back": "<p>Substitution request</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 15,
+                    "front": "<h3>During construction of the roof membrane installation, the contractor submits detailed fabrication diagrams for review. Which document should be used?</h3>",
+                    "back": "<p>Shop drawings</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 16,
+                    "front": "<h3>During construction of the roof membrane installation, the contractor must record conditions observed during a site visit. Which document should be used?</h3>",
+                    "back": "<p>Field report</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 17,
+                    "front": "<h3>During construction of the roof membrane installation, the contractor is requesting payment for completed work. Which document should be used?</h3>",
+                    "back": "<p>Application for Payment</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 18,
+                    "front": "<h3>During construction of the roof membrane installation, the contractor needs approval to substitute a specified product. Which document should be used?</h3>",
+                    "back": "<p>Substitution request</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 19,
+                    "front": "<h3>During construction of the roof membrane installation, the contractor documents final installed conditions differing from drawings. Which document should be used?</h3>",
+                    "back": "<p>Record drawings</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 20,
+                    "front": "<h3>During construction of the structural steel connections, the contractor needs clarification about conflicting drawings. Which document should be used?</h3>",
+                    "back": "<p>Request for Information (RFI)</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 21,
+                    "front": "<h3>During construction of the structural steel connections, the contractor requires minor clarification that will not affect cost or time. Which document should be used?</h3>",
+                    "back": "<p>Architect\u2019s Supplemental Instruction (ASI)</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 22,
+                    "front": "<h3>During construction of the structural steel connections, the contractor must formally change contract cost and time after agreement. Which document should be used?</h3>",
+                    "back": "<p>Change Order</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 23,
+                    "front": "<h3>During construction of the structural steel connections, the contractor must direct work before cost is agreed upon. Which document should be used?</h3>",
+                    "back": "<p>Construction Change Directive (CCD)</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 24,
+                    "front": "<h3>During construction of the structural steel connections, the contractor proposes using a different manufacturer than specified. Which document should be used?</h3>",
+                    "back": "<p>Substitution request</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 25,
+                    "front": "<h3>During construction of the structural steel connections, the contractor submits detailed fabrication diagrams for review. Which document should be used?</h3>",
+                    "back": "<p>Shop drawings</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 26,
+                    "front": "<h3>During construction of the structural steel connections, the contractor must record conditions observed during a site visit. Which document should be used?</h3>",
+                    "back": "<p>Field report</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 27,
+                    "front": "<h3>During construction of the structural steel connections, the contractor is requesting payment for completed work. Which document should be used?</h3>",
+                    "back": "<p>Application for Payment</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 28,
+                    "front": "<h3>During construction of the structural steel connections, the contractor needs approval to substitute a specified product. Which document should be used?</h3>",
+                    "back": "<p>Substitution request</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 29,
+                    "front": "<h3>During construction of the structural steel connections, the contractor documents final installed conditions differing from drawings. Which document should be used?</h3>",
+                    "back": "<p>Record drawings</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 30,
+                    "front": "<h3>During construction of the mechanical duct routing, the contractor needs clarification about conflicting drawings. Which document should be used?</h3>",
+                    "back": "<p>Request for Information (RFI)</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 31,
+                    "front": "<h3>During construction of the mechanical duct routing, the contractor requires minor clarification that will not affect cost or time. Which document should be used?</h3>",
+                    "back": "<p>Architect\u2019s Supplemental Instruction (ASI)</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 32,
+                    "front": "<h3>During construction of the mechanical duct routing, the contractor must formally change contract cost and time after agreement. Which document should be used?</h3>",
+                    "back": "<p>Change Order</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 33,
+                    "front": "<h3>During construction of the mechanical duct routing, the contractor must direct work before cost is agreed upon. Which document should be used?</h3>",
+                    "back": "<p>Construction Change Directive (CCD)</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 34,
+                    "front": "<h3>During construction of the mechanical duct routing, the contractor proposes using a different manufacturer than specified. Which document should be used?</h3>",
+                    "back": "<p>Substitution request</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 35,
+                    "front": "<h3>During construction of the mechanical duct routing, the contractor submits detailed fabrication diagrams for review. Which document should be used?</h3>",
+                    "back": "<p>Shop drawings</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 36,
+                    "front": "<h3>During construction of the mechanical duct routing, the contractor must record conditions observed during a site visit. Which document should be used?</h3>",
+                    "back": "<p>Field report</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 37,
+                    "front": "<h3>During construction of the mechanical duct routing, the contractor is requesting payment for completed work. Which document should be used?</h3>",
+                    "back": "<p>Application for Payment</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 38,
+                    "front": "<h3>During construction of the mechanical duct routing, the contractor needs approval to substitute a specified product. Which document should be used?</h3>",
+                    "back": "<p>Substitution request</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 39,
+                    "front": "<h3>During construction of the mechanical duct routing, the contractor documents final installed conditions differing from drawings. Which document should be used?</h3>",
+                    "back": "<p>Record drawings</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 40,
+                    "front": "<h3>During construction of the electrical conduit layout, the contractor needs clarification about conflicting drawings. Which document should be used?</h3>",
+                    "back": "<p>Request for Information (RFI)</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 41,
+                    "front": "<h3>During construction of the electrical conduit layout, the contractor requires minor clarification that will not affect cost or time. Which document should be used?</h3>",
+                    "back": "<p>Architect\u2019s Supplemental Instruction (ASI)</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 42,
+                    "front": "<h3>During construction of the electrical conduit layout, the contractor must formally change contract cost and time after agreement. Which document should be used?</h3>",
+                    "back": "<p>Change Order</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 43,
+                    "front": "<h3>During construction of the electrical conduit layout, the contractor must direct work before cost is agreed upon. Which document should be used?</h3>",
+                    "back": "<p>Construction Change Directive (CCD)</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 44,
+                    "front": "<h3>During construction of the electrical conduit layout, the contractor proposes using a different manufacturer than specified. Which document should be used?</h3>",
+                    "back": "<p>Substitution request</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 45,
+                    "front": "<h3>During construction of the electrical conduit layout, the contractor submits detailed fabrication diagrams for review. Which document should be used?</h3>",
+                    "back": "<p>Shop drawings</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 46,
+                    "front": "<h3>During construction of the electrical conduit layout, the contractor must record conditions observed during a site visit. Which document should be used?</h3>",
+                    "back": "<p>Field report</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 47,
+                    "front": "<h3>During construction of the electrical conduit layout, the contractor is requesting payment for completed work. Which document should be used?</h3>",
+                    "back": "<p>Application for Payment</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 48,
+                    "front": "<h3>During construction of the electrical conduit layout, the contractor needs approval to substitute a specified product. Which document should be used?</h3>",
+                    "back": "<p>Substitution request</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 49,
+                    "front": "<h3>During construction of the electrical conduit layout, the contractor documents final installed conditions differing from drawings. Which document should be used?</h3>",
+                    "back": "<p>Record drawings</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 50,
+                    "front": "<h3>During construction of the fire sprinkler piping, the contractor needs clarification about conflicting drawings. Which document should be used?</h3>",
+                    "back": "<p>Request for Information (RFI)</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 51,
+                    "front": "<h3>During construction of the fire sprinkler piping, the contractor requires minor clarification that will not affect cost or time. Which document should be used?</h3>",
+                    "back": "<p>Architect\u2019s Supplemental Instruction (ASI)</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 52,
+                    "front": "<h3>During construction of the fire sprinkler piping, the contractor must formally change contract cost and time after agreement. Which document should be used?</h3>",
+                    "back": "<p>Change Order</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 53,
+                    "front": "<h3>During construction of the fire sprinkler piping, the contractor must direct work before cost is agreed upon. Which document should be used?</h3>",
+                    "back": "<p>Construction Change Directive (CCD)</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 54,
+                    "front": "<h3>During construction of the fire sprinkler piping, the contractor proposes using a different manufacturer than specified. Which document should be used?</h3>",
+                    "back": "<p>Substitution request</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 55,
+                    "front": "<h3>During construction of the fire sprinkler piping, the contractor submits detailed fabrication diagrams for review. Which document should be used?</h3>",
+                    "back": "<p>Shop drawings</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 56,
+                    "front": "<h3>During construction of the fire sprinkler piping, the contractor must record conditions observed during a site visit. Which document should be used?</h3>",
+                    "back": "<p>Field report</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 57,
+                    "front": "<h3>During construction of the fire sprinkler piping, the contractor is requesting payment for completed work. Which document should be used?</h3>",
+                    "back": "<p>Application for Payment</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 58,
+                    "front": "<h3>During construction of the fire sprinkler piping, the contractor needs approval to substitute a specified product. Which document should be used?</h3>",
+                    "back": "<p>Substitution request</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 59,
+                    "front": "<h3>During construction of the fire sprinkler piping, the contractor documents final installed conditions differing from drawings. Which document should be used?</h3>",
+                    "back": "<p>Record drawings</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 60,
+                    "front": "<h3>During construction of the elevator shaft framing, the contractor needs clarification about conflicting drawings. Which document should be used?</h3>",
+                    "back": "<p>Request for Information (RFI)</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 61,
+                    "front": "<h3>During construction of the elevator shaft framing, the contractor requires minor clarification that will not affect cost or time. Which document should be used?</h3>",
+                    "back": "<p>Architect\u2019s Supplemental Instruction (ASI)</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 62,
+                    "front": "<h3>During construction of the elevator shaft framing, the contractor must formally change contract cost and time after agreement. Which document should be used?</h3>",
+                    "back": "<p>Change Order</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 63,
+                    "front": "<h3>During construction of the elevator shaft framing, the contractor must direct work before cost is agreed upon. Which document should be used?</h3>",
+                    "back": "<p>Construction Change Directive (CCD)</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 64,
+                    "front": "<h3>During construction of the elevator shaft framing, the contractor proposes using a different manufacturer than specified. Which document should be used?</h3>",
+                    "back": "<p>Substitution request</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 65,
+                    "front": "<h3>During construction of the elevator shaft framing, the contractor submits detailed fabrication diagrams for review. Which document should be used?</h3>",
+                    "back": "<p>Shop drawings</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 66,
+                    "front": "<h3>During construction of the elevator shaft framing, the contractor must record conditions observed during a site visit. Which document should be used?</h3>",
+                    "back": "<p>Field report</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 67,
+                    "front": "<h3>During construction of the elevator shaft framing, the contractor is requesting payment for completed work. Which document should be used?</h3>",
+                    "back": "<p>Application for Payment</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 68,
+                    "front": "<h3>During construction of the elevator shaft framing, the contractor needs approval to substitute a specified product. Which document should be used?</h3>",
+                    "back": "<p>Substitution request</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 69,
+                    "front": "<h3>During construction of the elevator shaft framing, the contractor documents final installed conditions differing from drawings. Which document should be used?</h3>",
+                    "back": "<p>Record drawings</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 70,
+                    "front": "<h3>During construction of the concrete slab reinforcement, the contractor needs clarification about conflicting drawings. Which document should be used?</h3>",
+                    "back": "<p>Request for Information (RFI)</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 71,
+                    "front": "<h3>During construction of the concrete slab reinforcement, the contractor requires minor clarification that will not affect cost or time. Which document should be used?</h3>",
+                    "back": "<p>Architect\u2019s Supplemental Instruction (ASI)</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 72,
+                    "front": "<h3>During construction of the concrete slab reinforcement, the contractor must formally change contract cost and time after agreement. Which document should be used?</h3>",
+                    "back": "<p>Change Order</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 73,
+                    "front": "<h3>During construction of the concrete slab reinforcement, the contractor must direct work before cost is agreed upon. Which document should be used?</h3>",
+                    "back": "<p>Construction Change Directive (CCD)</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 74,
+                    "front": "<h3>During construction of the concrete slab reinforcement, the contractor proposes using a different manufacturer than specified. Which document should be used?</h3>",
+                    "back": "<p>Substitution request</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 75,
+                    "front": "<h3>During construction of the concrete slab reinforcement, the contractor submits detailed fabrication diagrams for review. Which document should be used?</h3>",
+                    "back": "<p>Shop drawings</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 76,
+                    "front": "<h3>During construction of the concrete slab reinforcement, the contractor must record conditions observed during a site visit. Which document should be used?</h3>",
+                    "back": "<p>Field report</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 77,
+                    "front": "<h3>During construction of the concrete slab reinforcement, the contractor is requesting payment for completed work. Which document should be used?</h3>",
+                    "back": "<p>Application for Payment</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 78,
+                    "front": "<h3>During construction of the concrete slab reinforcement, the contractor needs approval to substitute a specified product. Which document should be used?</h3>",
+                    "back": "<p>Substitution request</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 79,
+                    "front": "<h3>During construction of the concrete slab reinforcement, the contractor documents final installed conditions differing from drawings. Which document should be used?</h3>",
+                    "back": "<p>Record drawings</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 80,
+                    "front": "<h3>During construction of the masonry control joints, the contractor needs clarification about conflicting drawings. Which document should be used?</h3>",
+                    "back": "<p>Request for Information (RFI)</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 81,
+                    "front": "<h3>During construction of the masonry control joints, the contractor requires minor clarification that will not affect cost or time. Which document should be used?</h3>",
+                    "back": "<p>Architect\u2019s Supplemental Instruction (ASI)</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 82,
+                    "front": "<h3>During construction of the masonry control joints, the contractor must formally change contract cost and time after agreement. Which document should be used?</h3>",
+                    "back": "<p>Change Order</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 83,
+                    "front": "<h3>During construction of the masonry control joints, the contractor must direct work before cost is agreed upon. Which document should be used?</h3>",
+                    "back": "<p>Construction Change Directive (CCD)</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 84,
+                    "front": "<h3>During construction of the masonry control joints, the contractor proposes using a different manufacturer than specified. Which document should be used?</h3>",
+                    "back": "<p>Substitution request</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 85,
+                    "front": "<h3>During construction of the masonry control joints, the contractor submits detailed fabrication diagrams for review. Which document should be used?</h3>",
+                    "back": "<p>Shop drawings</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 86,
+                    "front": "<h3>During construction of the masonry control joints, the contractor must record conditions observed during a site visit. Which document should be used?</h3>",
+                    "back": "<p>Field report</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 87,
+                    "front": "<h3>During construction of the masonry control joints, the contractor is requesting payment for completed work. Which document should be used?</h3>",
+                    "back": "<p>Application for Payment</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 88,
+                    "front": "<h3>During construction of the masonry control joints, the contractor needs approval to substitute a specified product. Which document should be used?</h3>",
+                    "back": "<p>Substitution request</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 89,
+                    "front": "<h3>During construction of the masonry control joints, the contractor documents final installed conditions differing from drawings. Which document should be used?</h3>",
+                    "back": "<p>Record drawings</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 90,
+                    "front": "<h3>During construction of the storefront glazing, the contractor needs clarification about conflicting drawings. Which document should be used?</h3>",
+                    "back": "<p>Request for Information (RFI)</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 91,
+                    "front": "<h3>During construction of the storefront glazing, the contractor requires minor clarification that will not affect cost or time. Which document should be used?</h3>",
+                    "back": "<p>Architect\u2019s Supplemental Instruction (ASI)</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 92,
+                    "front": "<h3>During construction of the storefront glazing, the contractor must formally change contract cost and time after agreement. Which document should be used?</h3>",
+                    "back": "<p>Change Order</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 93,
+                    "front": "<h3>During construction of the storefront glazing, the contractor must direct work before cost is agreed upon. Which document should be used?</h3>",
+                    "back": "<p>Construction Change Directive (CCD)</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 94,
+                    "front": "<h3>During construction of the storefront glazing, the contractor proposes using a different manufacturer than specified. Which document should be used?</h3>",
+                    "back": "<p>Substitution request</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 95,
+                    "front": "<h3>During construction of the storefront glazing, the contractor submits detailed fabrication diagrams for review. Which document should be used?</h3>",
+                    "back": "<p>Shop drawings</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 96,
+                    "front": "<h3>During construction of the storefront glazing, the contractor must record conditions observed during a site visit. Which document should be used?</h3>",
+                    "back": "<p>Field report</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 97,
+                    "front": "<h3>During construction of the storefront glazing, the contractor is requesting payment for completed work. Which document should be used?</h3>",
+                    "back": "<p>Application for Payment</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 98,
+                    "front": "<h3>During construction of the storefront glazing, the contractor needs approval to substitute a specified product. Which document should be used?</h3>",
+                    "back": "<p>Substitution request</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 99,
+                    "front": "<h3>During construction of the storefront glazing, the contractor documents final installed conditions differing from drawings. Which document should be used?</h3>",
+                    "back": "<p>Record drawings</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 100,
+                    "front": "<h3>During construction of the acoustic ceiling grid, the contractor needs clarification about conflicting drawings. Which document should be used?</h3>",
+                    "back": "<p>Request for Information (RFI)</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 101,
+                    "front": "<h3>During construction of the acoustic ceiling grid, the contractor requires minor clarification that will not affect cost or time. Which document should be used?</h3>",
+                    "back": "<p>Architect\u2019s Supplemental Instruction (ASI)</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 102,
+                    "front": "<h3>During construction of the acoustic ceiling grid, the contractor must formally change contract cost and time after agreement. Which document should be used?</h3>",
+                    "back": "<p>Change Order</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 103,
+                    "front": "<h3>During construction of the acoustic ceiling grid, the contractor must direct work before cost is agreed upon. Which document should be used?</h3>",
+                    "back": "<p>Construction Change Directive (CCD)</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 104,
+                    "front": "<h3>During construction of the acoustic ceiling grid, the contractor proposes using a different manufacturer than specified. Which document should be used?</h3>",
+                    "back": "<p>Substitution request</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 105,
+                    "front": "<h3>During construction of the acoustic ceiling grid, the contractor submits detailed fabrication diagrams for review. Which document should be used?</h3>",
+                    "back": "<p>Shop drawings</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 106,
+                    "front": "<h3>During construction of the acoustic ceiling grid, the contractor must record conditions observed during a site visit. Which document should be used?</h3>",
+                    "back": "<p>Field report</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 107,
+                    "front": "<h3>During construction of the acoustic ceiling grid, the contractor is requesting payment for completed work. Which document should be used?</h3>",
+                    "back": "<p>Application for Payment</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 108,
+                    "front": "<h3>During construction of the acoustic ceiling grid, the contractor needs approval to substitute a specified product. Which document should be used?</h3>",
+                    "back": "<p>Substitution request</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 109,
+                    "front": "<h3>During construction of the acoustic ceiling grid, the contractor documents final installed conditions differing from drawings. Which document should be used?</h3>",
+                    "back": "<p>Record drawings</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 110,
+                    "front": "<h3>During construction of the millwork fabrication, the contractor needs clarification about conflicting drawings. Which document should be used?</h3>",
+                    "back": "<p>Request for Information (RFI)</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 111,
+                    "front": "<h3>During construction of the millwork fabrication, the contractor requires minor clarification that will not affect cost or time. Which document should be used?</h3>",
+                    "back": "<p>Architect\u2019s Supplemental Instruction (ASI)</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 112,
+                    "front": "<h3>During construction of the millwork fabrication, the contractor must formally change contract cost and time after agreement. Which document should be used?</h3>",
+                    "back": "<p>Change Order</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 113,
+                    "front": "<h3>During construction of the millwork fabrication, the contractor must direct work before cost is agreed upon. Which document should be used?</h3>",
+                    "back": "<p>Construction Change Directive (CCD)</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 114,
+                    "front": "<h3>During construction of the millwork fabrication, the contractor proposes using a different manufacturer than specified. Which document should be used?</h3>",
+                    "back": "<p>Substitution request</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 115,
+                    "front": "<h3>During construction of the millwork fabrication, the contractor submits detailed fabrication diagrams for review. Which document should be used?</h3>",
+                    "back": "<p>Shop drawings</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 116,
+                    "front": "<h3>During construction of the millwork fabrication, the contractor must record conditions observed during a site visit. Which document should be used?</h3>",
+                    "back": "<p>Field report</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 117,
+                    "front": "<h3>During construction of the millwork fabrication, the contractor is requesting payment for completed work. Which document should be used?</h3>",
+                    "back": "<p>Application for Payment</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 118,
+                    "front": "<h3>During construction of the millwork fabrication, the contractor needs approval to substitute a specified product. Which document should be used?</h3>",
+                    "back": "<p>Substitution request</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 119,
+                    "front": "<h3>During construction of the millwork fabrication, the contractor documents final installed conditions differing from drawings. Which document should be used?</h3>",
+                    "back": "<p>Record drawings</p>",
+                    "markedAsCorrect": false
+                }
             ]
         }
         
         if(this.CEcards4.length == 0) {
             this.CEcards4 = [
-                { index: 0, front: '<h3>Who is responsible for jobsite safety during construction?</h3>', back: '<p>The contractor.</p>', markedAsCorrect: false },
-                { index: 1, front: '<h3>Who is responsible for verifying field dimensions before fabrication?</h3>', back: '<p>The architect.</p>', markedAsCorrect: false },
-                { index: 2, front: '<h3>Who is responsible for reviewing submittals for design intent?</h3>', back: '<p>The owner.</p>', markedAsCorrect: false },
-                { index: 3, front: '<h3>Who is responsible for construction means and methods?</h3>', back: '<p>The contractor (means and methods).</p>', markedAsCorrect: false },
-                { index: 4, front: '<h3>Who hires the testing agency unless otherwise specified?</h3>', back: '<p>The architect (design intent review).</p>', markedAsCorrect: false },
-                { index: 5, front: '<h3>Who coordinates subcontractor work?</h3>', back: '<p>The contractor (site safety).</p>', markedAsCorrect: false },
-                { index: 6, front: '<h3>Who prepares the schedule of values?</h3>', back: '<p>The owner (testing agency).</p>', markedAsCorrect: false },
-                { index: 7, front: '<h3>Who observes the work for general conformance with the contract documents?</h3>', back: '<p>The contractor (field measurements).</p>', markedAsCorrect: false },
-                { index: 8, front: '<h3>Who is responsible for jobsite safety during construction?</h3>', back: '<p>The contractor.</p>', markedAsCorrect: false },
-                { index: 9, front: '<h3>Who is responsible for verifying field dimensions before fabrication?</h3>', back: '<p>The architect.</p>', markedAsCorrect: false },
-                { index: 10, front: '<h3>Who is responsible for reviewing submittals for design intent?</h3>', back: '<p>The owner.</p>', markedAsCorrect: false },
-                { index: 11, front: '<h3>Who is responsible for construction means and methods?</h3>', back: '<p>The contractor (means and methods).</p>', markedAsCorrect: false },
-                { index: 12, front: '<h3>Who hires the testing agency unless otherwise specified?</h3>', back: '<p>The architect (design intent review).</p>', markedAsCorrect: false },
-                { index: 13, front: '<h3>Who coordinates subcontractor work?</h3>', back: '<p>The contractor (site safety).</p>', markedAsCorrect: false },
-                { index: 14, front: '<h3>Who prepares the schedule of values?</h3>', back: '<p>The owner (testing agency).</p>', markedAsCorrect: false },
-                { index: 15, front: '<h3>Who observes the work for general conformance with the contract documents?</h3>', back: '<p>The contractor (field measurements).</p>', markedAsCorrect: false },
-                { index: 16, front: '<h3>Who is responsible for jobsite safety during construction?</h3>', back: '<p>The contractor.</p>', markedAsCorrect: false },
-                { index: 17, front: '<h3>Who is responsible for verifying field dimensions before fabrication?</h3>', back: '<p>The architect.</p>', markedAsCorrect: false },
-                { index: 18, front: '<h3>Who is responsible for reviewing submittals for design intent?</h3>', back: '<p>The owner.</p>', markedAsCorrect: false },
-                { index: 19, front: '<h3>Who is responsible for construction means and methods?</h3>', back: '<p>The contractor (means and methods).</p>', markedAsCorrect: false },
-                { index: 20, front: '<h3>Who hires the testing agency unless otherwise specified?</h3>', back: '<p>The architect (design intent review).</p>', markedAsCorrect: false },
-                { index: 21, front: '<h3>Who coordinates subcontractor work?</h3>', back: '<p>The contractor (site safety).</p>', markedAsCorrect: false },
-                { index: 22, front: '<h3>Who prepares the schedule of values?</h3>', back: '<p>The owner (testing agency).</p>', markedAsCorrect: false },
-                { index: 23, front: '<h3>Who observes the work for general conformance with the contract documents?</h3>', back: '<p>The contractor (field measurements).</p>', markedAsCorrect: false },
-                { index: 24, front: '<h3>Who is responsible for jobsite safety during construction?</h3>', back: '<p>The contractor.</p>', markedAsCorrect: false },
-                { index: 25, front: '<h3>Who is responsible for verifying field dimensions before fabrication?</h3>', back: '<p>The architect.</p>', markedAsCorrect: false },
-                { index: 26, front: '<h3>Who is responsible for reviewing submittals for design intent?</h3>', back: '<p>The owner.</p>', markedAsCorrect: false },
-                { index: 27, front: '<h3>Who is responsible for construction means and methods?</h3>', back: '<p>The contractor (means and methods).</p>', markedAsCorrect: false },
-                { index: 28, front: '<h3>Who hires the testing agency unless otherwise specified?</h3>', back: '<p>The architect (design intent review).</p>', markedAsCorrect: false },
-                { index: 29, front: '<h3>Who coordinates subcontractor work?</h3>', back: '<p>The contractor (site safety).</p>', markedAsCorrect: false },
-                { index: 30, front: '<h3>Who prepares the schedule of values?</h3>', back: '<p>The owner (testing agency).</p>', markedAsCorrect: false },
-                { index: 31, front: '<h3>Who observes the work for general conformance with the contract documents?</h3>', back: '<p>The contractor (field measurements).</p>', markedAsCorrect: false },
-                { index: 32, front: '<h3>Who is responsible for jobsite safety during construction?</h3>', back: '<p>The contractor.</p>', markedAsCorrect: false },
-                { index: 33, front: '<h3>Who is responsible for verifying field dimensions before fabrication?</h3>', back: '<p>The architect.</p>', markedAsCorrect: false },
-                { index: 34, front: '<h3>Who is responsible for reviewing submittals for design intent?</h3>', back: '<p>The owner.</p>', markedAsCorrect: false },
-                { index: 35, front: '<h3>Who is responsible for construction means and methods?</h3>', back: '<p>The contractor (means and methods).</p>', markedAsCorrect: false },
-                { index: 36, front: '<h3>Who hires the testing agency unless otherwise specified?</h3>', back: '<p>The architect (design intent review).</p>', markedAsCorrect: false },
-                { index: 37, front: '<h3>Who coordinates subcontractor work?</h3>', back: '<p>The contractor (site safety).</p>', markedAsCorrect: false },
-                { index: 38, front: '<h3>Who prepares the schedule of values?</h3>', back: '<p>The owner (testing agency).</p>', markedAsCorrect: false },
-                { index: 39, front: '<h3>Who observes the work for general conformance with the contract documents?</h3>', back: '<p>The contractor (field measurements).</p>', markedAsCorrect: false },
-                { index: 40, front: '<h3>Who is responsible for jobsite safety during construction?</h3>', back: '<p>The contractor.</p>', markedAsCorrect: false },
-                { index: 41, front: '<h3>Who is responsible for verifying field dimensions before fabrication?</h3>', back: '<p>The architect.</p>', markedAsCorrect: false },
-                { index: 42, front: '<h3>Who is responsible for reviewing submittals for design intent?</h3>', back: '<p>The owner.</p>', markedAsCorrect: false },
-                { index: 43, front: '<h3>Who is responsible for construction means and methods?</h3>', back: '<p>The contractor (means and methods).</p>', markedAsCorrect: false },
-                { index: 44, front: '<h3>Who hires the testing agency unless otherwise specified?</h3>', back: '<p>The architect (design intent review).</p>', markedAsCorrect: false },
-                { index: 45, front: '<h3>Who coordinates subcontractor work?</h3>', back: '<p>The contractor (site safety).</p>', markedAsCorrect: false },
-                { index: 46, front: '<h3>Who prepares the schedule of values?</h3>', back: '<p>The owner (testing agency).</p>', markedAsCorrect: false },
-                { index: 47, front: '<h3>Who observes the work for general conformance with the contract documents?</h3>', back: '<p>The contractor (field measurements).</p>', markedAsCorrect: false },
-                { index: 48, front: '<h3>Who is responsible for jobsite safety during construction?</h3>', back: '<p>The contractor.</p>', markedAsCorrect: false },
-                { index: 49, front: '<h3>Who is responsible for verifying field dimensions before fabrication?</h3>', back: '<p>The architect.</p>', markedAsCorrect: false },
-                { index: 50, front: '<h3>Who is responsible for reviewing submittals for design intent?</h3>', back: '<p>The owner.</p>', markedAsCorrect: false },
-                { index: 51, front: '<h3>Who is responsible for construction means and methods?</h3>', back: '<p>The contractor (means and methods).</p>', markedAsCorrect: false },
-                { index: 52, front: '<h3>Who hires the testing agency unless otherwise specified?</h3>', back: '<p>The architect (design intent review).</p>', markedAsCorrect: false },
-                { index: 53, front: '<h3>Who coordinates subcontractor work?</h3>', back: '<p>The contractor (site safety).</p>', markedAsCorrect: false },
-                { index: 54, front: '<h3>Who prepares the schedule of values?</h3>', back: '<p>The owner (testing agency).</p>', markedAsCorrect: false },
-                { index: 55, front: '<h3>Who observes the work for general conformance with the contract documents?</h3>', back: '<p>The contractor (field measurements).</p>', markedAsCorrect: false },
-                { index: 56, front: '<h3>Who is responsible for jobsite safety during construction?</h3>', back: '<p>The contractor.</p>', markedAsCorrect: false },
-                { index: 57, front: '<h3>Who is responsible for verifying field dimensions before fabrication?</h3>', back: '<p>The architect.</p>', markedAsCorrect: false },
-                { index: 58, front: '<h3>Who is responsible for reviewing submittals for design intent?</h3>', back: '<p>The owner.</p>', markedAsCorrect: false },
-                { index: 59, front: '<h3>Who is responsible for construction means and methods?</h3>', back: '<p>The contractor (means and methods).</p>', markedAsCorrect: false },
-                { index: 60, front: '<h3>Who hires the testing agency unless otherwise specified?</h3>', back: '<p>The architect (design intent review).</p>', markedAsCorrect: false },
-                { index: 61, front: '<h3>Who coordinates subcontractor work?</h3>', back: '<p>The contractor (site safety).</p>', markedAsCorrect: false },
-                { index: 62, front: '<h3>Who prepares the schedule of values?</h3>', back: '<p>The owner (testing agency).</p>', markedAsCorrect: false },
-                { index: 63, front: '<h3>Who observes the work for general conformance with the contract documents?</h3>', back: '<p>The contractor (field measurements).</p>', markedAsCorrect: false },
-                { index: 64, front: '<h3>Who is responsible for jobsite safety during construction?</h3>', back: '<p>The contractor.</p>', markedAsCorrect: false },
-                { index: 65, front: '<h3>Who is responsible for verifying field dimensions before fabrication?</h3>', back: '<p>The architect.</p>', markedAsCorrect: false },
-                { index: 66, front: '<h3>Who is responsible for reviewing submittals for design intent?</h3>', back: '<p>The owner.</p>', markedAsCorrect: false },
-                { index: 67, front: '<h3>Who is responsible for construction means and methods?</h3>', back: '<p>The contractor (means and methods).</p>', markedAsCorrect: false },
-                { index: 68, front: '<h3>Who hires the testing agency unless otherwise specified?</h3>', back: '<p>The architect (design intent review).</p>', markedAsCorrect: false },
-                { index: 69, front: '<h3>Who coordinates subcontractor work?</h3>', back: '<p>The contractor (site safety).</p>', markedAsCorrect: false },
-                { index: 70, front: '<h3>Who prepares the schedule of values?</h3>', back: '<p>The owner (testing agency).</p>', markedAsCorrect: false },
-                { index: 71, front: '<h3>Who observes the work for general conformance with the contract documents?</h3>', back: '<p>The contractor (field measurements).</p>', markedAsCorrect: false },
-                { index: 72, front: '<h3>Who is responsible for jobsite safety during construction?</h3>', back: '<p>The contractor.</p>', markedAsCorrect: false },
-                { index: 73, front: '<h3>Who is responsible for verifying field dimensions before fabrication?</h3>', back: '<p>The architect.</p>', markedAsCorrect: false },
-                { index: 74, front: '<h3>Who is responsible for reviewing submittals for design intent?</h3>', back: '<p>The owner.</p>', markedAsCorrect: false },
-                { index: 75, front: '<h3>Who is responsible for construction means and methods?</h3>', back: '<p>The contractor (means and methods).</p>', markedAsCorrect: false },
-                { index: 76, front: '<h3>Who hires the testing agency unless otherwise specified?</h3>', back: '<p>The architect (design intent review).</p>', markedAsCorrect: false },
-                { index: 77, front: '<h3>Who coordinates subcontractor work?</h3>', back: '<p>The contractor (site safety).</p>', markedAsCorrect: false },
-                { index: 78, front: '<h3>Who prepares the schedule of values?</h3>', back: '<p>The owner (testing agency).</p>', markedAsCorrect: false },
-                { index: 79, front: '<h3>Who observes the work for general conformance with the contract documents?</h3>', back: '<p>The contractor (field measurements).</p>', markedAsCorrect: false }
+                {
+                    "index": 0,
+                    "front": "<h3>In a design\u2011bid\u2011build project for structural steel installation, who is responsible for coordinating subcontractor work?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 1,
+                    "front": "<h3>In a design\u2011bid\u2011build project for structural steel installation, who is responsible for construction means and methods?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 2,
+                    "front": "<h3>In a design\u2011bid\u2011build project for structural steel installation, who is responsible for jobsite safety?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 3,
+                    "front": "<h3>In a design\u2011bid\u2011build project for structural steel installation, who is responsible for verifying field measurements before fabrication?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 4,
+                    "front": "<h3>In a design\u2011bid\u2011build project for structural steel installation, who is responsible for reviewing shop drawings for design intent?</h3>",
+                    "back": "<p>The architect</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 5,
+                    "front": "<h3>In a design\u2011bid\u2011build project for structural steel installation, who is responsible for maintaining the construction schedule?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 6,
+                    "front": "<h3>In a design\u2011bid\u2011build project for structural steel installation, who is responsible for providing temporary protection for installed work?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 7,
+                    "front": "<h3>In a design\u2011bid\u2011build project for structural steel installation, who is responsible for installing work according to the contract documents?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 8,
+                    "front": "<h3>In a design\u2011bid\u2011build project for structural steel installation, who is responsible for correcting nonconforming work?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 9,
+                    "front": "<h3>In a design\u2011bid\u2011build project for structural steel installation, who is responsible for providing warranties at project closeout?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 10,
+                    "front": "<h3>In a design\u2011bid\u2011build project for structural steel installation, who is responsible for submitting payment applications?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 11,
+                    "front": "<h3>In a design\u2011bid\u2011build project for structural steel installation, who is responsible for preparing the schedule of values?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 12,
+                    "front": "<h3>In a design\u2011bid\u2011build project for structural steel installation, who is responsible for certifying contractor payment requests?</h3>",
+                    "back": "<p>The architect</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 13,
+                    "front": "<h3>In a design\u2011bid\u2011build project for structural steel installation, who is responsible for reviewing submittals for design intent?</h3>",
+                    "back": "<p>The architect</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 14,
+                    "front": "<h3>In a design\u2011bid\u2011build project for structural steel installation, who is responsible for maintaining record drawings during construction?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 15,
+                    "front": "<h3>In a design\u2011bid\u2011build project for structural steel installation, who is responsible for ensuring workers follow safety regulations?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 16,
+                    "front": "<h3>In a design\u2011bid\u2011build project for structural steel installation, who is responsible for coordinating material deliveries?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 17,
+                    "front": "<h3>In a design\u2011bid\u2011build project for structural steel installation, who is responsible for ensuring code compliance inspections?</h3>",
+                    "back": "<p>The authority having jurisdiction (AHJ)</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 18,
+                    "front": "<h3>In a design\u2011bid\u2011build project for structural steel installation, who is responsible for approving substitutions affecting design intent?</h3>",
+                    "back": "<p>The architect</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 19,
+                    "front": "<h3>In a design\u2011bid\u2011build project for structural steel installation, who is responsible for providing testing and inspection services?</h3>",
+                    "back": "<p>Typically the owner through a testing agency</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 20,
+                    "front": "<h3>In a design\u2011bid\u2011build project during curtain wall construction, who is responsible for coordinating subcontractor work?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 21,
+                    "front": "<h3>In a design\u2011bid\u2011build project during curtain wall construction, who is responsible for construction means and methods?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 22,
+                    "front": "<h3>In a design\u2011bid\u2011build project during curtain wall construction, who is responsible for jobsite safety?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 23,
+                    "front": "<h3>In a design\u2011bid\u2011build project during curtain wall construction, who is responsible for verifying field measurements before fabrication?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 24,
+                    "front": "<h3>In a design\u2011bid\u2011build project during curtain wall construction, who is responsible for reviewing shop drawings for design intent?</h3>",
+                    "back": "<p>The architect</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 25,
+                    "front": "<h3>In a design\u2011bid\u2011build project during curtain wall construction, who is responsible for maintaining the construction schedule?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 26,
+                    "front": "<h3>In a design\u2011bid\u2011build project during curtain wall construction, who is responsible for providing temporary protection for installed work?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 27,
+                    "front": "<h3>In a design\u2011bid\u2011build project during curtain wall construction, who is responsible for installing work according to the contract documents?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 28,
+                    "front": "<h3>In a design\u2011bid\u2011build project during curtain wall construction, who is responsible for correcting nonconforming work?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 29,
+                    "front": "<h3>In a design\u2011bid\u2011build project during curtain wall construction, who is responsible for providing warranties at project closeout?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 30,
+                    "front": "<h3>In a design\u2011bid\u2011build project during curtain wall construction, who is responsible for submitting payment applications?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 31,
+                    "front": "<h3>In a design\u2011bid\u2011build project during curtain wall construction, who is responsible for preparing the schedule of values?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 32,
+                    "front": "<h3>In a design\u2011bid\u2011build project during curtain wall construction, who is responsible for certifying contractor payment requests?</h3>",
+                    "back": "<p>The architect</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 33,
+                    "front": "<h3>In a design\u2011bid\u2011build project during curtain wall construction, who is responsible for reviewing submittals for design intent?</h3>",
+                    "back": "<p>The architect</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 34,
+                    "front": "<h3>In a design\u2011bid\u2011build project during curtain wall construction, who is responsible for maintaining record drawings during construction?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 35,
+                    "front": "<h3>In a design\u2011bid\u2011build project during curtain wall construction, who is responsible for ensuring workers follow safety regulations?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 36,
+                    "front": "<h3>In a design\u2011bid\u2011build project during curtain wall construction, who is responsible for coordinating material deliveries?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 37,
+                    "front": "<h3>In a design\u2011bid\u2011build project during curtain wall construction, who is responsible for ensuring code compliance inspections?</h3>",
+                    "back": "<p>The authority having jurisdiction (AHJ)</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 38,
+                    "front": "<h3>In a design\u2011bid\u2011build project during curtain wall construction, who is responsible for approving substitutions affecting design intent?</h3>",
+                    "back": "<p>The architect</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 39,
+                    "front": "<h3>In a design\u2011bid\u2011build project during curtain wall construction, who is responsible for providing testing and inspection services?</h3>",
+                    "back": "<p>Typically the owner through a testing agency</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 40,
+                    "front": "<h3>In a design\u2011bid\u2011build project for mechanical system installation, who is responsible for coordinating subcontractor work?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 41,
+                    "front": "<h3>In a design\u2011bid\u2011build project for mechanical system installation, who is responsible for construction means and methods?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 42,
+                    "front": "<h3>In a design\u2011bid\u2011build project for mechanical system installation, who is responsible for jobsite safety?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 43,
+                    "front": "<h3>In a design\u2011bid\u2011build project for mechanical system installation, who is responsible for verifying field measurements before fabrication?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 44,
+                    "front": "<h3>In a design\u2011bid\u2011build project for mechanical system installation, who is responsible for reviewing shop drawings for design intent?</h3>",
+                    "back": "<p>The architect</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 45,
+                    "front": "<h3>In a design\u2011bid\u2011build project for mechanical system installation, who is responsible for maintaining the construction schedule?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 46,
+                    "front": "<h3>In a design\u2011bid\u2011build project for mechanical system installation, who is responsible for providing temporary protection for installed work?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 47,
+                    "front": "<h3>In a design\u2011bid\u2011build project for mechanical system installation, who is responsible for installing work according to the contract documents?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 48,
+                    "front": "<h3>In a design\u2011bid\u2011build project for mechanical system installation, who is responsible for correcting nonconforming work?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 49,
+                    "front": "<h3>In a design\u2011bid\u2011build project for mechanical system installation, who is responsible for providing warranties at project closeout?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 50,
+                    "front": "<h3>In a design\u2011bid\u2011build project for mechanical system installation, who is responsible for submitting payment applications?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 51,
+                    "front": "<h3>In a design\u2011bid\u2011build project for mechanical system installation, who is responsible for preparing the schedule of values?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 52,
+                    "front": "<h3>In a design\u2011bid\u2011build project for mechanical system installation, who is responsible for certifying contractor payment requests?</h3>",
+                    "back": "<p>The architect</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 53,
+                    "front": "<h3>In a design\u2011bid\u2011build project for mechanical system installation, who is responsible for reviewing submittals for design intent?</h3>",
+                    "back": "<p>The architect</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 54,
+                    "front": "<h3>In a design\u2011bid\u2011build project for mechanical system installation, who is responsible for maintaining record drawings during construction?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 55,
+                    "front": "<h3>In a design\u2011bid\u2011build project for mechanical system installation, who is responsible for ensuring workers follow safety regulations?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 56,
+                    "front": "<h3>In a design\u2011bid\u2011build project for mechanical system installation, who is responsible for coordinating material deliveries?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 57,
+                    "front": "<h3>In a design\u2011bid\u2011build project for mechanical system installation, who is responsible for ensuring code compliance inspections?</h3>",
+                    "back": "<p>The authority having jurisdiction (AHJ)</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 58,
+                    "front": "<h3>In a design\u2011bid\u2011build project for mechanical system installation, who is responsible for approving substitutions affecting design intent?</h3>",
+                    "back": "<p>The architect</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 59,
+                    "front": "<h3>In a design\u2011bid\u2011build project for mechanical system installation, who is responsible for providing testing and inspection services?</h3>",
+                    "back": "<p>Typically the owner through a testing agency</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 60,
+                    "front": "<h3>In a design\u2011bid\u2011build project during electrical rough\u2011in, who is responsible for coordinating subcontractor work?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 61,
+                    "front": "<h3>In a design\u2011bid\u2011build project during electrical rough\u2011in, who is responsible for construction means and methods?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 62,
+                    "front": "<h3>In a design\u2011bid\u2011build project during electrical rough\u2011in, who is responsible for jobsite safety?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 63,
+                    "front": "<h3>In a design\u2011bid\u2011build project during electrical rough\u2011in, who is responsible for verifying field measurements before fabrication?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 64,
+                    "front": "<h3>In a design\u2011bid\u2011build project during electrical rough\u2011in, who is responsible for reviewing shop drawings for design intent?</h3>",
+                    "back": "<p>The architect</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 65,
+                    "front": "<h3>In a design\u2011bid\u2011build project during electrical rough\u2011in, who is responsible for maintaining the construction schedule?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 66,
+                    "front": "<h3>In a design\u2011bid\u2011build project during electrical rough\u2011in, who is responsible for providing temporary protection for installed work?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 67,
+                    "front": "<h3>In a design\u2011bid\u2011build project during electrical rough\u2011in, who is responsible for installing work according to the contract documents?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 68,
+                    "front": "<h3>In a design\u2011bid\u2011build project during electrical rough\u2011in, who is responsible for correcting nonconforming work?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 69,
+                    "front": "<h3>In a design\u2011bid\u2011build project during electrical rough\u2011in, who is responsible for providing warranties at project closeout?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 70,
+                    "front": "<h3>In a design\u2011bid\u2011build project during electrical rough\u2011in, who is responsible for submitting payment applications?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 71,
+                    "front": "<h3>In a design\u2011bid\u2011build project during electrical rough\u2011in, who is responsible for preparing the schedule of values?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 72,
+                    "front": "<h3>In a design\u2011bid\u2011build project during electrical rough\u2011in, who is responsible for certifying contractor payment requests?</h3>",
+                    "back": "<p>The architect</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 73,
+                    "front": "<h3>In a design\u2011bid\u2011build project during electrical rough\u2011in, who is responsible for reviewing submittals for design intent?</h3>",
+                    "back": "<p>The architect</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 74,
+                    "front": "<h3>In a design\u2011bid\u2011build project during electrical rough\u2011in, who is responsible for maintaining record drawings during construction?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 75,
+                    "front": "<h3>In a design\u2011bid\u2011build project during electrical rough\u2011in, who is responsible for ensuring workers follow safety regulations?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 76,
+                    "front": "<h3>In a design\u2011bid\u2011build project during electrical rough\u2011in, who is responsible for coordinating material deliveries?</h3>",
+                    "back": "<p>The contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 77,
+                    "front": "<h3>In a design\u2011bid\u2011build project during electrical rough\u2011in, who is responsible for ensuring code compliance inspections?</h3>",
+                    "back": "<p>The authority having jurisdiction (AHJ)</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 78,
+                    "front": "<h3>In a design\u2011bid\u2011build project during electrical rough\u2011in, who is responsible for approving substitutions affecting design intent?</h3>",
+                    "back": "<p>The architect</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 79,
+                    "front": "<h3>In a design\u2011bid\u2011build project during electrical rough\u2011in, who is responsible for providing testing and inspection services?</h3>",
+                    "back": "<p>Typically the owner through a testing agency</p>",
+                    "markedAsCorrect": false
+                }
             ]
         }
         
         if(this.CEcards5.length == 0) {
             this.CEcards5 = [
-                { index: 0, front: '<h3>A contractor reports a discrepancy between two drawings. What should the architect do FIRST?</h3>', back: '<p>Review the contract documents.</p>', markedAsCorrect: false },
-                { index: 1, front: '<h3>The architect observes work that may not comply with the drawings. What should the architect do FIRST?</h3>', back: '<p>Document the issue in a field report.</p>', markedAsCorrect: false },
-                { index: 2, front: '<h3>The contractor submits a question about specification requirements. What should the architect do FIRST?</h3>', back: '<p>Request clarification from the contractor.</p>', markedAsCorrect: false },
-                { index: 3, front: '<h3>The owner asks whether installed work meets design intent. What should the architect do FIRST?</h3>', back: '<p>Respond to the contractor\u2019s RFI.</p>', markedAsCorrect: false },
-                { index: 4, front: '<h3>The contractor proposes a product substitution during construction. What should the architect do FIRST?</h3>', back: '<p>Notify the owner.</p>', markedAsCorrect: false },
-                { index: 5, front: '<h3>A potential construction defect is observed on site. What should the architect do FIRST?</h3>', back: '<p>Verify the condition during a site visit.</p>', markedAsCorrect: false },
-                { index: 6, front: '<h3>The contractor claims additional cost due to unclear drawings. What should the architect do FIRST?</h3>', back: '<p>Review the relevant specification section.</p>', markedAsCorrect: false },
-                { index: 7, front: '<h3>A dimension conflict is discovered in the construction documents. What should the architect do FIRST?</h3>', back: '<p>Confirm whether the work conforms to the contract documents.</p>', markedAsCorrect: false },
-                { index: 8, front: '<h3>A contractor reports a discrepancy between two drawings. What should the architect do FIRST?</h3>', back: '<p>Review the contract documents.</p>', markedAsCorrect: false },
-                { index: 9, front: '<h3>The architect observes work that may not comply with the drawings. What should the architect do FIRST?</h3>', back: '<p>Document the issue in a field report.</p>', markedAsCorrect: false },
-                { index: 10, front: '<h3>The contractor submits a question about specification requirements. What should the architect do FIRST?</h3>', back: '<p>Request clarification from the contractor.</p>', markedAsCorrect: false },
-                { index: 11, front: '<h3>The owner asks whether installed work meets design intent. What should the architect do FIRST?</h3>', back: '<p>Respond to the contractor\u2019s RFI.</p>', markedAsCorrect: false },
-                { index: 12, front: '<h3>The contractor proposes a product substitution during construction. What should the architect do FIRST?</h3>', back: '<p>Notify the owner.</p>', markedAsCorrect: false },
-                { index: 13, front: '<h3>A potential construction defect is observed on site. What should the architect do FIRST?</h3>', back: '<p>Verify the condition during a site visit.</p>', markedAsCorrect: false },
-                { index: 14, front: '<h3>The contractor claims additional cost due to unclear drawings. What should the architect do FIRST?</h3>', back: '<p>Review the relevant specification section.</p>', markedAsCorrect: false },
-                { index: 15, front: '<h3>A dimension conflict is discovered in the construction documents. What should the architect do FIRST?</h3>', back: '<p>Confirm whether the work conforms to the contract documents.</p>', markedAsCorrect: false },
-                { index: 16, front: '<h3>A contractor reports a discrepancy between two drawings. What should the architect do FIRST?</h3>', back: '<p>Review the contract documents.</p>', markedAsCorrect: false },
-                { index: 17, front: '<h3>The architect observes work that may not comply with the drawings. What should the architect do FIRST?</h3>', back: '<p>Document the issue in a field report.</p>', markedAsCorrect: false },
-                { index: 18, front: '<h3>The contractor submits a question about specification requirements. What should the architect do FIRST?</h3>', back: '<p>Request clarification from the contractor.</p>', markedAsCorrect: false },
-                { index: 19, front: '<h3>The owner asks whether installed work meets design intent. What should the architect do FIRST?</h3>', back: '<p>Respond to the contractor\u2019s RFI.</p>', markedAsCorrect: false },
-                { index: 20, front: '<h3>The contractor proposes a product substitution during construction. What should the architect do FIRST?</h3>', back: '<p>Notify the owner.</p>', markedAsCorrect: false },
-                { index: 21, front: '<h3>A potential construction defect is observed on site. What should the architect do FIRST?</h3>', back: '<p>Verify the condition during a site visit.</p>', markedAsCorrect: false },
-                { index: 22, front: '<h3>The contractor claims additional cost due to unclear drawings. What should the architect do FIRST?</h3>', back: '<p>Review the relevant specification section.</p>', markedAsCorrect: false },
-                { index: 23, front: '<h3>A dimension conflict is discovered in the construction documents. What should the architect do FIRST?</h3>', back: '<p>Confirm whether the work conforms to the contract documents.</p>', markedAsCorrect: false },
-                { index: 24, front: '<h3>A contractor reports a discrepancy between two drawings. What should the architect do FIRST?</h3>', back: '<p>Review the contract documents.</p>', markedAsCorrect: false },
-                { index: 25, front: '<h3>The architect observes work that may not comply with the drawings. What should the architect do FIRST?</h3>', back: '<p>Document the issue in a field report.</p>', markedAsCorrect: false },
-                { index: 26, front: '<h3>The contractor submits a question about specification requirements. What should the architect do FIRST?</h3>', back: '<p>Request clarification from the contractor.</p>', markedAsCorrect: false },
-                { index: 27, front: '<h3>The owner asks whether installed work meets design intent. What should the architect do FIRST?</h3>', back: '<p>Respond to the contractor\u2019s RFI.</p>', markedAsCorrect: false },
-                { index: 28, front: '<h3>The contractor proposes a product substitution during construction. What should the architect do FIRST?</h3>', back: '<p>Notify the owner.</p>', markedAsCorrect: false },
-                { index: 29, front: '<h3>A potential construction defect is observed on site. What should the architect do FIRST?</h3>', back: '<p>Verify the condition during a site visit.</p>', markedAsCorrect: false },
-                { index: 30, front: '<h3>The contractor claims additional cost due to unclear drawings. What should the architect do FIRST?</h3>', back: '<p>Review the relevant specification section.</p>', markedAsCorrect: false },
-                { index: 31, front: '<h3>A dimension conflict is discovered in the construction documents. What should the architect do FIRST?</h3>', back: '<p>Confirm whether the work conforms to the contract documents.</p>', markedAsCorrect: false },
-                { index: 32, front: '<h3>A contractor reports a discrepancy between two drawings. What should the architect do FIRST?</h3>', back: '<p>Review the contract documents.</p>', markedAsCorrect: false },
-                { index: 33, front: '<h3>The architect observes work that may not comply with the drawings. What should the architect do FIRST?</h3>', back: '<p>Document the issue in a field report.</p>', markedAsCorrect: false },
-                { index: 34, front: '<h3>The contractor submits a question about specification requirements. What should the architect do FIRST?</h3>', back: '<p>Request clarification from the contractor.</p>', markedAsCorrect: false },
-                { index: 35, front: '<h3>The owner asks whether installed work meets design intent. What should the architect do FIRST?</h3>', back: '<p>Respond to the contractor\u2019s RFI.</p>', markedAsCorrect: false },
-                { index: 36, front: '<h3>The contractor proposes a product substitution during construction. What should the architect do FIRST?</h3>', back: '<p>Notify the owner.</p>', markedAsCorrect: false },
-                { index: 37, front: '<h3>A potential construction defect is observed on site. What should the architect do FIRST?</h3>', back: '<p>Verify the condition during a site visit.</p>', markedAsCorrect: false },
-                { index: 38, front: '<h3>The contractor claims additional cost due to unclear drawings. What should the architect do FIRST?</h3>', back: '<p>Review the relevant specification section.</p>', markedAsCorrect: false },
-                { index: 39, front: '<h3>A dimension conflict is discovered in the construction documents. What should the architect do FIRST?</h3>', back: '<p>Confirm whether the work conforms to the contract documents.</p>', markedAsCorrect: false },
-                { index: 40, front: '<h3>A contractor reports a discrepancy between two drawings. What should the architect do FIRST?</h3>', back: '<p>Review the contract documents.</p>', markedAsCorrect: false },
-                { index: 41, front: '<h3>The architect observes work that may not comply with the drawings. What should the architect do FIRST?</h3>', back: '<p>Document the issue in a field report.</p>', markedAsCorrect: false },
-                { index: 42, front: '<h3>The contractor submits a question about specification requirements. What should the architect do FIRST?</h3>', back: '<p>Request clarification from the contractor.</p>', markedAsCorrect: false },
-                { index: 43, front: '<h3>The owner asks whether installed work meets design intent. What should the architect do FIRST?</h3>', back: '<p>Respond to the contractor\u2019s RFI.</p>', markedAsCorrect: false },
-                { index: 44, front: '<h3>The contractor proposes a product substitution during construction. What should the architect do FIRST?</h3>', back: '<p>Notify the owner.</p>', markedAsCorrect: false },
-                { index: 45, front: '<h3>A potential construction defect is observed on site. What should the architect do FIRST?</h3>', back: '<p>Verify the condition during a site visit.</p>', markedAsCorrect: false },
-                { index: 46, front: '<h3>The contractor claims additional cost due to unclear drawings. What should the architect do FIRST?</h3>', back: '<p>Review the relevant specification section.</p>', markedAsCorrect: false },
-                { index: 47, front: '<h3>A dimension conflict is discovered in the construction documents. What should the architect do FIRST?</h3>', back: '<p>Confirm whether the work conforms to the contract documents.</p>', markedAsCorrect: false },
-                { index: 48, front: '<h3>A contractor reports a discrepancy between two drawings. What should the architect do FIRST?</h3>', back: '<p>Review the contract documents.</p>', markedAsCorrect: false },
-                { index: 49, front: '<h3>The architect observes work that may not comply with the drawings. What should the architect do FIRST?</h3>', back: '<p>Document the issue in a field report.</p>', markedAsCorrect: false }
+                {
+                    "index": 0,
+                    "front": "<h3>During construction, A discrepancy is discovered between structural and architectural drawings. What should the architect do FIRST?</h3>",
+                    "back": "<p>Review the contract documents to verify the issue</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 1,
+                    "front": "<h3>During construction, installed work appears inconsistent with the drawings. What should the architect do FIRST?</h3>",
+                    "back": "<p>Document the condition and notify the contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 2,
+                    "front": "<h3>During construction, a contractor submits a substitution request. What should the architect do FIRST?</h3>",
+                    "back": "<p>Evaluate whether the proposed change meets design intent</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 3,
+                    "front": "<h3>During construction, a shop drawing arrives without contractor review stamp. What should the architect do FIRST?</h3>",
+                    "back": "<p>Return the submittal without review</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 4,
+                    "front": "<h3>During construction, the owner questions whether installed work meets requirements. What should the architect do FIRST?</h3>",
+                    "back": "<p>Review the contract documents and approved submittals</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 5,
+                    "front": "<h3>During construction, a contractor claims additional cost due to unclear drawings. What should the architect do FIRST?</h3>",
+                    "back": "<p>Review the drawings and specifications</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 6,
+                    "front": "<h3>During construction, a potential construction defect is observed on site. What should the architect do FIRST?</h3>",
+                    "back": "<p>Document the issue in a field report</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 7,
+                    "front": "<h3>During construction, a contractor asks for clarification on specification requirements. What should the architect do FIRST?</h3>",
+                    "back": "<p>Review the relevant specification section</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 8,
+                    "front": "<h3>During construction, the owner believes the contractor is behind schedule. What should the architect do FIRST?</h3>",
+                    "back": "<p>Review the contractor\u2019s schedule and progress reports</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 9,
+                    "front": "<h3>During construction, work that will soon be concealed appears incorrect. What should the architect do FIRST?</h3>",
+                    "back": "<p>Notify the contractor before the work is concealed</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 10,
+                    "front": "<h3>During construction, a contractor submits an RFI regarding conflicting dimensions. What should the architect do FIRST?</h3>",
+                    "back": "<p>Review the relevant drawings and specifications</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 11,
+                    "front": "<h3>During construction, a payment application includes stored materials. What should the architect do FIRST?</h3>",
+                    "back": "<p>Verify the contract allows payment for stored materials</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 12,
+                    "front": "<h3>During construction, a submittal differs from the specifications. What should the architect do FIRST?</h3>",
+                    "back": "<p>Determine whether the deviation affects design intent</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 13,
+                    "front": "<h3>During construction, the owner requests a design change during construction. What should the architect do FIRST?</h3>",
+                    "back": "<p>Evaluate impacts on cost and schedule</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 14,
+                    "front": "<h3>During construction, a contractor claims a specification requirement cannot be met. What should the architect do FIRST?</h3>",
+                    "back": "<p>Review the specification and consult the appropriate consultant</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 15,
+                    "front": "<h3>During construction, the contractor reports unexpected site conditions. What should the architect do FIRST?</h3>",
+                    "back": "<p>Investigate the reported condition in the contract documents</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 16,
+                    "front": "<h3>During construction, a field inspector reports possible improper installation. What should the architect do FIRST?</h3>",
+                    "back": "<p>Request additional documentation from the contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 17,
+                    "front": "<h3>During construction, a contractor submits a product data sheet differing from specs. What should the architect do FIRST?</h3>",
+                    "back": "<p>Compare the submittal to the specifications</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 18,
+                    "front": "<h3>During construction, the owner questions whether testing results are acceptable. What should the architect do FIRST?</h3>",
+                    "back": "<p>Review the testing requirements in the specifications</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 19,
+                    "front": "<h3>During construction, a contractor requests approval of an alternate material. What should the architect do FIRST?</h3>",
+                    "back": "<p>Evaluate whether the alternate meets performance criteria</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 20,
+                    "front": "<h3>During construction, A discrepancy is discovered between structural and architectural drawings. What should the architect do FIRST?</h3>",
+                    "back": "<p>Review the contract documents to verify the issue</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 21,
+                    "front": "<h3>During construction, installed work appears inconsistent with the drawings. What should the architect do FIRST?</h3>",
+                    "back": "<p>Document the condition and notify the contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 22,
+                    "front": "<h3>During construction, a contractor submits a substitution request. What should the architect do FIRST?</h3>",
+                    "back": "<p>Evaluate whether the proposed change meets design intent</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 23,
+                    "front": "<h3>During construction, a shop drawing arrives without contractor review stamp. What should the architect do FIRST?</h3>",
+                    "back": "<p>Return the submittal without review</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 24,
+                    "front": "<h3>During construction, the owner questions whether installed work meets requirements. What should the architect do FIRST?</h3>",
+                    "back": "<p>Review the contract documents and approved submittals</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 25,
+                    "front": "<h3>During construction, a contractor claims additional cost due to unclear drawings. What should the architect do FIRST?</h3>",
+                    "back": "<p>Review the drawings and specifications</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 26,
+                    "front": "<h3>During construction, a potential construction defect is observed on site. What should the architect do FIRST?</h3>",
+                    "back": "<p>Document the issue in a field report</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 27,
+                    "front": "<h3>During construction, a contractor asks for clarification on specification requirements. What should the architect do FIRST?</h3>",
+                    "back": "<p>Review the relevant specification section</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 28,
+                    "front": "<h3>During construction, the owner believes the contractor is behind schedule. What should the architect do FIRST?</h3>",
+                    "back": "<p>Review the contractor\u2019s schedule and progress reports</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 29,
+                    "front": "<h3>During construction, work that will soon be concealed appears incorrect. What should the architect do FIRST?</h3>",
+                    "back": "<p>Notify the contractor before the work is concealed</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 30,
+                    "front": "<h3>During construction, a contractor submits an RFI regarding conflicting dimensions. What should the architect do FIRST?</h3>",
+                    "back": "<p>Review the relevant drawings and specifications</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 31,
+                    "front": "<h3>During construction, a payment application includes stored materials. What should the architect do FIRST?</h3>",
+                    "back": "<p>Verify the contract allows payment for stored materials</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 32,
+                    "front": "<h3>During construction, a submittal differs from the specifications. What should the architect do FIRST?</h3>",
+                    "back": "<p>Determine whether the deviation affects design intent</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 33,
+                    "front": "<h3>During construction, the owner requests a design change during construction. What should the architect do FIRST?</h3>",
+                    "back": "<p>Evaluate impacts on cost and schedule</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 34,
+                    "front": "<h3>During construction, a contractor claims a specification requirement cannot be met. What should the architect do FIRST?</h3>",
+                    "back": "<p>Review the specification and consult the appropriate consultant</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 35,
+                    "front": "<h3>During construction, the contractor reports unexpected site conditions. What should the architect do FIRST?</h3>",
+                    "back": "<p>Investigate the reported condition in the contract documents</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 36,
+                    "front": "<h3>During construction, a field inspector reports possible improper installation. What should the architect do FIRST?</h3>",
+                    "back": "<p>Request additional documentation from the contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 37,
+                    "front": "<h3>During construction, a contractor submits a product data sheet differing from specs. What should the architect do FIRST?</h3>",
+                    "back": "<p>Compare the submittal to the specifications</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 38,
+                    "front": "<h3>During construction, the owner questions whether testing results are acceptable. What should the architect do FIRST?</h3>",
+                    "back": "<p>Review the testing requirements in the specifications</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 39,
+                    "front": "<h3>During construction, a contractor requests approval of an alternate material. What should the architect do FIRST?</h3>",
+                    "back": "<p>Evaluate whether the alternate meets performance criteria</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 40,
+                    "front": "<h3>During construction, A discrepancy is discovered between structural and architectural drawings. What should the architect do FIRST?</h3>",
+                    "back": "<p>Review the contract documents to verify the issue</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 41,
+                    "front": "<h3>During construction, installed work appears inconsistent with the drawings. What should the architect do FIRST?</h3>",
+                    "back": "<p>Document the condition and notify the contractor</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 42,
+                    "front": "<h3>During construction, a contractor submits a substitution request. What should the architect do FIRST?</h3>",
+                    "back": "<p>Evaluate whether the proposed change meets design intent</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 43,
+                    "front": "<h3>During construction, a shop drawing arrives without contractor review stamp. What should the architect do FIRST?</h3>",
+                    "back": "<p>Return the submittal without review</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 44,
+                    "front": "<h3>During construction, the owner questions whether installed work meets requirements. What should the architect do FIRST?</h3>",
+                    "back": "<p>Review the contract documents and approved submittals</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 45,
+                    "front": "<h3>During construction, a contractor claims additional cost due to unclear drawings. What should the architect do FIRST?</h3>",
+                    "back": "<p>Review the drawings and specifications</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 46,
+                    "front": "<h3>During construction, a potential construction defect is observed on site. What should the architect do FIRST?</h3>",
+                    "back": "<p>Document the issue in a field report</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 47,
+                    "front": "<h3>During construction, a contractor asks for clarification on specification requirements. What should the architect do FIRST?</h3>",
+                    "back": "<p>Review the relevant specification section</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 48,
+                    "front": "<h3>During construction, the owner believes the contractor is behind schedule. What should the architect do FIRST?</h3>",
+                    "back": "<p>Review the contractor\u2019s schedule and progress reports</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 49,
+                    "front": "<h3>During construction, work that will soon be concealed appears incorrect. What should the architect do FIRST?</h3>",
+                    "back": "<p>Notify the contractor before the work is concealed</p>",
+                    "markedAsCorrect": false
+                }
             ]
         }
         

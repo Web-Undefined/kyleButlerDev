@@ -1,0 +1,302 @@
+[
+  {
+    "index": 0,
+    "front": "<h3>During construction, A discrepancy is discovered between structural and architectural drawings. What should the architect do FIRST?</h3>",
+    "back": "<p>Review the contract documents to verify the issue</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 1,
+    "front": "<h3>During construction, installed work appears inconsistent with the drawings. What should the architect do FIRST?</h3>",
+    "back": "<p>Document the condition and notify the contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 2,
+    "front": "<h3>During construction, a contractor submits a substitution request. What should the architect do FIRST?</h3>",
+    "back": "<p>Evaluate whether the proposed change meets design intent</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 3,
+    "front": "<h3>During construction, a shop drawing arrives without contractor review stamp. What should the architect do FIRST?</h3>",
+    "back": "<p>Return the submittal without review</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 4,
+    "front": "<h3>During construction, the owner questions whether installed work meets requirements. What should the architect do FIRST?</h3>",
+    "back": "<p>Review the contract documents and approved submittals</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 5,
+    "front": "<h3>During construction, a contractor claims additional cost due to unclear drawings. What should the architect do FIRST?</h3>",
+    "back": "<p>Review the drawings and specifications</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 6,
+    "front": "<h3>During construction, a potential construction defect is observed on site. What should the architect do FIRST?</h3>",
+    "back": "<p>Document the issue in a field report</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 7,
+    "front": "<h3>During construction, a contractor asks for clarification on specification requirements. What should the architect do FIRST?</h3>",
+    "back": "<p>Review the relevant specification section</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 8,
+    "front": "<h3>During construction, the owner believes the contractor is behind schedule. What should the architect do FIRST?</h3>",
+    "back": "<p>Review the contractor\u2019s schedule and progress reports</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 9,
+    "front": "<h3>During construction, work that will soon be concealed appears incorrect. What should the architect do FIRST?</h3>",
+    "back": "<p>Notify the contractor before the work is concealed</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 10,
+    "front": "<h3>During construction, a contractor submits an RFI regarding conflicting dimensions. What should the architect do FIRST?</h3>",
+    "back": "<p>Review the relevant drawings and specifications</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 11,
+    "front": "<h3>During construction, a payment application includes stored materials. What should the architect do FIRST?</h3>",
+    "back": "<p>Verify the contract allows payment for stored materials</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 12,
+    "front": "<h3>During construction, a submittal differs from the specifications. What should the architect do FIRST?</h3>",
+    "back": "<p>Determine whether the deviation affects design intent</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 13,
+    "front": "<h3>During construction, the owner requests a design change during construction. What should the architect do FIRST?</h3>",
+    "back": "<p>Evaluate impacts on cost and schedule</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 14,
+    "front": "<h3>During construction, a contractor claims a specification requirement cannot be met. What should the architect do FIRST?</h3>",
+    "back": "<p>Review the specification and consult the appropriate consultant</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 15,
+    "front": "<h3>During construction, the contractor reports unexpected site conditions. What should the architect do FIRST?</h3>",
+    "back": "<p>Investigate the reported condition in the contract documents</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 16,
+    "front": "<h3>During construction, a field inspector reports possible improper installation. What should the architect do FIRST?</h3>",
+    "back": "<p>Request additional documentation from the contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 17,
+    "front": "<h3>During construction, a contractor submits a product data sheet differing from specs. What should the architect do FIRST?</h3>",
+    "back": "<p>Compare the submittal to the specifications</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 18,
+    "front": "<h3>During construction, the owner questions whether testing results are acceptable. What should the architect do FIRST?</h3>",
+    "back": "<p>Review the testing requirements in the specifications</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 19,
+    "front": "<h3>During construction, a contractor requests approval of an alternate material. What should the architect do FIRST?</h3>",
+    "back": "<p>Evaluate whether the alternate meets performance criteria</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 20,
+    "front": "<h3>During construction, A discrepancy is discovered between structural and architectural drawings. What should the architect do FIRST?</h3>",
+    "back": "<p>Review the contract documents to verify the issue</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 21,
+    "front": "<h3>During construction, installed work appears inconsistent with the drawings. What should the architect do FIRST?</h3>",
+    "back": "<p>Document the condition and notify the contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 22,
+    "front": "<h3>During construction, a contractor submits a substitution request. What should the architect do FIRST?</h3>",
+    "back": "<p>Evaluate whether the proposed change meets design intent</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 23,
+    "front": "<h3>During construction, a shop drawing arrives without contractor review stamp. What should the architect do FIRST?</h3>",
+    "back": "<p>Return the submittal without review</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 24,
+    "front": "<h3>During construction, the owner questions whether installed work meets requirements. What should the architect do FIRST?</h3>",
+    "back": "<p>Review the contract documents and approved submittals</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 25,
+    "front": "<h3>During construction, a contractor claims additional cost due to unclear drawings. What should the architect do FIRST?</h3>",
+    "back": "<p>Review the drawings and specifications</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 26,
+    "front": "<h3>During construction, a potential construction defect is observed on site. What should the architect do FIRST?</h3>",
+    "back": "<p>Document the issue in a field report</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 27,
+    "front": "<h3>During construction, a contractor asks for clarification on specification requirements. What should the architect do FIRST?</h3>",
+    "back": "<p>Review the relevant specification section</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 28,
+    "front": "<h3>During construction, the owner believes the contractor is behind schedule. What should the architect do FIRST?</h3>",
+    "back": "<p>Review the contractor\u2019s schedule and progress reports</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 29,
+    "front": "<h3>During construction, work that will soon be concealed appears incorrect. What should the architect do FIRST?</h3>",
+    "back": "<p>Notify the contractor before the work is concealed</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 30,
+    "front": "<h3>During construction, a contractor submits an RFI regarding conflicting dimensions. What should the architect do FIRST?</h3>",
+    "back": "<p>Review the relevant drawings and specifications</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 31,
+    "front": "<h3>During construction, a payment application includes stored materials. What should the architect do FIRST?</h3>",
+    "back": "<p>Verify the contract allows payment for stored materials</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 32,
+    "front": "<h3>During construction, a submittal differs from the specifications. What should the architect do FIRST?</h3>",
+    "back": "<p>Determine whether the deviation affects design intent</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 33,
+    "front": "<h3>During construction, the owner requests a design change during construction. What should the architect do FIRST?</h3>",
+    "back": "<p>Evaluate impacts on cost and schedule</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 34,
+    "front": "<h3>During construction, a contractor claims a specification requirement cannot be met. What should the architect do FIRST?</h3>",
+    "back": "<p>Review the specification and consult the appropriate consultant</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 35,
+    "front": "<h3>During construction, the contractor reports unexpected site conditions. What should the architect do FIRST?</h3>",
+    "back": "<p>Investigate the reported condition in the contract documents</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 36,
+    "front": "<h3>During construction, a field inspector reports possible improper installation. What should the architect do FIRST?</h3>",
+    "back": "<p>Request additional documentation from the contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 37,
+    "front": "<h3>During construction, a contractor submits a product data sheet differing from specs. What should the architect do FIRST?</h3>",
+    "back": "<p>Compare the submittal to the specifications</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 38,
+    "front": "<h3>During construction, the owner questions whether testing results are acceptable. What should the architect do FIRST?</h3>",
+    "back": "<p>Review the testing requirements in the specifications</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 39,
+    "front": "<h3>During construction, a contractor requests approval of an alternate material. What should the architect do FIRST?</h3>",
+    "back": "<p>Evaluate whether the alternate meets performance criteria</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 40,
+    "front": "<h3>During construction, A discrepancy is discovered between structural and architectural drawings. What should the architect do FIRST?</h3>",
+    "back": "<p>Review the contract documents to verify the issue</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 41,
+    "front": "<h3>During construction, installed work appears inconsistent with the drawings. What should the architect do FIRST?</h3>",
+    "back": "<p>Document the condition and notify the contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 42,
+    "front": "<h3>During construction, a contractor submits a substitution request. What should the architect do FIRST?</h3>",
+    "back": "<p>Evaluate whether the proposed change meets design intent</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 43,
+    "front": "<h3>During construction, a shop drawing arrives without contractor review stamp. What should the architect do FIRST?</h3>",
+    "back": "<p>Return the submittal without review</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 44,
+    "front": "<h3>During construction, the owner questions whether installed work meets requirements. What should the architect do FIRST?</h3>",
+    "back": "<p>Review the contract documents and approved submittals</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 45,
+    "front": "<h3>During construction, a contractor claims additional cost due to unclear drawings. What should the architect do FIRST?</h3>",
+    "back": "<p>Review the drawings and specifications</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 46,
+    "front": "<h3>During construction, a potential construction defect is observed on site. What should the architect do FIRST?</h3>",
+    "back": "<p>Document the issue in a field report</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 47,
+    "front": "<h3>During construction, a contractor asks for clarification on specification requirements. What should the architect do FIRST?</h3>",
+    "back": "<p>Review the relevant specification section</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 48,
+    "front": "<h3>During construction, the owner believes the contractor is behind schedule. What should the architect do FIRST?</h3>",
+    "back": "<p>Review the contractor\u2019s schedule and progress reports</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 49,
+    "front": "<h3>During construction, work that will soon be concealed appears incorrect. What should the architect do FIRST?</h3>",
+    "back": "<p>Notify the contractor before the work is concealed</p>",
+    "markedAsCorrect": false
+  }
+]

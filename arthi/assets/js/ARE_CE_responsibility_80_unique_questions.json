@@ -1,0 +1,482 @@
+[
+  {
+    "index": 0,
+    "front": "<h3>In a design\u2011bid\u2011build project for structural steel installation, who is responsible for coordinating subcontractor work?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 1,
+    "front": "<h3>In a design\u2011bid\u2011build project for structural steel installation, who is responsible for construction means and methods?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 2,
+    "front": "<h3>In a design\u2011bid\u2011build project for structural steel installation, who is responsible for jobsite safety?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 3,
+    "front": "<h3>In a design\u2011bid\u2011build project for structural steel installation, who is responsible for verifying field measurements before fabrication?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 4,
+    "front": "<h3>In a design\u2011bid\u2011build project for structural steel installation, who is responsible for reviewing shop drawings for design intent?</h3>",
+    "back": "<p>The architect</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 5,
+    "front": "<h3>In a design\u2011bid\u2011build project for structural steel installation, who is responsible for maintaining the construction schedule?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 6,
+    "front": "<h3>In a design\u2011bid\u2011build project for structural steel installation, who is responsible for providing temporary protection for installed work?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 7,
+    "front": "<h3>In a design\u2011bid\u2011build project for structural steel installation, who is responsible for installing work according to the contract documents?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 8,
+    "front": "<h3>In a design\u2011bid\u2011build project for structural steel installation, who is responsible for correcting nonconforming work?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 9,
+    "front": "<h3>In a design\u2011bid\u2011build project for structural steel installation, who is responsible for providing warranties at project closeout?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 10,
+    "front": "<h3>In a design\u2011bid\u2011build project for structural steel installation, who is responsible for submitting payment applications?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 11,
+    "front": "<h3>In a design\u2011bid\u2011build project for structural steel installation, who is responsible for preparing the schedule of values?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 12,
+    "front": "<h3>In a design\u2011bid\u2011build project for structural steel installation, who is responsible for certifying contractor payment requests?</h3>",
+    "back": "<p>The architect</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 13,
+    "front": "<h3>In a design\u2011bid\u2011build project for structural steel installation, who is responsible for reviewing submittals for design intent?</h3>",
+    "back": "<p>The architect</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 14,
+    "front": "<h3>In a design\u2011bid\u2011build project for structural steel installation, who is responsible for maintaining record drawings during construction?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 15,
+    "front": "<h3>In a design\u2011bid\u2011build project for structural steel installation, who is responsible for ensuring workers follow safety regulations?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 16,
+    "front": "<h3>In a design\u2011bid\u2011build project for structural steel installation, who is responsible for coordinating material deliveries?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 17,
+    "front": "<h3>In a design\u2011bid\u2011build project for structural steel installation, who is responsible for ensuring code compliance inspections?</h3>",
+    "back": "<p>The authority having jurisdiction (AHJ)</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 18,
+    "front": "<h3>In a design\u2011bid\u2011build project for structural steel installation, who is responsible for approving substitutions affecting design intent?</h3>",
+    "back": "<p>The architect</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 19,
+    "front": "<h3>In a design\u2011bid\u2011build project for structural steel installation, who is responsible for providing testing and inspection services?</h3>",
+    "back": "<p>Typically the owner through a testing agency</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 20,
+    "front": "<h3>In a design\u2011bid\u2011build project during curtain wall construction, who is responsible for coordinating subcontractor work?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 21,
+    "front": "<h3>In a design\u2011bid\u2011build project during curtain wall construction, who is responsible for construction means and methods?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 22,
+    "front": "<h3>In a design\u2011bid\u2011build project during curtain wall construction, who is responsible for jobsite safety?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 23,
+    "front": "<h3>In a design\u2011bid\u2011build project during curtain wall construction, who is responsible for verifying field measurements before fabrication?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 24,
+    "front": "<h3>In a design\u2011bid\u2011build project during curtain wall construction, who is responsible for reviewing shop drawings for design intent?</h3>",
+    "back": "<p>The architect</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 25,
+    "front": "<h3>In a design\u2011bid\u2011build project during curtain wall construction, who is responsible for maintaining the construction schedule?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 26,
+    "front": "<h3>In a design\u2011bid\u2011build project during curtain wall construction, who is responsible for providing temporary protection for installed work?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 27,
+    "front": "<h3>In a design\u2011bid\u2011build project during curtain wall construction, who is responsible for installing work according to the contract documents?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 28,
+    "front": "<h3>In a design\u2011bid\u2011build project during curtain wall construction, who is responsible for correcting nonconforming work?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 29,
+    "front": "<h3>In a design\u2011bid\u2011build project during curtain wall construction, who is responsible for providing warranties at project closeout?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 30,
+    "front": "<h3>In a design\u2011bid\u2011build project during curtain wall construction, who is responsible for submitting payment applications?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 31,
+    "front": "<h3>In a design\u2011bid\u2011build project during curtain wall construction, who is responsible for preparing the schedule of values?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 32,
+    "front": "<h3>In a design\u2011bid\u2011build project during curtain wall construction, who is responsible for certifying contractor payment requests?</h3>",
+    "back": "<p>The architect</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 33,
+    "front": "<h3>In a design\u2011bid\u2011build project during curtain wall construction, who is responsible for reviewing submittals for design intent?</h3>",
+    "back": "<p>The architect</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 34,
+    "front": "<h3>In a design\u2011bid\u2011build project during curtain wall construction, who is responsible for maintaining record drawings during construction?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 35,
+    "front": "<h3>In a design\u2011bid\u2011build project during curtain wall construction, who is responsible for ensuring workers follow safety regulations?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 36,
+    "front": "<h3>In a design\u2011bid\u2011build project during curtain wall construction, who is responsible for coordinating material deliveries?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 37,
+    "front": "<h3>In a design\u2011bid\u2011build project during curtain wall construction, who is responsible for ensuring code compliance inspections?</h3>",
+    "back": "<p>The authority having jurisdiction (AHJ)</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 38,
+    "front": "<h3>In a design\u2011bid\u2011build project during curtain wall construction, who is responsible for approving substitutions affecting design intent?</h3>",
+    "back": "<p>The architect</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 39,
+    "front": "<h3>In a design\u2011bid\u2011build project during curtain wall construction, who is responsible for providing testing and inspection services?</h3>",
+    "back": "<p>Typically the owner through a testing agency</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 40,
+    "front": "<h3>In a design\u2011bid\u2011build project for mechanical system installation, who is responsible for coordinating subcontractor work?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 41,
+    "front": "<h3>In a design\u2011bid\u2011build project for mechanical system installation, who is responsible for construction means and methods?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 42,
+    "front": "<h3>In a design\u2011bid\u2011build project for mechanical system installation, who is responsible for jobsite safety?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 43,
+    "front": "<h3>In a design\u2011bid\u2011build project for mechanical system installation, who is responsible for verifying field measurements before fabrication?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 44,
+    "front": "<h3>In a design\u2011bid\u2011build project for mechanical system installation, who is responsible for reviewing shop drawings for design intent?</h3>",
+    "back": "<p>The architect</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 45,
+    "front": "<h3>In a design\u2011bid\u2011build project for mechanical system installation, who is responsible for maintaining the construction schedule?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 46,
+    "front": "<h3>In a design\u2011bid\u2011build project for mechanical system installation, who is responsible for providing temporary protection for installed work?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 47,
+    "front": "<h3>In a design\u2011bid\u2011build project for mechanical system installation, who is responsible for installing work according to the contract documents?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 48,
+    "front": "<h3>In a design\u2011bid\u2011build project for mechanical system installation, who is responsible for correcting nonconforming work?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 49,
+    "front": "<h3>In a design\u2011bid\u2011build project for mechanical system installation, who is responsible for providing warranties at project closeout?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 50,
+    "front": "<h3>In a design\u2011bid\u2011build project for mechanical system installation, who is responsible for submitting payment applications?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 51,
+    "front": "<h3>In a design\u2011bid\u2011build project for mechanical system installation, who is responsible for preparing the schedule of values?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 52,
+    "front": "<h3>In a design\u2011bid\u2011build project for mechanical system installation, who is responsible for certifying contractor payment requests?</h3>",
+    "back": "<p>The architect</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 53,
+    "front": "<h3>In a design\u2011bid\u2011build project for mechanical system installation, who is responsible for reviewing submittals for design intent?</h3>",
+    "back": "<p>The architect</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 54,
+    "front": "<h3>In a design\u2011bid\u2011build project for mechanical system installation, who is responsible for maintaining record drawings during construction?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 55,
+    "front": "<h3>In a design\u2011bid\u2011build project for mechanical system installation, who is responsible for ensuring workers follow safety regulations?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 56,
+    "front": "<h3>In a design\u2011bid\u2011build project for mechanical system installation, who is responsible for coordinating material deliveries?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 57,
+    "front": "<h3>In a design\u2011bid\u2011build project for mechanical system installation, who is responsible for ensuring code compliance inspections?</h3>",
+    "back": "<p>The authority having jurisdiction (AHJ)</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 58,
+    "front": "<h3>In a design\u2011bid\u2011build project for mechanical system installation, who is responsible for approving substitutions affecting design intent?</h3>",
+    "back": "<p>The architect</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 59,
+    "front": "<h3>In a design\u2011bid\u2011build project for mechanical system installation, who is responsible for providing testing and inspection services?</h3>",
+    "back": "<p>Typically the owner through a testing agency</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 60,
+    "front": "<h3>In a design\u2011bid\u2011build project during electrical rough\u2011in, who is responsible for coordinating subcontractor work?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 61,
+    "front": "<h3>In a design\u2011bid\u2011build project during electrical rough\u2011in, who is responsible for construction means and methods?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 62,
+    "front": "<h3>In a design\u2011bid\u2011build project during electrical rough\u2011in, who is responsible for jobsite safety?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 63,
+    "front": "<h3>In a design\u2011bid\u2011build project during electrical rough\u2011in, who is responsible for verifying field measurements before fabrication?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 64,
+    "front": "<h3>In a design\u2011bid\u2011build project during electrical rough\u2011in, who is responsible for reviewing shop drawings for design intent?</h3>",
+    "back": "<p>The architect</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 65,
+    "front": "<h3>In a design\u2011bid\u2011build project during electrical rough\u2011in, who is responsible for maintaining the construction schedule?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 66,
+    "front": "<h3>In a design\u2011bid\u2011build project during electrical rough\u2011in, who is responsible for providing temporary protection for installed work?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 67,
+    "front": "<h3>In a design\u2011bid\u2011build project during electrical rough\u2011in, who is responsible for installing work according to the contract documents?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 68,
+    "front": "<h3>In a design\u2011bid\u2011build project during electrical rough\u2011in, who is responsible for correcting nonconforming work?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 69,
+    "front": "<h3>In a design\u2011bid\u2011build project during electrical rough\u2011in, who is responsible for providing warranties at project closeout?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 70,
+    "front": "<h3>In a design\u2011bid\u2011build project during electrical rough\u2011in, who is responsible for submitting payment applications?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 71,
+    "front": "<h3>In a design\u2011bid\u2011build project during electrical rough\u2011in, who is responsible for preparing the schedule of values?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 72,
+    "front": "<h3>In a design\u2011bid\u2011build project during electrical rough\u2011in, who is responsible for certifying contractor payment requests?</h3>",
+    "back": "<p>The architect</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 73,
+    "front": "<h3>In a design\u2011bid\u2011build project during electrical rough\u2011in, who is responsible for reviewing submittals for design intent?</h3>",
+    "back": "<p>The architect</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 74,
+    "front": "<h3>In a design\u2011bid\u2011build project during electrical rough\u2011in, who is responsible for maintaining record drawings during construction?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 75,
+    "front": "<h3>In a design\u2011bid\u2011build project during electrical rough\u2011in, who is responsible for ensuring workers follow safety regulations?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 76,
+    "front": "<h3>In a design\u2011bid\u2011build project during electrical rough\u2011in, who is responsible for coordinating material deliveries?</h3>",
+    "back": "<p>The contractor</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 77,
+    "front": "<h3>In a design\u2011bid\u2011build project during electrical rough\u2011in, who is responsible for ensuring code compliance inspections?</h3>",
+    "back": "<p>The authority having jurisdiction (AHJ)</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 78,
+    "front": "<h3>In a design\u2011bid\u2011build project during electrical rough\u2011in, who is responsible for approving substitutions affecting design intent?</h3>",
+    "back": "<p>The architect</p>",
+    "markedAsCorrect": false
+  },
+  {
+    "index": 79,
+    "front": "<h3>In a design\u2011bid\u2011build project during electrical rough\u2011in, who is responsible for providing testing and inspection services?</h3>",
+    "back": "<p>Typically the owner through a testing agency</p>",
+    "markedAsCorrect": false
+  }
+]
