@@ -3,14 +3,174 @@ document.addEventListener('alpine:init', () => {
     cards: [],
     index: 0,
     index2: 0,
+    index3: 0,
+    index4: 0,
+    index5: 0,
     correct: 0,
     incorrect: 0,
     CEcards: [],
     CEcards2: [],
+    CEcards3: [],
+    CEcards4: [],
+    CEcards5: [],
     currentCEDeck: 1,
 
     setCEDeck(deckNumber) {
         this.currentCEDeck = deckNumber;
+    },
+
+    currentExamType: 'CE',
+    setExamType(type) {
+        this.currentExamType = type;
+    },
+
+    currentCECard: {},
+    currentCE2Card: {},
+    currentCE3Card: {},
+    currentCE4Card: {},
+    currentCE5Card: {},
+    nextCECard() {
+        if (this.index < this.CEcards.length - 1) {
+            this.index++;
+            this.currentCECard = this.CEcards[this.index];
+        }
+    },
+    nextCE2Card() {
+        if (this.index2 < this.CEcards2.length - 1) {
+            this.index2++;
+            this.currentCE2Card = this.CEcards2[this.index2];
+        }
+    },
+    nextCE3Card() {
+        if (this.index3 < this.CEcards3.length - 1) {
+            this.index3++;
+            this.currentCE3Card = this.CEcards3[this.index3];
+        }
+    },
+    nextCE4Card() {
+        if (this.index4 < this.CEcards4.length - 1) {
+            this.index4++;
+            this.currentCE4Card = this.CEcards4[this.index4];
+        }
+    },
+    nextCE5Card() {
+        if (this.index5 < this.CEcards5.length - 1) {
+            this.index5++;
+            this.currentCE5Card = this.CEcards5[this.index5];
+        }
+    },
+
+    previousCECard() {
+        if (this.index > 0) {
+            this.index--;
+            this.currentCECard = this.CEcards[this.index];
+        }
+    },
+    previousCE2Card() {
+        if (this.index2 > 0) {
+            this.index2--;
+            this.currentCE2Card = this.CEcards2[this.index2];
+        }
+    },
+    previousCE3Card() {
+        if (this.index3 > 0) {
+            this.index3--;
+            this.currentCE3Card = this.CEcards3[this.index3];
+        }
+    },
+    previousCE4Card() {
+        if (this.index4 > 0) {
+            this.index4--;
+            this.currentCE4Card = this.CEcards4[this.index4];
+        }
+    },
+    previousCE5Card() {
+        if (this.index5 > 0) {
+            this.index5--;
+            this.currentCE5Card = this.CEcards5[this.index5];
+        }
+    },
+
+    backToCEStart() {
+        this.index = 0;
+        this.currentCECard = this.CEcards[this.index];
+    },
+    backToCE2Start() {
+        this.index2 = 0;
+        this.currentCE2Card = this.CEcards2[this.index2];
+    },
+    backToCE3Start() {
+        this.index3 = 0;
+        this.currentCE3Card = this.CEcards3[this.index3];
+    },
+    backToCE4Start() {
+        this.index4 = 0;
+        this.currentCE4Card = this.CEcards4[this.index4];
+    },
+    backToCE5Start() {
+        this.index5 = 0;
+        this.currentCE5Card = this.CEcards5[this.index5];
+    },
+
+    shuffleCECards() {
+        for (let i = this.CEcards.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [this.CEcards[i], this.CEcards[j]] = [this.CEcards[j], this.CEcards[i]];
+        }
+        this.index = 0;
+        this.currentCECard = this.CEcards[this.index];
+
+        this.CEcards.forEach(card => {
+            card.index = this.CEcards.indexOf(card)
+        })
+    },
+    shuffleCE2Cards() {
+        for (let i = this.CEcards2.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [this.CEcards2[i], this.CEcards2[j]] = [this.CEcards2[j], this.CEcards2[i]];
+        }
+        this.index2 = 0;
+        this.currentCE2Card = this.CEcards2[this.index2];
+
+        this.CEcards2.forEach(card => {
+            card.index = this.CEcards2.indexOf(card)
+        })
+    },
+    shuffleCE3Cards() {
+        for (let i = this.CEcards3.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [this.CEcards3[i], this.CEcards3[j]] = [this.CEcards3[j], this.CEcards3[i]];
+        }
+        this.index3 = 0;
+        this.currentCE3Card = this.CEcards3[this.index3];
+
+        this.CEcards3.forEach(card => {
+            card.index = this.CEcards3.indexOf(card)
+        })
+    },
+    shuffleCE4Cards() {
+        for (let i = this.CEcards4.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [this.CEcards4[i], this.CEcards4[j]] = [this.CEcards4[j], this.CEcards4[i]];
+        }
+        this.index4 = 0;
+        this.currentCE4Card = this.CEcards4[this.index4];
+
+        this.CEcards4.forEach(card => {
+            card.index = this.CEcards4.indexOf(card)
+        })
+    },
+    shuffleCE5Cards() {
+        for (let i = this.CEcards5.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [this.CEcards5[i], this.CEcards5[j]] = [this.CEcards5[j], this.CEcards5[i]];
+        }
+        this.index5 = 0;
+        this.currentCE5Card = this.CEcards5[this.index5];
+
+        this.CEcards5.forEach(card => {
+            card.index = this.CEcards5.indexOf(card)
+        })
     },
 
     firstTry() {
@@ -1541,75 +1701,1268 @@ document.addEventListener('alpine:init', () => {
 { index: 228, front: "<h3>The contractor claims that correcting defective work would cause project delay. What determines whether correction is required?</h3>", back: "<p>The contract documents.</p>" }
         ]
 
+        this.CEcards3 = [
+  {
+    "index": 0,
+    "front": "<h3>The architect needs to clarify a detail without changing cost or time. Which document should be used?</h3>",
+    "back": "<p>Architect\u2019s Supplemental Instruction (ASI).</p>"
+  },
+  {
+    "index": 1,
+    "front": "<h3>The owner and contractor agree to modify the contract sum and time. Which document should be used?</h3>",
+    "back": "<p>Change Order.</p>"
+  },
+  {
+    "index": 2,
+    "front": "<h3>The architect directs work to proceed before cost is finalized. Which document should be used?</h3>",
+    "back": "<p>Construction Change Directive (CCD).</p>"
+  },
+  {
+    "index": 3,
+    "front": "<h3>The contractor needs clarification about conflicting drawings. Which document should be used?</h3>",
+    "back": "<p>Request for Information (RFI).</p>"
+  },
+  {
+    "index": 4,
+    "front": "<h3>The contractor proposes a different product than specified. Which document should be submitted?</h3>",
+    "back": "<p>Substitution request.</p>"
+  },
+  {
+    "index": 5,
+    "front": "<h3>The contractor submits fabrication details for review. Which document is this?</h3>",
+    "back": "<p>Shop drawings.</p>"
+  },
+  {
+    "index": 6,
+    "front": "<h3>The architect documents observations during a site visit. Which document should be produced?</h3>",
+    "back": "<p>Field report.</p>"
+  },
+  {
+    "index": 7,
+    "front": "<h3>The architect confirms the building can be used for its intended purpose. Which document is issued?</h3>",
+    "back": "<p>Certificate of Substantial Completion.</p>"
+  },
+  {
+    "index": 8,
+    "front": "<h3>The contractor requests payment for completed work. Which document is used?</h3>",
+    "back": "<p>Application for Payment.</p>"
+  },
+  {
+    "index": 9,
+    "front": "<h3>The architect approves payment to the contractor. Which document is issued?</h3>",
+    "back": "<p>Certificate for Payment.</p>"
+  },
+  {
+    "index": 10,
+    "front": "<h3>The contractor breaks down the contract sum into work categories. Which document is used?</h3>",
+    "back": "<p>Schedule of Values.</p>"
+  },
+  {
+    "index": 11,
+    "front": "<h3>The architect lists items that must be corrected before final completion. Which document is used?</h3>",
+    "back": "<p>Punch list.</p>"
+  },
+  {
+    "index": 12,
+    "front": "<h3>The contractor records actual installed conditions for the project. Which document is produced?</h3>",
+    "back": "<p>Record drawings.</p>"
+  },
+  {
+    "index": 13,
+    "front": "<h3>The contractor provides equipment maintenance instructions. Which document is submitted?</h3>",
+    "back": "<p>O&M manual.</p>"
+  },
+  {
+    "index": 14,
+    "front": "<h3>The contractor provides guarantee coverage for installed materials. Which document is submitted?</h3>",
+    "back": "<p>Warranty.</p>"
+  },
+  {
+    "index": 15,
+    "front": "<h3>The architect records decisions from a construction meeting. Which document should be produced?</h3>",
+    "back": "<p>Meeting minutes.</p>"
+  },
+  {
+    "index": 16,
+    "front": "<h3>The architect needs to clarify a detail without changing cost or time. Which document should be used?</h3>",
+    "back": "<p>Architect\u2019s Supplemental Instruction (ASI).</p>"
+  },
+  {
+    "index": 17,
+    "front": "<h3>The owner and contractor agree to modify the contract sum and time. Which document should be used?</h3>",
+    "back": "<p>Change Order.</p>"
+  },
+  {
+    "index": 18,
+    "front": "<h3>The architect directs work to proceed before cost is finalized. Which document should be used?</h3>",
+    "back": "<p>Construction Change Directive (CCD).</p>"
+  },
+  {
+    "index": 19,
+    "front": "<h3>The contractor needs clarification about conflicting drawings. Which document should be used?</h3>",
+    "back": "<p>Request for Information (RFI).</p>"
+  },
+  {
+    "index": 20,
+    "front": "<h3>The contractor proposes a different product than specified. Which document should be submitted?</h3>",
+    "back": "<p>Substitution request.</p>"
+  },
+  {
+    "index": 21,
+    "front": "<h3>The contractor submits fabrication details for review. Which document is this?</h3>",
+    "back": "<p>Shop drawings.</p>"
+  },
+  {
+    "index": 22,
+    "front": "<h3>The architect documents observations during a site visit. Which document should be produced?</h3>",
+    "back": "<p>Field report.</p>"
+  },
+  {
+    "index": 23,
+    "front": "<h3>The architect confirms the building can be used for its intended purpose. Which document is issued?</h3>",
+    "back": "<p>Certificate of Substantial Completion.</p>"
+  },
+  {
+    "index": 24,
+    "front": "<h3>The contractor requests payment for completed work. Which document is used?</h3>",
+    "back": "<p>Application for Payment.</p>"
+  },
+  {
+    "index": 25,
+    "front": "<h3>The architect approves payment to the contractor. Which document is issued?</h3>",
+    "back": "<p>Certificate for Payment.</p>"
+  },
+  {
+    "index": 26,
+    "front": "<h3>The contractor breaks down the contract sum into work categories. Which document is used?</h3>",
+    "back": "<p>Schedule of Values.</p>"
+  },
+  {
+    "index": 27,
+    "front": "<h3>The architect lists items that must be corrected before final completion. Which document is used?</h3>",
+    "back": "<p>Punch list.</p>"
+  },
+  {
+    "index": 28,
+    "front": "<h3>The contractor records actual installed conditions for the project. Which document is produced?</h3>",
+    "back": "<p>Record drawings.</p>"
+  },
+  {
+    "index": 29,
+    "front": "<h3>The contractor provides equipment maintenance instructions. Which document is submitted?</h3>",
+    "back": "<p>O&M manual.</p>"
+  },
+  {
+    "index": 30,
+    "front": "<h3>The contractor provides guarantee coverage for installed materials. Which document is submitted?</h3>",
+    "back": "<p>Warranty.</p>"
+  },
+  {
+    "index": 31,
+    "front": "<h3>The architect records decisions from a construction meeting. Which document should be produced?</h3>",
+    "back": "<p>Meeting minutes.</p>"
+  },
+  {
+    "index": 32,
+    "front": "<h3>The architect needs to clarify a detail without changing cost or time. Which document should be used?</h3>",
+    "back": "<p>Architect\u2019s Supplemental Instruction (ASI).</p>"
+  },
+  {
+    "index": 33,
+    "front": "<h3>The owner and contractor agree to modify the contract sum and time. Which document should be used?</h3>",
+    "back": "<p>Change Order.</p>"
+  },
+  {
+    "index": 34,
+    "front": "<h3>The architect directs work to proceed before cost is finalized. Which document should be used?</h3>",
+    "back": "<p>Construction Change Directive (CCD).</p>"
+  },
+  {
+    "index": 35,
+    "front": "<h3>The contractor needs clarification about conflicting drawings. Which document should be used?</h3>",
+    "back": "<p>Request for Information (RFI).</p>"
+  },
+  {
+    "index": 36,
+    "front": "<h3>The contractor proposes a different product than specified. Which document should be submitted?</h3>",
+    "back": "<p>Substitution request.</p>"
+  },
+  {
+    "index": 37,
+    "front": "<h3>The contractor submits fabrication details for review. Which document is this?</h3>",
+    "back": "<p>Shop drawings.</p>"
+  },
+  {
+    "index": 38,
+    "front": "<h3>The architect documents observations during a site visit. Which document should be produced?</h3>",
+    "back": "<p>Field report.</p>"
+  },
+  {
+    "index": 39,
+    "front": "<h3>The architect confirms the building can be used for its intended purpose. Which document is issued?</h3>",
+    "back": "<p>Certificate of Substantial Completion.</p>"
+  },
+  {
+    "index": 40,
+    "front": "<h3>The contractor requests payment for completed work. Which document is used?</h3>",
+    "back": "<p>Application for Payment.</p>"
+  },
+  {
+    "index": 41,
+    "front": "<h3>The architect approves payment to the contractor. Which document is issued?</h3>",
+    "back": "<p>Certificate for Payment.</p>"
+  },
+  {
+    "index": 42,
+    "front": "<h3>The contractor breaks down the contract sum into work categories. Which document is used?</h3>",
+    "back": "<p>Schedule of Values.</p>"
+  },
+  {
+    "index": 43,
+    "front": "<h3>The architect lists items that must be corrected before final completion. Which document is used?</h3>",
+    "back": "<p>Punch list.</p>"
+  },
+  {
+    "index": 44,
+    "front": "<h3>The contractor records actual installed conditions for the project. Which document is produced?</h3>",
+    "back": "<p>Record drawings.</p>"
+  },
+  {
+    "index": 45,
+    "front": "<h3>The contractor provides equipment maintenance instructions. Which document is submitted?</h3>",
+    "back": "<p>O&M manual.</p>"
+  },
+  {
+    "index": 46,
+    "front": "<h3>The contractor provides guarantee coverage for installed materials. Which document is submitted?</h3>",
+    "back": "<p>Warranty.</p>"
+  },
+  {
+    "index": 47,
+    "front": "<h3>The architect records decisions from a construction meeting. Which document should be produced?</h3>",
+    "back": "<p>Meeting minutes.</p>"
+  },
+  {
+    "index": 48,
+    "front": "<h3>The architect needs to clarify a detail without changing cost or time. Which document should be used?</h3>",
+    "back": "<p>Architect\u2019s Supplemental Instruction (ASI).</p>"
+  },
+  {
+    "index": 49,
+    "front": "<h3>The owner and contractor agree to modify the contract sum and time. Which document should be used?</h3>",
+    "back": "<p>Change Order.</p>"
+  },
+  {
+    "index": 50,
+    "front": "<h3>The architect directs work to proceed before cost is finalized. Which document should be used?</h3>",
+    "back": "<p>Construction Change Directive (CCD).</p>"
+  },
+  {
+    "index": 51,
+    "front": "<h3>The contractor needs clarification about conflicting drawings. Which document should be used?</h3>",
+    "back": "<p>Request for Information (RFI).</p>"
+  },
+  {
+    "index": 52,
+    "front": "<h3>The contractor proposes a different product than specified. Which document should be submitted?</h3>",
+    "back": "<p>Substitution request.</p>"
+  },
+  {
+    "index": 53,
+    "front": "<h3>The contractor submits fabrication details for review. Which document is this?</h3>",
+    "back": "<p>Shop drawings.</p>"
+  },
+  {
+    "index": 54,
+    "front": "<h3>The architect documents observations during a site visit. Which document should be produced?</h3>",
+    "back": "<p>Field report.</p>"
+  },
+  {
+    "index": 55,
+    "front": "<h3>The architect confirms the building can be used for its intended purpose. Which document is issued?</h3>",
+    "back": "<p>Certificate of Substantial Completion.</p>"
+  },
+  {
+    "index": 56,
+    "front": "<h3>The contractor requests payment for completed work. Which document is used?</h3>",
+    "back": "<p>Application for Payment.</p>"
+  },
+  {
+    "index": 57,
+    "front": "<h3>The architect approves payment to the contractor. Which document is issued?</h3>",
+    "back": "<p>Certificate for Payment.</p>"
+  },
+  {
+    "index": 58,
+    "front": "<h3>The contractor breaks down the contract sum into work categories. Which document is used?</h3>",
+    "back": "<p>Schedule of Values.</p>"
+  },
+  {
+    "index": 59,
+    "front": "<h3>The architect lists items that must be corrected before final completion. Which document is used?</h3>",
+    "back": "<p>Punch list.</p>"
+  },
+  {
+    "index": 60,
+    "front": "<h3>The contractor records actual installed conditions for the project. Which document is produced?</h3>",
+    "back": "<p>Record drawings.</p>"
+  },
+  {
+    "index": 61,
+    "front": "<h3>The contractor provides equipment maintenance instructions. Which document is submitted?</h3>",
+    "back": "<p>O&M manual.</p>"
+  },
+  {
+    "index": 62,
+    "front": "<h3>The contractor provides guarantee coverage for installed materials. Which document is submitted?</h3>",
+    "back": "<p>Warranty.</p>"
+  },
+  {
+    "index": 63,
+    "front": "<h3>The architect records decisions from a construction meeting. Which document should be produced?</h3>",
+    "back": "<p>Meeting minutes.</p>"
+  },
+  {
+    "index": 64,
+    "front": "<h3>The architect needs to clarify a detail without changing cost or time. Which document should be used?</h3>",
+    "back": "<p>Architect\u2019s Supplemental Instruction (ASI).</p>"
+  },
+  {
+    "index": 65,
+    "front": "<h3>The owner and contractor agree to modify the contract sum and time. Which document should be used?</h3>",
+    "back": "<p>Change Order.</p>"
+  },
+  {
+    "index": 66,
+    "front": "<h3>The architect directs work to proceed before cost is finalized. Which document should be used?</h3>",
+    "back": "<p>Construction Change Directive (CCD).</p>"
+  },
+  {
+    "index": 67,
+    "front": "<h3>The contractor needs clarification about conflicting drawings. Which document should be used?</h3>",
+    "back": "<p>Request for Information (RFI).</p>"
+  },
+  {
+    "index": 68,
+    "front": "<h3>The contractor proposes a different product than specified. Which document should be submitted?</h3>",
+    "back": "<p>Substitution request.</p>"
+  },
+  {
+    "index": 69,
+    "front": "<h3>The contractor submits fabrication details for review. Which document is this?</h3>",
+    "back": "<p>Shop drawings.</p>"
+  },
+  {
+    "index": 70,
+    "front": "<h3>The architect documents observations during a site visit. Which document should be produced?</h3>",
+    "back": "<p>Field report.</p>"
+  },
+  {
+    "index": 71,
+    "front": "<h3>The architect confirms the building can be used for its intended purpose. Which document is issued?</h3>",
+    "back": "<p>Certificate of Substantial Completion.</p>"
+  },
+  {
+    "index": 72,
+    "front": "<h3>The contractor requests payment for completed work. Which document is used?</h3>",
+    "back": "<p>Application for Payment.</p>"
+  },
+  {
+    "index": 73,
+    "front": "<h3>The architect approves payment to the contractor. Which document is issued?</h3>",
+    "back": "<p>Certificate for Payment.</p>"
+  },
+  {
+    "index": 74,
+    "front": "<h3>The contractor breaks down the contract sum into work categories. Which document is used?</h3>",
+    "back": "<p>Schedule of Values.</p>"
+  },
+  {
+    "index": 75,
+    "front": "<h3>The architect lists items that must be corrected before final completion. Which document is used?</h3>",
+    "back": "<p>Punch list.</p>"
+  },
+  {
+    "index": 76,
+    "front": "<h3>The contractor records actual installed conditions for the project. Which document is produced?</h3>",
+    "back": "<p>Record drawings.</p>"
+  },
+  {
+    "index": 77,
+    "front": "<h3>The contractor provides equipment maintenance instructions. Which document is submitted?</h3>",
+    "back": "<p>O&M manual.</p>"
+  },
+  {
+    "index": 78,
+    "front": "<h3>The contractor provides guarantee coverage for installed materials. Which document is submitted?</h3>",
+    "back": "<p>Warranty.</p>"
+  },
+  {
+    "index": 79,
+    "front": "<h3>The architect records decisions from a construction meeting. Which document should be produced?</h3>",
+    "back": "<p>Meeting minutes.</p>"
+  },
+  {
+    "index": 80,
+    "front": "<h3>The architect needs to clarify a detail without changing cost or time. Which document should be used?</h3>",
+    "back": "<p>Architect\u2019s Supplemental Instruction (ASI).</p>"
+  },
+  {
+    "index": 81,
+    "front": "<h3>The owner and contractor agree to modify the contract sum and time. Which document should be used?</h3>",
+    "back": "<p>Change Order.</p>"
+  },
+  {
+    "index": 82,
+    "front": "<h3>The architect directs work to proceed before cost is finalized. Which document should be used?</h3>",
+    "back": "<p>Construction Change Directive (CCD).</p>"
+  },
+  {
+    "index": 83,
+    "front": "<h3>The contractor needs clarification about conflicting drawings. Which document should be used?</h3>",
+    "back": "<p>Request for Information (RFI).</p>"
+  },
+  {
+    "index": 84,
+    "front": "<h3>The contractor proposes a different product than specified. Which document should be submitted?</h3>",
+    "back": "<p>Substitution request.</p>"
+  },
+  {
+    "index": 85,
+    "front": "<h3>The contractor submits fabrication details for review. Which document is this?</h3>",
+    "back": "<p>Shop drawings.</p>"
+  },
+  {
+    "index": 86,
+    "front": "<h3>The architect documents observations during a site visit. Which document should be produced?</h3>",
+    "back": "<p>Field report.</p>"
+  },
+  {
+    "index": 87,
+    "front": "<h3>The architect confirms the building can be used for its intended purpose. Which document is issued?</h3>",
+    "back": "<p>Certificate of Substantial Completion.</p>"
+  },
+  {
+    "index": 88,
+    "front": "<h3>The contractor requests payment for completed work. Which document is used?</h3>",
+    "back": "<p>Application for Payment.</p>"
+  },
+  {
+    "index": 89,
+    "front": "<h3>The architect approves payment to the contractor. Which document is issued?</h3>",
+    "back": "<p>Certificate for Payment.</p>"
+  },
+  {
+    "index": 90,
+    "front": "<h3>The contractor breaks down the contract sum into work categories. Which document is used?</h3>",
+    "back": "<p>Schedule of Values.</p>"
+  },
+  {
+    "index": 91,
+    "front": "<h3>The architect lists items that must be corrected before final completion. Which document is used?</h3>",
+    "back": "<p>Punch list.</p>"
+  },
+  {
+    "index": 92,
+    "front": "<h3>The contractor records actual installed conditions for the project. Which document is produced?</h3>",
+    "back": "<p>Record drawings.</p>"
+  },
+  {
+    "index": 93,
+    "front": "<h3>The contractor provides equipment maintenance instructions. Which document is submitted?</h3>",
+    "back": "<p>O&M manual.</p>"
+  },
+  {
+    "index": 94,
+    "front": "<h3>The contractor provides guarantee coverage for installed materials. Which document is submitted?</h3>",
+    "back": "<p>Warranty.</p>"
+  },
+  {
+    "index": 95,
+    "front": "<h3>The architect records decisions from a construction meeting. Which document should be produced?</h3>",
+    "back": "<p>Meeting minutes.</p>"
+  },
+  {
+    "index": 96,
+    "front": "<h3>The architect needs to clarify a detail without changing cost or time. Which document should be used?</h3>",
+    "back": "<p>Architect\u2019s Supplemental Instruction (ASI).</p>"
+  },
+  {
+    "index": 97,
+    "front": "<h3>The owner and contractor agree to modify the contract sum and time. Which document should be used?</h3>",
+    "back": "<p>Change Order.</p>"
+  },
+  {
+    "index": 98,
+    "front": "<h3>The architect directs work to proceed before cost is finalized. Which document should be used?</h3>",
+    "back": "<p>Construction Change Directive (CCD).</p>"
+  },
+  {
+    "index": 99,
+    "front": "<h3>The contractor needs clarification about conflicting drawings. Which document should be used?</h3>",
+    "back": "<p>Request for Information (RFI).</p>"
+  },
+  {
+    "index": 100,
+    "front": "<h3>The contractor proposes a different product than specified. Which document should be submitted?</h3>",
+    "back": "<p>Substitution request.</p>"
+  },
+  {
+    "index": 101,
+    "front": "<h3>The contractor submits fabrication details for review. Which document is this?</h3>",
+    "back": "<p>Shop drawings.</p>"
+  },
+  {
+    "index": 102,
+    "front": "<h3>The architect documents observations during a site visit. Which document should be produced?</h3>",
+    "back": "<p>Field report.</p>"
+  },
+  {
+    "index": 103,
+    "front": "<h3>The architect confirms the building can be used for its intended purpose. Which document is issued?</h3>",
+    "back": "<p>Certificate of Substantial Completion.</p>"
+  },
+  {
+    "index": 104,
+    "front": "<h3>The contractor requests payment for completed work. Which document is used?</h3>",
+    "back": "<p>Application for Payment.</p>"
+  },
+  {
+    "index": 105,
+    "front": "<h3>The architect approves payment to the contractor. Which document is issued?</h3>",
+    "back": "<p>Certificate for Payment.</p>"
+  },
+  {
+    "index": 106,
+    "front": "<h3>The contractor breaks down the contract sum into work categories. Which document is used?</h3>",
+    "back": "<p>Schedule of Values.</p>"
+  },
+  {
+    "index": 107,
+    "front": "<h3>The architect lists items that must be corrected before final completion. Which document is used?</h3>",
+    "back": "<p>Punch list.</p>"
+  },
+  {
+    "index": 108,
+    "front": "<h3>The contractor records actual installed conditions for the project. Which document is produced?</h3>",
+    "back": "<p>Record drawings.</p>"
+  },
+  {
+    "index": 109,
+    "front": "<h3>The contractor provides equipment maintenance instructions. Which document is submitted?</h3>",
+    "back": "<p>O&M manual.</p>"
+  },
+  {
+    "index": 110,
+    "front": "<h3>The contractor provides guarantee coverage for installed materials. Which document is submitted?</h3>",
+    "back": "<p>Warranty.</p>"
+  },
+  {
+    "index": 111,
+    "front": "<h3>The architect records decisions from a construction meeting. Which document should be produced?</h3>",
+    "back": "<p>Meeting minutes.</p>"
+  },
+  {
+    "index": 112,
+    "front": "<h3>The architect needs to clarify a detail without changing cost or time. Which document should be used?</h3>",
+    "back": "<p>Architect\u2019s Supplemental Instruction (ASI).</p>"
+  },
+  {
+    "index": 113,
+    "front": "<h3>The owner and contractor agree to modify the contract sum and time. Which document should be used?</h3>",
+    "back": "<p>Change Order.</p>"
+  },
+  {
+    "index": 114,
+    "front": "<h3>The architect directs work to proceed before cost is finalized. Which document should be used?</h3>",
+    "back": "<p>Construction Change Directive (CCD).</p>"
+  },
+  {
+    "index": 115,
+    "front": "<h3>The contractor needs clarification about conflicting drawings. Which document should be used?</h3>",
+    "back": "<p>Request for Information (RFI).</p>"
+  },
+  {
+    "index": 116,
+    "front": "<h3>The contractor proposes a different product than specified. Which document should be submitted?</h3>",
+    "back": "<p>Substitution request.</p>"
+  },
+  {
+    "index": 117,
+    "front": "<h3>The contractor submits fabrication details for review. Which document is this?</h3>",
+    "back": "<p>Shop drawings.</p>"
+  },
+  {
+    "index": 118,
+    "front": "<h3>The architect documents observations during a site visit. Which document should be produced?</h3>",
+    "back": "<p>Field report.</p>"
+  },
+  {
+    "index": 119,
+    "front": "<h3>The architect confirms the building can be used for its intended purpose. Which document is issued?</h3>",
+    "back": "<p>Certificate of Substantial Completion.</p>"
+  }
+]
+        this.CEcards4 = [
+  {
+    "index": 0,
+    "front": "<h3>Who is responsible for jobsite safety during construction?</h3>",
+    "back": "<p>The contractor.</p>"
+  },
+  {
+    "index": 1,
+    "front": "<h3>Who is responsible for verifying field dimensions before fabrication?</h3>",
+    "back": "<p>The architect.</p>"
+  },
+  {
+    "index": 2,
+    "front": "<h3>Who is responsible for reviewing submittals for design intent?</h3>",
+    "back": "<p>The owner.</p>"
+  },
+  {
+    "index": 3,
+    "front": "<h3>Who is responsible for construction means and methods?</h3>",
+    "back": "<p>The contractor (means and methods).</p>"
+  },
+  {
+    "index": 4,
+    "front": "<h3>Who hires the testing agency unless otherwise specified?</h3>",
+    "back": "<p>The architect (design intent review).</p>"
+  },
+  {
+    "index": 5,
+    "front": "<h3>Who coordinates subcontractor work?</h3>",
+    "back": "<p>The contractor (site safety).</p>"
+  },
+  {
+    "index": 6,
+    "front": "<h3>Who prepares the schedule of values?</h3>",
+    "back": "<p>The owner (testing agency).</p>"
+  },
+  {
+    "index": 7,
+    "front": "<h3>Who observes the work for general conformance with the contract documents?</h3>",
+    "back": "<p>The contractor (field measurements).</p>"
+  },
+  {
+    "index": 8,
+    "front": "<h3>Who is responsible for jobsite safety during construction?</h3>",
+    "back": "<p>The contractor.</p>"
+  },
+  {
+    "index": 9,
+    "front": "<h3>Who is responsible for verifying field dimensions before fabrication?</h3>",
+    "back": "<p>The architect.</p>"
+  },
+  {
+    "index": 10,
+    "front": "<h3>Who is responsible for reviewing submittals for design intent?</h3>",
+    "back": "<p>The owner.</p>"
+  },
+  {
+    "index": 11,
+    "front": "<h3>Who is responsible for construction means and methods?</h3>",
+    "back": "<p>The contractor (means and methods).</p>"
+  },
+  {
+    "index": 12,
+    "front": "<h3>Who hires the testing agency unless otherwise specified?</h3>",
+    "back": "<p>The architect (design intent review).</p>"
+  },
+  {
+    "index": 13,
+    "front": "<h3>Who coordinates subcontractor work?</h3>",
+    "back": "<p>The contractor (site safety).</p>"
+  },
+  {
+    "index": 14,
+    "front": "<h3>Who prepares the schedule of values?</h3>",
+    "back": "<p>The owner (testing agency).</p>"
+  },
+  {
+    "index": 15,
+    "front": "<h3>Who observes the work for general conformance with the contract documents?</h3>",
+    "back": "<p>The contractor (field measurements).</p>"
+  },
+  {
+    "index": 16,
+    "front": "<h3>Who is responsible for jobsite safety during construction?</h3>",
+    "back": "<p>The contractor.</p>"
+  },
+  {
+    "index": 17,
+    "front": "<h3>Who is responsible for verifying field dimensions before fabrication?</h3>",
+    "back": "<p>The architect.</p>"
+  },
+  {
+    "index": 18,
+    "front": "<h3>Who is responsible for reviewing submittals for design intent?</h3>",
+    "back": "<p>The owner.</p>"
+  },
+  {
+    "index": 19,
+    "front": "<h3>Who is responsible for construction means and methods?</h3>",
+    "back": "<p>The contractor (means and methods).</p>"
+  },
+  {
+    "index": 20,
+    "front": "<h3>Who hires the testing agency unless otherwise specified?</h3>",
+    "back": "<p>The architect (design intent review).</p>"
+  },
+  {
+    "index": 21,
+    "front": "<h3>Who coordinates subcontractor work?</h3>",
+    "back": "<p>The contractor (site safety).</p>"
+  },
+  {
+    "index": 22,
+    "front": "<h3>Who prepares the schedule of values?</h3>",
+    "back": "<p>The owner (testing agency).</p>"
+  },
+  {
+    "index": 23,
+    "front": "<h3>Who observes the work for general conformance with the contract documents?</h3>",
+    "back": "<p>The contractor (field measurements).</p>"
+  },
+  {
+    "index": 24,
+    "front": "<h3>Who is responsible for jobsite safety during construction?</h3>",
+    "back": "<p>The contractor.</p>"
+  },
+  {
+    "index": 25,
+    "front": "<h3>Who is responsible for verifying field dimensions before fabrication?</h3>",
+    "back": "<p>The architect.</p>"
+  },
+  {
+    "index": 26,
+    "front": "<h3>Who is responsible for reviewing submittals for design intent?</h3>",
+    "back": "<p>The owner.</p>"
+  },
+  {
+    "index": 27,
+    "front": "<h3>Who is responsible for construction means and methods?</h3>",
+    "back": "<p>The contractor (means and methods).</p>"
+  },
+  {
+    "index": 28,
+    "front": "<h3>Who hires the testing agency unless otherwise specified?</h3>",
+    "back": "<p>The architect (design intent review).</p>"
+  },
+  {
+    "index": 29,
+    "front": "<h3>Who coordinates subcontractor work?</h3>",
+    "back": "<p>The contractor (site safety).</p>"
+  },
+  {
+    "index": 30,
+    "front": "<h3>Who prepares the schedule of values?</h3>",
+    "back": "<p>The owner (testing agency).</p>"
+  },
+  {
+    "index": 31,
+    "front": "<h3>Who observes the work for general conformance with the contract documents?</h3>",
+    "back": "<p>The contractor (field measurements).</p>"
+  },
+  {
+    "index": 32,
+    "front": "<h3>Who is responsible for jobsite safety during construction?</h3>",
+    "back": "<p>The contractor.</p>"
+  },
+  {
+    "index": 33,
+    "front": "<h3>Who is responsible for verifying field dimensions before fabrication?</h3>",
+    "back": "<p>The architect.</p>"
+  },
+  {
+    "index": 34,
+    "front": "<h3>Who is responsible for reviewing submittals for design intent?</h3>",
+    "back": "<p>The owner.</p>"
+  },
+  {
+    "index": 35,
+    "front": "<h3>Who is responsible for construction means and methods?</h3>",
+    "back": "<p>The contractor (means and methods).</p>"
+  },
+  {
+    "index": 36,
+    "front": "<h3>Who hires the testing agency unless otherwise specified?</h3>",
+    "back": "<p>The architect (design intent review).</p>"
+  },
+  {
+    "index": 37,
+    "front": "<h3>Who coordinates subcontractor work?</h3>",
+    "back": "<p>The contractor (site safety).</p>"
+  },
+  {
+    "index": 38,
+    "front": "<h3>Who prepares the schedule of values?</h3>",
+    "back": "<p>The owner (testing agency).</p>"
+  },
+  {
+    "index": 39,
+    "front": "<h3>Who observes the work for general conformance with the contract documents?</h3>",
+    "back": "<p>The contractor (field measurements).</p>"
+  },
+  {
+    "index": 40,
+    "front": "<h3>Who is responsible for jobsite safety during construction?</h3>",
+    "back": "<p>The contractor.</p>"
+  },
+  {
+    "index": 41,
+    "front": "<h3>Who is responsible for verifying field dimensions before fabrication?</h3>",
+    "back": "<p>The architect.</p>"
+  },
+  {
+    "index": 42,
+    "front": "<h3>Who is responsible for reviewing submittals for design intent?</h3>",
+    "back": "<p>The owner.</p>"
+  },
+  {
+    "index": 43,
+    "front": "<h3>Who is responsible for construction means and methods?</h3>",
+    "back": "<p>The contractor (means and methods).</p>"
+  },
+  {
+    "index": 44,
+    "front": "<h3>Who hires the testing agency unless otherwise specified?</h3>",
+    "back": "<p>The architect (design intent review).</p>"
+  },
+  {
+    "index": 45,
+    "front": "<h3>Who coordinates subcontractor work?</h3>",
+    "back": "<p>The contractor (site safety).</p>"
+  },
+  {
+    "index": 46,
+    "front": "<h3>Who prepares the schedule of values?</h3>",
+    "back": "<p>The owner (testing agency).</p>"
+  },
+  {
+    "index": 47,
+    "front": "<h3>Who observes the work for general conformance with the contract documents?</h3>",
+    "back": "<p>The contractor (field measurements).</p>"
+  },
+  {
+    "index": 48,
+    "front": "<h3>Who is responsible for jobsite safety during construction?</h3>",
+    "back": "<p>The contractor.</p>"
+  },
+  {
+    "index": 49,
+    "front": "<h3>Who is responsible for verifying field dimensions before fabrication?</h3>",
+    "back": "<p>The architect.</p>"
+  },
+  {
+    "index": 50,
+    "front": "<h3>Who is responsible for reviewing submittals for design intent?</h3>",
+    "back": "<p>The owner.</p>"
+  },
+  {
+    "index": 51,
+    "front": "<h3>Who is responsible for construction means and methods?</h3>",
+    "back": "<p>The contractor (means and methods).</p>"
+  },
+  {
+    "index": 52,
+    "front": "<h3>Who hires the testing agency unless otherwise specified?</h3>",
+    "back": "<p>The architect (design intent review).</p>"
+  },
+  {
+    "index": 53,
+    "front": "<h3>Who coordinates subcontractor work?</h3>",
+    "back": "<p>The contractor (site safety).</p>"
+  },
+  {
+    "index": 54,
+    "front": "<h3>Who prepares the schedule of values?</h3>",
+    "back": "<p>The owner (testing agency).</p>"
+  },
+  {
+    "index": 55,
+    "front": "<h3>Who observes the work for general conformance with the contract documents?</h3>",
+    "back": "<p>The contractor (field measurements).</p>"
+  },
+  {
+    "index": 56,
+    "front": "<h3>Who is responsible for jobsite safety during construction?</h3>",
+    "back": "<p>The contractor.</p>"
+  },
+  {
+    "index": 57,
+    "front": "<h3>Who is responsible for verifying field dimensions before fabrication?</h3>",
+    "back": "<p>The architect.</p>"
+  },
+  {
+    "index": 58,
+    "front": "<h3>Who is responsible for reviewing submittals for design intent?</h3>",
+    "back": "<p>The owner.</p>"
+  },
+  {
+    "index": 59,
+    "front": "<h3>Who is responsible for construction means and methods?</h3>",
+    "back": "<p>The contractor (means and methods).</p>"
+  },
+  {
+    "index": 60,
+    "front": "<h3>Who hires the testing agency unless otherwise specified?</h3>",
+    "back": "<p>The architect (design intent review).</p>"
+  },
+  {
+    "index": 61,
+    "front": "<h3>Who coordinates subcontractor work?</h3>",
+    "back": "<p>The contractor (site safety).</p>"
+  },
+  {
+    "index": 62,
+    "front": "<h3>Who prepares the schedule of values?</h3>",
+    "back": "<p>The owner (testing agency).</p>"
+  },
+  {
+    "index": 63,
+    "front": "<h3>Who observes the work for general conformance with the contract documents?</h3>",
+    "back": "<p>The contractor (field measurements).</p>"
+  },
+  {
+    "index": 64,
+    "front": "<h3>Who is responsible for jobsite safety during construction?</h3>",
+    "back": "<p>The contractor.</p>"
+  },
+  {
+    "index": 65,
+    "front": "<h3>Who is responsible for verifying field dimensions before fabrication?</h3>",
+    "back": "<p>The architect.</p>"
+  },
+  {
+    "index": 66,
+    "front": "<h3>Who is responsible for reviewing submittals for design intent?</h3>",
+    "back": "<p>The owner.</p>"
+  },
+  {
+    "index": 67,
+    "front": "<h3>Who is responsible for construction means and methods?</h3>",
+    "back": "<p>The contractor (means and methods).</p>"
+  },
+  {
+    "index": 68,
+    "front": "<h3>Who hires the testing agency unless otherwise specified?</h3>",
+    "back": "<p>The architect (design intent review).</p>"
+  },
+  {
+    "index": 69,
+    "front": "<h3>Who coordinates subcontractor work?</h3>",
+    "back": "<p>The contractor (site safety).</p>"
+  },
+  {
+    "index": 70,
+    "front": "<h3>Who prepares the schedule of values?</h3>",
+    "back": "<p>The owner (testing agency).</p>"
+  },
+  {
+    "index": 71,
+    "front": "<h3>Who observes the work for general conformance with the contract documents?</h3>",
+    "back": "<p>The contractor (field measurements).</p>"
+  },
+  {
+    "index": 72,
+    "front": "<h3>Who is responsible for jobsite safety during construction?</h3>",
+    "back": "<p>The contractor.</p>"
+  },
+  {
+    "index": 73,
+    "front": "<h3>Who is responsible for verifying field dimensions before fabrication?</h3>",
+    "back": "<p>The architect.</p>"
+  },
+  {
+    "index": 74,
+    "front": "<h3>Who is responsible for reviewing submittals for design intent?</h3>",
+    "back": "<p>The owner.</p>"
+  },
+  {
+    "index": 75,
+    "front": "<h3>Who is responsible for construction means and methods?</h3>",
+    "back": "<p>The contractor (means and methods).</p>"
+  },
+  {
+    "index": 76,
+    "front": "<h3>Who hires the testing agency unless otherwise specified?</h3>",
+    "back": "<p>The architect (design intent review).</p>"
+  },
+  {
+    "index": 77,
+    "front": "<h3>Who coordinates subcontractor work?</h3>",
+    "back": "<p>The contractor (site safety).</p>"
+  },
+  {
+    "index": 78,
+    "front": "<h3>Who prepares the schedule of values?</h3>",
+    "back": "<p>The owner (testing agency).</p>"
+  },
+  {
+    "index": 79,
+    "front": "<h3>Who observes the work for general conformance with the contract documents?</h3>",
+    "back": "<p>The contractor (field measurements).</p>"
+  }
+]
+        this.CEcards5 = [
+  {
+    "index": 0,
+    "front": "<h3>A contractor reports a discrepancy between two drawings. What should the architect do FIRST?</h3>",
+    "back": "<p>Review the contract documents.</p>"
+  },
+  {
+    "index": 1,
+    "front": "<h3>The architect observes work that may not comply with the drawings. What should the architect do FIRST?</h3>",
+    "back": "<p>Document the issue in a field report.</p>"
+  },
+  {
+    "index": 2,
+    "front": "<h3>The contractor submits a question about specification requirements. What should the architect do FIRST?</h3>",
+    "back": "<p>Request clarification from the contractor.</p>"
+  },
+  {
+    "index": 3,
+    "front": "<h3>The owner asks whether installed work meets design intent. What should the architect do FIRST?</h3>",
+    "back": "<p>Respond to the contractor\u2019s RFI.</p>"
+  },
+  {
+    "index": 4,
+    "front": "<h3>The contractor proposes a product substitution during construction. What should the architect do FIRST?</h3>",
+    "back": "<p>Notify the owner.</p>"
+  },
+  {
+    "index": 5,
+    "front": "<h3>A potential construction defect is observed on site. What should the architect do FIRST?</h3>",
+    "back": "<p>Verify the condition during a site visit.</p>"
+  },
+  {
+    "index": 6,
+    "front": "<h3>The contractor claims additional cost due to unclear drawings. What should the architect do FIRST?</h3>",
+    "back": "<p>Review the relevant specification section.</p>"
+  },
+  {
+    "index": 7,
+    "front": "<h3>A dimension conflict is discovered in the construction documents. What should the architect do FIRST?</h3>",
+    "back": "<p>Confirm whether the work conforms to the contract documents.</p>"
+  },
+  {
+    "index": 8,
+    "front": "<h3>A contractor reports a discrepancy between two drawings. What should the architect do FIRST?</h3>",
+    "back": "<p>Review the contract documents.</p>"
+  },
+  {
+    "index": 9,
+    "front": "<h3>The architect observes work that may not comply with the drawings. What should the architect do FIRST?</h3>",
+    "back": "<p>Document the issue in a field report.</p>"
+  },
+  {
+    "index": 10,
+    "front": "<h3>The contractor submits a question about specification requirements. What should the architect do FIRST?</h3>",
+    "back": "<p>Request clarification from the contractor.</p>"
+  },
+  {
+    "index": 11,
+    "front": "<h3>The owner asks whether installed work meets design intent. What should the architect do FIRST?</h3>",
+    "back": "<p>Respond to the contractor\u2019s RFI.</p>"
+  },
+  {
+    "index": 12,
+    "front": "<h3>The contractor proposes a product substitution during construction. What should the architect do FIRST?</h3>",
+    "back": "<p>Notify the owner.</p>"
+  },
+  {
+    "index": 13,
+    "front": "<h3>A potential construction defect is observed on site. What should the architect do FIRST?</h3>",
+    "back": "<p>Verify the condition during a site visit.</p>"
+  },
+  {
+    "index": 14,
+    "front": "<h3>The contractor claims additional cost due to unclear drawings. What should the architect do FIRST?</h3>",
+    "back": "<p>Review the relevant specification section.</p>"
+  },
+  {
+    "index": 15,
+    "front": "<h3>A dimension conflict is discovered in the construction documents. What should the architect do FIRST?</h3>",
+    "back": "<p>Confirm whether the work conforms to the contract documents.</p>"
+  },
+  {
+    "index": 16,
+    "front": "<h3>A contractor reports a discrepancy between two drawings. What should the architect do FIRST?</h3>",
+    "back": "<p>Review the contract documents.</p>"
+  },
+  {
+    "index": 17,
+    "front": "<h3>The architect observes work that may not comply with the drawings. What should the architect do FIRST?</h3>",
+    "back": "<p>Document the issue in a field report.</p>"
+  },
+  {
+    "index": 18,
+    "front": "<h3>The contractor submits a question about specification requirements. What should the architect do FIRST?</h3>",
+    "back": "<p>Request clarification from the contractor.</p>"
+  },
+  {
+    "index": 19,
+    "front": "<h3>The owner asks whether installed work meets design intent. What should the architect do FIRST?</h3>",
+    "back": "<p>Respond to the contractor\u2019s RFI.</p>"
+  },
+  {
+    "index": 20,
+    "front": "<h3>The contractor proposes a product substitution during construction. What should the architect do FIRST?</h3>",
+    "back": "<p>Notify the owner.</p>"
+  },
+  {
+    "index": 21,
+    "front": "<h3>A potential construction defect is observed on site. What should the architect do FIRST?</h3>",
+    "back": "<p>Verify the condition during a site visit.</p>"
+  },
+  {
+    "index": 22,
+    "front": "<h3>The contractor claims additional cost due to unclear drawings. What should the architect do FIRST?</h3>",
+    "back": "<p>Review the relevant specification section.</p>"
+  },
+  {
+    "index": 23,
+    "front": "<h3>A dimension conflict is discovered in the construction documents. What should the architect do FIRST?</h3>",
+    "back": "<p>Confirm whether the work conforms to the contract documents.</p>"
+  },
+  {
+    "index": 24,
+    "front": "<h3>A contractor reports a discrepancy between two drawings. What should the architect do FIRST?</h3>",
+    "back": "<p>Review the contract documents.</p>"
+  },
+  {
+    "index": 25,
+    "front": "<h3>The architect observes work that may not comply with the drawings. What should the architect do FIRST?</h3>",
+    "back": "<p>Document the issue in a field report.</p>"
+  },
+  {
+    "index": 26,
+    "front": "<h3>The contractor submits a question about specification requirements. What should the architect do FIRST?</h3>",
+    "back": "<p>Request clarification from the contractor.</p>"
+  },
+  {
+    "index": 27,
+    "front": "<h3>The owner asks whether installed work meets design intent. What should the architect do FIRST?</h3>",
+    "back": "<p>Respond to the contractor\u2019s RFI.</p>"
+  },
+  {
+    "index": 28,
+    "front": "<h3>The contractor proposes a product substitution during construction. What should the architect do FIRST?</h3>",
+    "back": "<p>Notify the owner.</p>"
+  },
+  {
+    "index": 29,
+    "front": "<h3>A potential construction defect is observed on site. What should the architect do FIRST?</h3>",
+    "back": "<p>Verify the condition during a site visit.</p>"
+  },
+  {
+    "index": 30,
+    "front": "<h3>The contractor claims additional cost due to unclear drawings. What should the architect do FIRST?</h3>",
+    "back": "<p>Review the relevant specification section.</p>"
+  },
+  {
+    "index": 31,
+    "front": "<h3>A dimension conflict is discovered in the construction documents. What should the architect do FIRST?</h3>",
+    "back": "<p>Confirm whether the work conforms to the contract documents.</p>"
+  },
+  {
+    "index": 32,
+    "front": "<h3>A contractor reports a discrepancy between two drawings. What should the architect do FIRST?</h3>",
+    "back": "<p>Review the contract documents.</p>"
+  },
+  {
+    "index": 33,
+    "front": "<h3>The architect observes work that may not comply with the drawings. What should the architect do FIRST?</h3>",
+    "back": "<p>Document the issue in a field report.</p>"
+  },
+  {
+    "index": 34,
+    "front": "<h3>The contractor submits a question about specification requirements. What should the architect do FIRST?</h3>",
+    "back": "<p>Request clarification from the contractor.</p>"
+  },
+  {
+    "index": 35,
+    "front": "<h3>The owner asks whether installed work meets design intent. What should the architect do FIRST?</h3>",
+    "back": "<p>Respond to the contractor\u2019s RFI.</p>"
+  },
+  {
+    "index": 36,
+    "front": "<h3>The contractor proposes a product substitution during construction. What should the architect do FIRST?</h3>",
+    "back": "<p>Notify the owner.</p>"
+  },
+  {
+    "index": 37,
+    "front": "<h3>A potential construction defect is observed on site. What should the architect do FIRST?</h3>",
+    "back": "<p>Verify the condition during a site visit.</p>"
+  },
+  {
+    "index": 38,
+    "front": "<h3>The contractor claims additional cost due to unclear drawings. What should the architect do FIRST?</h3>",
+    "back": "<p>Review the relevant specification section.</p>"
+  },
+  {
+    "index": 39,
+    "front": "<h3>A dimension conflict is discovered in the construction documents. What should the architect do FIRST?</h3>",
+    "back": "<p>Confirm whether the work conforms to the contract documents.</p>"
+  },
+  {
+    "index": 40,
+    "front": "<h3>A contractor reports a discrepancy between two drawings. What should the architect do FIRST?</h3>",
+    "back": "<p>Review the contract documents.</p>"
+  },
+  {
+    "index": 41,
+    "front": "<h3>The architect observes work that may not comply with the drawings. What should the architect do FIRST?</h3>",
+    "back": "<p>Document the issue in a field report.</p>"
+  },
+  {
+    "index": 42,
+    "front": "<h3>The contractor submits a question about specification requirements. What should the architect do FIRST?</h3>",
+    "back": "<p>Request clarification from the contractor.</p>"
+  },
+  {
+    "index": 43,
+    "front": "<h3>The owner asks whether installed work meets design intent. What should the architect do FIRST?</h3>",
+    "back": "<p>Respond to the contractor\u2019s RFI.</p>"
+  },
+  {
+    "index": 44,
+    "front": "<h3>The contractor proposes a product substitution during construction. What should the architect do FIRST?</h3>",
+    "back": "<p>Notify the owner.</p>"
+  },
+  {
+    "index": 45,
+    "front": "<h3>A potential construction defect is observed on site. What should the architect do FIRST?</h3>",
+    "back": "<p>Verify the condition during a site visit.</p>"
+  },
+  {
+    "index": 46,
+    "front": "<h3>The contractor claims additional cost due to unclear drawings. What should the architect do FIRST?</h3>",
+    "back": "<p>Review the relevant specification section.</p>"
+  },
+  {
+    "index": 47,
+    "front": "<h3>A dimension conflict is discovered in the construction documents. What should the architect do FIRST?</h3>",
+    "back": "<p>Confirm whether the work conforms to the contract documents.</p>"
+  },
+  {
+    "index": 48,
+    "front": "<h3>A contractor reports a discrepancy between two drawings. What should the architect do FIRST?</h3>",
+    "back": "<p>Review the contract documents.</p>"
+  },
+  {
+    "index": 49,
+    "front": "<h3>The architect observes work that may not comply with the drawings. What should the architect do FIRST?</h3>",
+    "back": "<p>Document the issue in a field report.</p>"
+  }
+]
+
         this.currentCECard = this.CEcards[0];
         this.currentCE2Card = this.CEcards2[0];
+        this.currentCE3Card = this.CEcards3[0];
+        this.currentCE4Card = this.CEcards4[0];
+        this.currentCE5Card = this.CEcards5[0];
     },
-
-    currentExamType: 'CE',
-    setExamType(type) {
-        this.currentExamType = type;
-    },
-
-    currentCE2Card: {},
-    currentCECard: {},
-    nextCECard() {
-        if (this.index < this.CEcards.length - 1) {
-            this.index++;
-            this.currentCECard = this.CEcards[this.index];
-        }
-    },
-    nextCE2Card() {
-        if (this.index2 < this.CEcards2.length - 1) {
-            this.index2++;
-            this.currentCE2Card = this.CEcards2[this.index2];
-        }
-    },
-    previousCECard() {
-        if (this.index > 0) {
-            this.index--;
-            this.currentCECard = this.CEcards[this.index];
-        }
-    },
-    previousCE2Card() {
-        if (this.index2 > 0) {
-            this.index2--;
-            this.currentCE2Card = this.CEcards2[this.index2];
-        }
-    },
-
-    backToCEStart() {
-        this.index = 0;
-        this.currentCECard = this.CEcards[this.index];
-    },
-    backToCE2Start() {
-        this.index2 = 0;
-        this.currentCE2Card = this.CEcards2[this.index2];
-    },
-
-    shuffleCECards() {
-        for (let i = this.CEcards.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [this.CEcards[i], this.CEcards[j]] = [this.CEcards[j], this.CEcards[i]];
-        }
-        this.index = 0;
-        this.currentCECard = this.CEcards[this.index];
-
-        this.CEcards.forEach(card => {
-            card.index = this.CEcards.indexOf(card)
-        })
-    },
-    shuffleCE2Cards() {
-        for (let i = this.CEcards2.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [this.CEcards2[i], this.CEcards2[j]] = [this.CEcards2[j], this.CEcards2[i]];
-        }
-        this.index2 = 0;
-        this.currentCE2Card = this.CEcards2[this.index2];
-
-        this.CEcards2.forEach(card => {
-            card.index = this.CEcards2.indexOf(card)
-        })
-    },
-    
   })
 })

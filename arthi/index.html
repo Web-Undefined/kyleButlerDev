@@ -31,10 +31,23 @@
 							<div class="inner" x-show="currentExamType == 'CE'">
 								<h1 style="text-transform: none;">CE Flashcards</h1>
 
-								<ul class="actions" style="margin-bottom: 0; align-items: center; justify-content: center;">
+								<div class="field" style="max-width: 20em; margin: auto">
+									<select @change="setCEDeck($event.target.value)" name="deck-selector" id="deck-selector">
+										<option value="1">General Deck #1</option>
+										<option value="2">General Deck #2</option>
+										<option value="3">Which document should be used?</option>
+										<option value="4">Who is responsible?</option>
+										<option value="5">What should the architect do FIRST?</option>
+									</select>
+								</div>
+
+								<!-- <ul class="actions" style="margin-bottom: 0; align-items: center; justify-content: center;">
 									<li><a @click="setCEDeck(1)" class="button">Deck #1</a></li>
 									<li><a @click="setCEDeck(2)" class="button">Deck #2</a></li>
-								</ul>
+									<li><a @click="setCEDeck(3)" class="button">Deck #3</a></li>
+									<li><a @click="setCEDeck(4)" class="button">Deck #4</a></li>
+									<li><a @click="setCEDeck(5)" class="button">Deck #5</a></li>
+								</ul> -->
 
 								<!-- Deck #1 -->
 									<div x-show="currentCEDeck == 1">
@@ -121,7 +134,137 @@
 										</div>
 									</div>
 								</div>
+
+								<!-- Deck #3 -->
+								<div x-show="currentCEDeck == 3">
+										<div class="card-carousel" aria-roledescription="carousel">
+										
+											<ul class="icons" style="margin: 0;">
+												<li><a @click="previousCE3Card()" title="Previous Card" class="icon solid fa-chevron-left"></a></li>
+											</ul>
+											<div class="business-card" role="button" aria-pressed="false" tabindex="0" aria-label="Business card" style="background-color: #6b3fa0;">
+											<div class="card-inner">
+												<div class="card-face card-front" style="background-color: #6b3fa0;">
+													<div class="card-content">
+														<div x-html="currentCE3Card.front"></div>
+													</div>
+												</div>
+												<div class="card-face card-back" aria-hidden="true" style="background-color: #4a2570;">
+													<div class="card-content">
+														<div x-html="currentCE3Card.back"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<ul class="icons" style="margin: 0;">
+											<li><a @click="nextCE3Card()" title="Next Card" class="icon solid fa-chevron-right"></a></li>
+										</ul>
+									</div>
+									<div style="display: flex; justify-content: space-around; align-items: center; margin-top: 0.5rem;">
+									
+										<ul class="icons" style="margin: 0;">
+											<li><a @click="backToCE3Start()" title="Back to Start" class="icon solid fa-fast-backward"></a></li>
+										</ul>
+										<p style="margin: 0" class="card-counter">Card <span x-text="currentCE3Card.index + 1"></span> of <span x-text="CEcards3.length"></span></p>
+										<ul class="icons" style="margin: 0;">
+											<li><a @click="shuffleCE3Cards()" title="Shuffle Cards" class="icon solid fa-random"></a></li>
+										</ul>
+									
+									</div>
+									<div class="progress">
+										<div class="bar"
+											:style="`width: ${(currentCE3Card.index+1)/CEcards3.length*100}%; border-radius: 9999px; transition: width 0.3s ease; opacity: 1; background: #6b3fa0;`">
+										</div>
+									</div>
+								</div>
+
+								<!-- Deck #4 -->
+								 <div x-show="currentCEDeck == 4">
+										<div class="card-carousel" aria-roledescription="carousel">
+										
+											<ul class="icons" style="margin: 0;">
+												<li><a @click="previousCE4Card()" title="Previous Card" class="icon solid fa-chevron-left"></a></li>
+											</ul>
+											<div class="business-card" role="button" aria-pressed="false" tabindex="0" aria-label="Business card" style="background-color: #c77d33;">
+											<div class="card-inner">
+												<div class="card-face card-front" style="background-color: #c77d33;">
+													<div class="card-content">
+														<div x-html="currentCE4Card.front"></div>
+													</div>
+												</div>
+												<div class="card-face card-back" aria-hidden="true" style="background-color: #8c5a2c;">
+													<div class="card-content">
+														<div x-html="currentCE4Card.back"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<ul class="icons" style="margin: 0;">
+											<li><a @click="nextCE4Card()" title="Next Card" class="icon solid fa-chevron-right"></a></li>
+										</ul>
+									</div>
+									<div style="display: flex; justify-content: space-around; align-items: center; margin-top: 0.5rem;">
+									
+										<ul class="icons" style="margin: 0;">
+											<li><a @click="backToCE4Start()" title="Back to Start" class="icon solid fa-fast-backward"></a></li>
+										</ul>
+										<p style="margin: 0" class="card-counter">Card <span x-text="currentCE4Card.index + 1"></span> of <span x-text="CEcards4.length"></span></p>
+										<ul class="icons" style="margin: 0;">
+											<li><a @click="shuffleCE4Cards()" title="Shuffle Cards" class="icon solid fa-random"></a></li>
+										</ul>
+									
+									</div>
+									<div class="progress">
+										<div class="bar"
+											:style="`width: ${(currentCE4Card.index+1)/CEcards4.length*100}%; border-radius: 9999px; transition: width 0.3s ease; opacity: 1; background: #c77d33;`">
+										</div>
+									</div>
+								</div>
+
+								<!-- Deck #5 -->
+								 <div x-show="currentCEDeck == 5">
+										<div class="card-carousel" aria-roledescription="carousel">
+										
+											<ul class="icons" style="margin: 0;">
+												<li><a @click="previousCE5Card()" title="Previous Card" class="icon solid fa-chevron-left"></a></li>
+											</ul>
+											<div class="business-card" role="button" aria-pressed="false" tabindex="0" aria-label="Business card" style="background-color: #0d7377;">
+											<div class="card-inner">
+												<div class="card-face card-front" style="background-color: #0d7377;">
+													<div class="card-content">
+														<div x-html="currentCE5Card.front"></div>
+													</div>
+												</div>
+												<div class="card-face card-back" aria-hidden="true" style="background-color: #054956;">
+													<div class="card-content">
+														<div x-html="currentCE5Card.back"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<ul class="icons" style="margin: 0;">
+											<li><a @click="nextCE5Card()" title="Next Card" class="icon solid fa-chevron-right"></a></li>
+										</ul>
+									</div>
+									<div style="display: flex; justify-content: space-around; align-items: center; margin-top: 0.5rem;">
+									
+										<ul class="icons" style="margin: 0;">
+											<li><a @click="backToCE5Start()" title="Back to Start" class="icon solid fa-fast-backward"></a></li>
+										</ul>
+										<p style="margin: 0" class="card-counter">Card <span x-text="currentCE5Card.index + 1"></span> of <span x-text="CEcards5.length"></span></p>
+										<ul class="icons" style="margin: 0;">
+											<li><a @click="shuffleCE5Cards()" title="Shuffle Cards" class="icon solid fa-random"></a></li>
+										</ul>
+									
+									</div>
+									<div class="progress">
+										<div class="bar"
+											:style="`width: ${(currentCE5Card.index+1)/CEcards5.length*100}%; border-radius: 9999px; transition: width 0.3s ease; opacity: 1; background: #0d7377;`">
+										</div>
+									</div>
+								</div>
 							</div>
+
 							<div class="inner" x-show="currentExamType == 'PjM'">
 								<h1 style="text-transform: none;">PjM Flashcards</h1>
 								<p>Coming Soon</p>
