@@ -6,6 +6,7 @@ document.addEventListener('alpine:init', () => {
     index3: 0,
     index4: 0,
     index5: 0,
+    index6: 0,
     correct: 0,
     incorrect: 0,
     CEcards: Alpine.$persist([]),
@@ -13,6 +14,7 @@ document.addEventListener('alpine:init', () => {
     CEcards3: Alpine.$persist([]),
     CEcards4: Alpine.$persist([]),
     CEcards5: Alpine.$persist([]),
+    CEcards6: Alpine.$persist([]),
     currentCEDeck: 1,
 
     setCEDeck(deckNumber) {
@@ -29,6 +31,7 @@ document.addEventListener('alpine:init', () => {
     currentCE3Card: {},
     currentCE4Card: {},
     currentCE5Card: {},
+    currentCE6Card: {},
     nextCECard() {
         if (this.index < this.CEcards.length - 1) {
             this.index++;
@@ -57,6 +60,12 @@ document.addEventListener('alpine:init', () => {
         if (this.index5 < this.CEcards5.length - 1) {
             this.index5++;
             this.currentCE5Card = this.CEcards5[this.index5];
+        }
+    },
+    nextCE6Card() {
+        if (this.index6 < this.CEcards6.length - 1) {
+            this.index6++;
+            this.currentCE6Card = this.CEcards6[this.index6];
         }
     },
 
@@ -90,6 +99,12 @@ document.addEventListener('alpine:init', () => {
             this.currentCE5Card = this.CEcards5[this.index5];
         }
     },
+    previousCE6Card() {
+        if (this.index6 > 0) {
+            this.index6--;
+            this.currentCE6Card = this.CEcards6[this.index6];
+        }
+    },
 
     backToCEStart() {
         this.index = 0;
@@ -110,6 +125,10 @@ document.addEventListener('alpine:init', () => {
     backToCE5Start() {
         this.index5 = 0;
         this.currentCE5Card = this.CEcards5[this.index5];
+    },
+    backToCE6Start() {
+        this.index6 = 0;
+        this.currentCE6Card = this.CEcards6[this.index6];
     },
 
     shuffleCECards() {
@@ -170,6 +189,18 @@ document.addEventListener('alpine:init', () => {
 
         this.CEcards5.forEach(card => {
             card.index = this.CEcards5.indexOf(card)
+        })
+    },
+    shuffleCE6Cards() {
+        for (let i = this.CEcards6.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [this.CEcards6[i], this.CEcards6[j]] = [this.CEcards6[j], this.CEcards6[i]];
+        }
+        this.index6 = 0;
+        this.currentCE6Card = this.CEcards6[this.index6];
+
+        this.CEcards6.forEach(card => {
+            card.index = this.CEcards6.indexOf(card)
         })
     },
 
@@ -2185,12 +2216,1098 @@ document.addEventListener('alpine:init', () => {
                 }
             ]
         }
+
+        if(this.CEcards6.length == 0) {
+            this.CEcards6 = [
+                {
+                    "index": 0,
+                    "front": "<h3>During curtain wall installation, a contractor discovers a discrepancy between structural and architectural drawings. Which document should the contractor submit to request clarification?</h3>",
+                    "back": "<p>Request for Information (RFI).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 1,
+                    "front": "<h3>During curtain wall installation, a contractor discovers a discrepancy between structural and architectural drawings. Which document should the architect issue if the clarification does not affect cost or time?</h3>",
+                    "back": "<p>Architect\u2019s Supplemental Instruction (ASI).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 2,
+                    "front": "<h3>During curtain wall installation, a contractor discovers a discrepancy between structural and architectural drawings. Which document formally modifies contract cost and time after agreement?</h3>",
+                    "back": "<p>Change Order.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 3,
+                    "front": "<h3>During curtain wall installation, a contractor discovers a discrepancy between structural and architectural drawings. Which document directs the contractor to proceed before cost agreement?</h3>",
+                    "back": "<p>Construction Change Directive (CCD).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 4,
+                    "front": "<h3>During curtain wall installation, a contractor discovers a discrepancy between structural and architectural drawings. What should the architect review first to determine compliance?</h3>",
+                    "back": "<p>The contract documents and specifications.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 5,
+                    "front": "<h3>During curtain wall installation, a contractor discovers a discrepancy between structural and architectural drawings. Who is responsible for construction means and methods?</h3>",
+                    "back": "<p>The contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 6,
+                    "front": "<h3>During curtain wall installation, a contractor discovers a discrepancy between structural and architectural drawings. Who reviews submittals for conformance with design intent?</h3>",
+                    "back": "<p>The architect.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 7,
+                    "front": "<h3>During curtain wall installation, a contractor discovers a discrepancy between structural and architectural drawings. What should the architect do first after observing potential nonconforming work?</h3>",
+                    "back": "<p>Document the condition and notify the contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 8,
+                    "front": "<h3>During curtain wall installation, a contractor discovers a discrepancy between structural and architectural drawings. Who prepares the schedule of values used in payment applications?</h3>",
+                    "back": "<p>The contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 9,
+                    "front": "<h3>During curtain wall installation, a contractor discovers a discrepancy between structural and architectural drawings. Who certifies contractor payment requests?</h3>",
+                    "back": "<p>The architect.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 10,
+                    "front": "<h3>During roof membrane installation, a contractor discovers a discrepancy between structural and architectural drawings. Which document should the contractor submit to request clarification?</h3>",
+                    "back": "<p>Request for Information (RFI).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 11,
+                    "front": "<h3>During roof membrane installation, a contractor discovers a discrepancy between structural and architectural drawings. Which document should the architect issue if the clarification does not affect cost or time?</h3>",
+                    "back": "<p>Architect\u2019s Supplemental Instruction (ASI).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 12,
+                    "front": "<h3>During roof membrane installation, a contractor discovers a discrepancy between structural and architectural drawings. Which document formally modifies contract cost and time after agreement?</h3>",
+                    "back": "<p>Change Order.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 13,
+                    "front": "<h3>During roof membrane installation, a contractor discovers a discrepancy between structural and architectural drawings. Which document directs the contractor to proceed before cost agreement?</h3>",
+                    "back": "<p>Construction Change Directive (CCD).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 14,
+                    "front": "<h3>During roof membrane installation, a contractor discovers a discrepancy between structural and architectural drawings. What should the architect review first to determine compliance?</h3>",
+                    "back": "<p>The contract documents and specifications.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 15,
+                    "front": "<h3>During roof membrane installation, a contractor discovers a discrepancy between structural and architectural drawings. Who is responsible for construction means and methods?</h3>",
+                    "back": "<p>The contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 16,
+                    "front": "<h3>During roof membrane installation, a contractor discovers a discrepancy between structural and architectural drawings. Who reviews submittals for conformance with design intent?</h3>",
+                    "back": "<p>The architect.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 17,
+                    "front": "<h3>During roof membrane installation, a contractor discovers a discrepancy between structural and architectural drawings. What should the architect do first after observing potential nonconforming work?</h3>",
+                    "back": "<p>Document the condition and notify the contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 18,
+                    "front": "<h3>During roof membrane installation, a contractor discovers a discrepancy between structural and architectural drawings. Who prepares the schedule of values used in payment applications?</h3>",
+                    "back": "<p>The contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 19,
+                    "front": "<h3>During roof membrane installation, a contractor discovers a discrepancy between structural and architectural drawings. Who certifies contractor payment requests?</h3>",
+                    "back": "<p>The architect.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 20,
+                    "front": "<h3>During structural steel erection, a contractor discovers a discrepancy between structural and architectural drawings. Which document should the contractor submit to request clarification?</h3>",
+                    "back": "<p>Request for Information (RFI).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 21,
+                    "front": "<h3>During structural steel erection, a contractor discovers a discrepancy between structural and architectural drawings. Which document should the architect issue if the clarification does not affect cost or time?</h3>",
+                    "back": "<p>Architect\u2019s Supplemental Instruction (ASI).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 22,
+                    "front": "<h3>During structural steel erection, a contractor discovers a discrepancy between structural and architectural drawings. Which document formally modifies contract cost and time after agreement?</h3>",
+                    "back": "<p>Change Order.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 23,
+                    "front": "<h3>During structural steel erection, a contractor discovers a discrepancy between structural and architectural drawings. Which document directs the contractor to proceed before cost agreement?</h3>",
+                    "back": "<p>Construction Change Directive (CCD).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 24,
+                    "front": "<h3>During structural steel erection, a contractor discovers a discrepancy between structural and architectural drawings. What should the architect review first to determine compliance?</h3>",
+                    "back": "<p>The contract documents and specifications.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 25,
+                    "front": "<h3>During structural steel erection, a contractor discovers a discrepancy between structural and architectural drawings. Who is responsible for construction means and methods?</h3>",
+                    "back": "<p>The contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 26,
+                    "front": "<h3>During structural steel erection, a contractor discovers a discrepancy between structural and architectural drawings. Who reviews submittals for conformance with design intent?</h3>",
+                    "back": "<p>The architect.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 27,
+                    "front": "<h3>During structural steel erection, a contractor discovers a discrepancy between structural and architectural drawings. What should the architect do first after observing potential nonconforming work?</h3>",
+                    "back": "<p>Document the condition and notify the contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 28,
+                    "front": "<h3>During structural steel erection, a contractor discovers a discrepancy between structural and architectural drawings. Who prepares the schedule of values used in payment applications?</h3>",
+                    "back": "<p>The contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 29,
+                    "front": "<h3>During structural steel erection, a contractor discovers a discrepancy between structural and architectural drawings. Who certifies contractor payment requests?</h3>",
+                    "back": "<p>The architect.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 30,
+                    "front": "<h3>During mechanical ductwork installation, a contractor discovers a discrepancy between structural and architectural drawings. Which document should the contractor submit to request clarification?</h3>",
+                    "back": "<p>Request for Information (RFI).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 31,
+                    "front": "<h3>During mechanical ductwork installation, a contractor discovers a discrepancy between structural and architectural drawings. Which document should the architect issue if the clarification does not affect cost or time?</h3>",
+                    "back": "<p>Architect\u2019s Supplemental Instruction (ASI).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 32,
+                    "front": "<h3>During mechanical ductwork installation, a contractor discovers a discrepancy between structural and architectural drawings. Which document formally modifies contract cost and time after agreement?</h3>",
+                    "back": "<p>Change Order.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 33,
+                    "front": "<h3>During mechanical ductwork installation, a contractor discovers a discrepancy between structural and architectural drawings. Which document directs the contractor to proceed before cost agreement?</h3>",
+                    "back": "<p>Construction Change Directive (CCD).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 34,
+                    "front": "<h3>During mechanical ductwork installation, a contractor discovers a discrepancy between structural and architectural drawings. What should the architect review first to determine compliance?</h3>",
+                    "back": "<p>The contract documents and specifications.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 35,
+                    "front": "<h3>During mechanical ductwork installation, a contractor discovers a discrepancy between structural and architectural drawings. Who is responsible for construction means and methods?</h3>",
+                    "back": "<p>The contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 36,
+                    "front": "<h3>During mechanical ductwork installation, a contractor discovers a discrepancy between structural and architectural drawings. Who reviews submittals for conformance with design intent?</h3>",
+                    "back": "<p>The architect.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 37,
+                    "front": "<h3>During mechanical ductwork installation, a contractor discovers a discrepancy between structural and architectural drawings. What should the architect do first after observing potential nonconforming work?</h3>",
+                    "back": "<p>Document the condition and notify the contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 38,
+                    "front": "<h3>During mechanical ductwork installation, a contractor discovers a discrepancy between structural and architectural drawings. Who prepares the schedule of values used in payment applications?</h3>",
+                    "back": "<p>The contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 39,
+                    "front": "<h3>During mechanical ductwork installation, a contractor discovers a discrepancy between structural and architectural drawings. Who certifies contractor payment requests?</h3>",
+                    "back": "<p>The architect.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 40,
+                    "front": "<h3>During electrical conduit installation, a contractor discovers a discrepancy between structural and architectural drawings. Which document should the contractor submit to request clarification?</h3>",
+                    "back": "<p>Request for Information (RFI).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 41,
+                    "front": "<h3>During electrical conduit installation, a contractor discovers a discrepancy between structural and architectural drawings. Which document should the architect issue if the clarification does not affect cost or time?</h3>",
+                    "back": "<p>Architect\u2019s Supplemental Instruction (ASI).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 42,
+                    "front": "<h3>During electrical conduit installation, a contractor discovers a discrepancy between structural and architectural drawings. Which document formally modifies contract cost and time after agreement?</h3>",
+                    "back": "<p>Change Order.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 43,
+                    "front": "<h3>During electrical conduit installation, a contractor discovers a discrepancy between structural and architectural drawings. Which document directs the contractor to proceed before cost agreement?</h3>",
+                    "back": "<p>Construction Change Directive (CCD).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 44,
+                    "front": "<h3>During electrical conduit installation, a contractor discovers a discrepancy between structural and architectural drawings. What should the architect review first to determine compliance?</h3>",
+                    "back": "<p>The contract documents and specifications.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 45,
+                    "front": "<h3>During electrical conduit installation, a contractor discovers a discrepancy between structural and architectural drawings. Who is responsible for construction means and methods?</h3>",
+                    "back": "<p>The contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 46,
+                    "front": "<h3>During electrical conduit installation, a contractor discovers a discrepancy between structural and architectural drawings. Who reviews submittals for conformance with design intent?</h3>",
+                    "back": "<p>The architect.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 47,
+                    "front": "<h3>During electrical conduit installation, a contractor discovers a discrepancy between structural and architectural drawings. What should the architect do first after observing potential nonconforming work?</h3>",
+                    "back": "<p>Document the condition and notify the contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 48,
+                    "front": "<h3>During electrical conduit installation, a contractor discovers a discrepancy between structural and architectural drawings. Who prepares the schedule of values used in payment applications?</h3>",
+                    "back": "<p>The contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 49,
+                    "front": "<h3>During electrical conduit installation, a contractor discovers a discrepancy between structural and architectural drawings. Who certifies contractor payment requests?</h3>",
+                    "back": "<p>The architect.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 50,
+                    "front": "<h3>During masonry wall construction, a contractor discovers a discrepancy between structural and architectural drawings. Which document should the contractor submit to request clarification?</h3>",
+                    "back": "<p>Request for Information (RFI).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 51,
+                    "front": "<h3>During masonry wall construction, a contractor discovers a discrepancy between structural and architectural drawings. Which document should the architect issue if the clarification does not affect cost or time?</h3>",
+                    "back": "<p>Architect\u2019s Supplemental Instruction (ASI).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 52,
+                    "front": "<h3>During masonry wall construction, a contractor discovers a discrepancy between structural and architectural drawings. Which document formally modifies contract cost and time after agreement?</h3>",
+                    "back": "<p>Change Order.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 53,
+                    "front": "<h3>During masonry wall construction, a contractor discovers a discrepancy between structural and architectural drawings. Which document directs the contractor to proceed before cost agreement?</h3>",
+                    "back": "<p>Construction Change Directive (CCD).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 54,
+                    "front": "<h3>During masonry wall construction, a contractor discovers a discrepancy between structural and architectural drawings. What should the architect review first to determine compliance?</h3>",
+                    "back": "<p>The contract documents and specifications.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 55,
+                    "front": "<h3>During masonry wall construction, a contractor discovers a discrepancy between structural and architectural drawings. Who is responsible for construction means and methods?</h3>",
+                    "back": "<p>The contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 56,
+                    "front": "<h3>During masonry wall construction, a contractor discovers a discrepancy between structural and architectural drawings. Who reviews submittals for conformance with design intent?</h3>",
+                    "back": "<p>The architect.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 57,
+                    "front": "<h3>During masonry wall construction, a contractor discovers a discrepancy between structural and architectural drawings. What should the architect do first after observing potential nonconforming work?</h3>",
+                    "back": "<p>Document the condition and notify the contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 58,
+                    "front": "<h3>During masonry wall construction, a contractor discovers a discrepancy between structural and architectural drawings. Who prepares the schedule of values used in payment applications?</h3>",
+                    "back": "<p>The contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 59,
+                    "front": "<h3>During masonry wall construction, a contractor discovers a discrepancy between structural and architectural drawings. Who certifies contractor payment requests?</h3>",
+                    "back": "<p>The architect.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 60,
+                    "front": "<h3>During concrete slab placement, a contractor discovers a discrepancy between structural and architectural drawings. Which document should the contractor submit to request clarification?</h3>",
+                    "back": "<p>Request for Information (RFI).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 61,
+                    "front": "<h3>During concrete slab placement, a contractor discovers a discrepancy between structural and architectural drawings. Which document should the architect issue if the clarification does not affect cost or time?</h3>",
+                    "back": "<p>Architect\u2019s Supplemental Instruction (ASI).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 62,
+                    "front": "<h3>During concrete slab placement, a contractor discovers a discrepancy between structural and architectural drawings. Which document formally modifies contract cost and time after agreement?</h3>",
+                    "back": "<p>Change Order.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 63,
+                    "front": "<h3>During concrete slab placement, a contractor discovers a discrepancy between structural and architectural drawings. Which document directs the contractor to proceed before cost agreement?</h3>",
+                    "back": "<p>Construction Change Directive (CCD).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 64,
+                    "front": "<h3>During concrete slab placement, a contractor discovers a discrepancy between structural and architectural drawings. What should the architect review first to determine compliance?</h3>",
+                    "back": "<p>The contract documents and specifications.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 65,
+                    "front": "<h3>During concrete slab placement, a contractor discovers a discrepancy between structural and architectural drawings. Who is responsible for construction means and methods?</h3>",
+                    "back": "<p>The contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 66,
+                    "front": "<h3>During concrete slab placement, a contractor discovers a discrepancy between structural and architectural drawings. Who reviews submittals for conformance with design intent?</h3>",
+                    "back": "<p>The architect.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 67,
+                    "front": "<h3>During concrete slab placement, a contractor discovers a discrepancy between structural and architectural drawings. What should the architect do first after observing potential nonconforming work?</h3>",
+                    "back": "<p>Document the condition and notify the contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 68,
+                    "front": "<h3>During concrete slab placement, a contractor discovers a discrepancy between structural and architectural drawings. Who prepares the schedule of values used in payment applications?</h3>",
+                    "back": "<p>The contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 69,
+                    "front": "<h3>During concrete slab placement, a contractor discovers a discrepancy between structural and architectural drawings. Who certifies contractor payment requests?</h3>",
+                    "back": "<p>The architect.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 70,
+                    "front": "<h3>During storefront glazing installation, a contractor discovers a discrepancy between structural and architectural drawings. Which document should the contractor submit to request clarification?</h3>",
+                    "back": "<p>Request for Information (RFI).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 71,
+                    "front": "<h3>During storefront glazing installation, a contractor discovers a discrepancy between structural and architectural drawings. Which document should the architect issue if the clarification does not affect cost or time?</h3>",
+                    "back": "<p>Architect\u2019s Supplemental Instruction (ASI).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 72,
+                    "front": "<h3>During storefront glazing installation, a contractor discovers a discrepancy between structural and architectural drawings. Which document formally modifies contract cost and time after agreement?</h3>",
+                    "back": "<p>Change Order.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 73,
+                    "front": "<h3>During storefront glazing installation, a contractor discovers a discrepancy between structural and architectural drawings. Which document directs the contractor to proceed before cost agreement?</h3>",
+                    "back": "<p>Construction Change Directive (CCD).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 74,
+                    "front": "<h3>During storefront glazing installation, a contractor discovers a discrepancy between structural and architectural drawings. What should the architect review first to determine compliance?</h3>",
+                    "back": "<p>The contract documents and specifications.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 75,
+                    "front": "<h3>During storefront glazing installation, a contractor discovers a discrepancy between structural and architectural drawings. Who is responsible for construction means and methods?</h3>",
+                    "back": "<p>The contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 76,
+                    "front": "<h3>During storefront glazing installation, a contractor discovers a discrepancy between structural and architectural drawings. Who reviews submittals for conformance with design intent?</h3>",
+                    "back": "<p>The architect.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 77,
+                    "front": "<h3>During storefront glazing installation, a contractor discovers a discrepancy between structural and architectural drawings. What should the architect do first after observing potential nonconforming work?</h3>",
+                    "back": "<p>Document the condition and notify the contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 78,
+                    "front": "<h3>During storefront glazing installation, a contractor discovers a discrepancy between structural and architectural drawings. Who prepares the schedule of values used in payment applications?</h3>",
+                    "back": "<p>The contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 79,
+                    "front": "<h3>During storefront glazing installation, a contractor discovers a discrepancy between structural and architectural drawings. Who certifies contractor payment requests?</h3>",
+                    "back": "<p>The architect.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 80,
+                    "front": "<h3>During interior drywall installation, a contractor discovers a discrepancy between structural and architectural drawings. Which document should the contractor submit to request clarification?</h3>",
+                    "back": "<p>Request for Information (RFI).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 81,
+                    "front": "<h3>During interior drywall installation, a contractor discovers a discrepancy between structural and architectural drawings. Which document should the architect issue if the clarification does not affect cost or time?</h3>",
+                    "back": "<p>Architect\u2019s Supplemental Instruction (ASI).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 82,
+                    "front": "<h3>During interior drywall installation, a contractor discovers a discrepancy between structural and architectural drawings. Which document formally modifies contract cost and time after agreement?</h3>",
+                    "back": "<p>Change Order.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 83,
+                    "front": "<h3>During interior drywall installation, a contractor discovers a discrepancy between structural and architectural drawings. Which document directs the contractor to proceed before cost agreement?</h3>",
+                    "back": "<p>Construction Change Directive (CCD).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 84,
+                    "front": "<h3>During interior drywall installation, a contractor discovers a discrepancy between structural and architectural drawings. What should the architect review first to determine compliance?</h3>",
+                    "back": "<p>The contract documents and specifications.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 85,
+                    "front": "<h3>During interior drywall installation, a contractor discovers a discrepancy between structural and architectural drawings. Who is responsible for construction means and methods?</h3>",
+                    "back": "<p>The contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 86,
+                    "front": "<h3>During interior drywall installation, a contractor discovers a discrepancy between structural and architectural drawings. Who reviews submittals for conformance with design intent?</h3>",
+                    "back": "<p>The architect.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 87,
+                    "front": "<h3>During interior drywall installation, a contractor discovers a discrepancy between structural and architectural drawings. What should the architect do first after observing potential nonconforming work?</h3>",
+                    "back": "<p>Document the condition and notify the contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 88,
+                    "front": "<h3>During interior drywall installation, a contractor discovers a discrepancy between structural and architectural drawings. Who prepares the schedule of values used in payment applications?</h3>",
+                    "back": "<p>The contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 89,
+                    "front": "<h3>During interior drywall installation, a contractor discovers a discrepancy between structural and architectural drawings. Who certifies contractor payment requests?</h3>",
+                    "back": "<p>The architect.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 90,
+                    "front": "<h3>During site drainage installation, a contractor discovers a discrepancy between structural and architectural drawings. Which document should the contractor submit to request clarification?</h3>",
+                    "back": "<p>Request for Information (RFI).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 91,
+                    "front": "<h3>During site drainage installation, a contractor discovers a discrepancy between structural and architectural drawings. Which document should the architect issue if the clarification does not affect cost or time?</h3>",
+                    "back": "<p>Architect\u2019s Supplemental Instruction (ASI).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 92,
+                    "front": "<h3>During site drainage installation, a contractor discovers a discrepancy between structural and architectural drawings. Which document formally modifies contract cost and time after agreement?</h3>",
+                    "back": "<p>Change Order.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 93,
+                    "front": "<h3>During site drainage installation, a contractor discovers a discrepancy between structural and architectural drawings. Which document directs the contractor to proceed before cost agreement?</h3>",
+                    "back": "<p>Construction Change Directive (CCD).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 94,
+                    "front": "<h3>During site drainage installation, a contractor discovers a discrepancy between structural and architectural drawings. What should the architect review first to determine compliance?</h3>",
+                    "back": "<p>The contract documents and specifications.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 95,
+                    "front": "<h3>During site drainage installation, a contractor discovers a discrepancy between structural and architectural drawings. Who is responsible for construction means and methods?</h3>",
+                    "back": "<p>The contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 96,
+                    "front": "<h3>During site drainage installation, a contractor discovers a discrepancy between structural and architectural drawings. Who reviews submittals for conformance with design intent?</h3>",
+                    "back": "<p>The architect.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 97,
+                    "front": "<h3>During site drainage installation, a contractor discovers a discrepancy between structural and architectural drawings. What should the architect do first after observing potential nonconforming work?</h3>",
+                    "back": "<p>Document the condition and notify the contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 98,
+                    "front": "<h3>During site drainage installation, a contractor discovers a discrepancy between structural and architectural drawings. Who prepares the schedule of values used in payment applications?</h3>",
+                    "back": "<p>The contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 99,
+                    "front": "<h3>During site drainage installation, a contractor discovers a discrepancy between structural and architectural drawings. Who certifies contractor payment requests?</h3>",
+                    "back": "<p>The architect.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 100,
+                    "front": "<h3>During curtain wall installation, a subcontractor installs a product different from the one specified. Which document should the contractor submit to request clarification?</h3>",
+                    "back": "<p>Request for Information (RFI).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 101,
+                    "front": "<h3>During curtain wall installation, a subcontractor installs a product different from the one specified. Which document should the architect issue if the clarification does not affect cost or time?</h3>",
+                    "back": "<p>Architect\u2019s Supplemental Instruction (ASI).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 102,
+                    "front": "<h3>During curtain wall installation, a subcontractor installs a product different from the one specified. Which document formally modifies contract cost and time after agreement?</h3>",
+                    "back": "<p>Change Order.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 103,
+                    "front": "<h3>During curtain wall installation, a subcontractor installs a product different from the one specified. Which document directs the contractor to proceed before cost agreement?</h3>",
+                    "back": "<p>Construction Change Directive (CCD).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 104,
+                    "front": "<h3>During curtain wall installation, a subcontractor installs a product different from the one specified. What should the architect review first to determine compliance?</h3>",
+                    "back": "<p>The contract documents and specifications.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 105,
+                    "front": "<h3>During curtain wall installation, a subcontractor installs a product different from the one specified. Who is responsible for construction means and methods?</h3>",
+                    "back": "<p>The contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 106,
+                    "front": "<h3>During curtain wall installation, a subcontractor installs a product different from the one specified. Who reviews submittals for conformance with design intent?</h3>",
+                    "back": "<p>The architect.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 107,
+                    "front": "<h3>During curtain wall installation, a subcontractor installs a product different from the one specified. What should the architect do first after observing potential nonconforming work?</h3>",
+                    "back": "<p>Document the condition and notify the contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 108,
+                    "front": "<h3>During curtain wall installation, a subcontractor installs a product different from the one specified. Who prepares the schedule of values used in payment applications?</h3>",
+                    "back": "<p>The contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 109,
+                    "front": "<h3>During curtain wall installation, a subcontractor installs a product different from the one specified. Who certifies contractor payment requests?</h3>",
+                    "back": "<p>The architect.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 110,
+                    "front": "<h3>During roof membrane installation, a subcontractor installs a product different from the one specified. Which document should the contractor submit to request clarification?</h3>",
+                    "back": "<p>Request for Information (RFI).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 111,
+                    "front": "<h3>During roof membrane installation, a subcontractor installs a product different from the one specified. Which document should the architect issue if the clarification does not affect cost or time?</h3>",
+                    "back": "<p>Architect\u2019s Supplemental Instruction (ASI).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 112,
+                    "front": "<h3>During roof membrane installation, a subcontractor installs a product different from the one specified. Which document formally modifies contract cost and time after agreement?</h3>",
+                    "back": "<p>Change Order.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 113,
+                    "front": "<h3>During roof membrane installation, a subcontractor installs a product different from the one specified. Which document directs the contractor to proceed before cost agreement?</h3>",
+                    "back": "<p>Construction Change Directive (CCD).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 114,
+                    "front": "<h3>During roof membrane installation, a subcontractor installs a product different from the one specified. What should the architect review first to determine compliance?</h3>",
+                    "back": "<p>The contract documents and specifications.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 115,
+                    "front": "<h3>During roof membrane installation, a subcontractor installs a product different from the one specified. Who is responsible for construction means and methods?</h3>",
+                    "back": "<p>The contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 116,
+                    "front": "<h3>During roof membrane installation, a subcontractor installs a product different from the one specified. Who reviews submittals for conformance with design intent?</h3>",
+                    "back": "<p>The architect.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 117,
+                    "front": "<h3>During roof membrane installation, a subcontractor installs a product different from the one specified. What should the architect do first after observing potential nonconforming work?</h3>",
+                    "back": "<p>Document the condition and notify the contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 118,
+                    "front": "<h3>During roof membrane installation, a subcontractor installs a product different from the one specified. Who prepares the schedule of values used in payment applications?</h3>",
+                    "back": "<p>The contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 119,
+                    "front": "<h3>During roof membrane installation, a subcontractor installs a product different from the one specified. Who certifies contractor payment requests?</h3>",
+                    "back": "<p>The architect.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 120,
+                    "front": "<h3>During structural steel erection, a subcontractor installs a product different from the one specified. Which document should the contractor submit to request clarification?</h3>",
+                    "back": "<p>Request for Information (RFI).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 121,
+                    "front": "<h3>During structural steel erection, a subcontractor installs a product different from the one specified. Which document should the architect issue if the clarification does not affect cost or time?</h3>",
+                    "back": "<p>Architect\u2019s Supplemental Instruction (ASI).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 122,
+                    "front": "<h3>During structural steel erection, a subcontractor installs a product different from the one specified. Which document formally modifies contract cost and time after agreement?</h3>",
+                    "back": "<p>Change Order.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 123,
+                    "front": "<h3>During structural steel erection, a subcontractor installs a product different from the one specified. Which document directs the contractor to proceed before cost agreement?</h3>",
+                    "back": "<p>Construction Change Directive (CCD).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 124,
+                    "front": "<h3>During structural steel erection, a subcontractor installs a product different from the one specified. What should the architect review first to determine compliance?</h3>",
+                    "back": "<p>The contract documents and specifications.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 125,
+                    "front": "<h3>During structural steel erection, a subcontractor installs a product different from the one specified. Who is responsible for construction means and methods?</h3>",
+                    "back": "<p>The contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 126,
+                    "front": "<h3>During structural steel erection, a subcontractor installs a product different from the one specified. Who reviews submittals for conformance with design intent?</h3>",
+                    "back": "<p>The architect.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 127,
+                    "front": "<h3>During structural steel erection, a subcontractor installs a product different from the one specified. What should the architect do first after observing potential nonconforming work?</h3>",
+                    "back": "<p>Document the condition and notify the contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 128,
+                    "front": "<h3>During structural steel erection, a subcontractor installs a product different from the one specified. Who prepares the schedule of values used in payment applications?</h3>",
+                    "back": "<p>The contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 129,
+                    "front": "<h3>During structural steel erection, a subcontractor installs a product different from the one specified. Who certifies contractor payment requests?</h3>",
+                    "back": "<p>The architect.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 130,
+                    "front": "<h3>During mechanical ductwork installation, a subcontractor installs a product different from the one specified. Which document should the contractor submit to request clarification?</h3>",
+                    "back": "<p>Request for Information (RFI).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 131,
+                    "front": "<h3>During mechanical ductwork installation, a subcontractor installs a product different from the one specified. Which document should the architect issue if the clarification does not affect cost or time?</h3>",
+                    "back": "<p>Architect\u2019s Supplemental Instruction (ASI).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 132,
+                    "front": "<h3>During mechanical ductwork installation, a subcontractor installs a product different from the one specified. Which document formally modifies contract cost and time after agreement?</h3>",
+                    "back": "<p>Change Order.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 133,
+                    "front": "<h3>During mechanical ductwork installation, a subcontractor installs a product different from the one specified. Which document directs the contractor to proceed before cost agreement?</h3>",
+                    "back": "<p>Construction Change Directive (CCD).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 134,
+                    "front": "<h3>During mechanical ductwork installation, a subcontractor installs a product different from the one specified. What should the architect review first to determine compliance?</h3>",
+                    "back": "<p>The contract documents and specifications.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 135,
+                    "front": "<h3>During mechanical ductwork installation, a subcontractor installs a product different from the one specified. Who is responsible for construction means and methods?</h3>",
+                    "back": "<p>The contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 136,
+                    "front": "<h3>During mechanical ductwork installation, a subcontractor installs a product different from the one specified. Who reviews submittals for conformance with design intent?</h3>",
+                    "back": "<p>The architect.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 137,
+                    "front": "<h3>During mechanical ductwork installation, a subcontractor installs a product different from the one specified. What should the architect do first after observing potential nonconforming work?</h3>",
+                    "back": "<p>Document the condition and notify the contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 138,
+                    "front": "<h3>During mechanical ductwork installation, a subcontractor installs a product different from the one specified. Who prepares the schedule of values used in payment applications?</h3>",
+                    "back": "<p>The contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 139,
+                    "front": "<h3>During mechanical ductwork installation, a subcontractor installs a product different from the one specified. Who certifies contractor payment requests?</h3>",
+                    "back": "<p>The architect.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 140,
+                    "front": "<h3>During electrical conduit installation, a subcontractor installs a product different from the one specified. Which document should the contractor submit to request clarification?</h3>",
+                    "back": "<p>Request for Information (RFI).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 141,
+                    "front": "<h3>During electrical conduit installation, a subcontractor installs a product different from the one specified. Which document should the architect issue if the clarification does not affect cost or time?</h3>",
+                    "back": "<p>Architect\u2019s Supplemental Instruction (ASI).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 142,
+                    "front": "<h3>During electrical conduit installation, a subcontractor installs a product different from the one specified. Which document formally modifies contract cost and time after agreement?</h3>",
+                    "back": "<p>Change Order.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 143,
+                    "front": "<h3>During electrical conduit installation, a subcontractor installs a product different from the one specified. Which document directs the contractor to proceed before cost agreement?</h3>",
+                    "back": "<p>Construction Change Directive (CCD).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 144,
+                    "front": "<h3>During electrical conduit installation, a subcontractor installs a product different from the one specified. What should the architect review first to determine compliance?</h3>",
+                    "back": "<p>The contract documents and specifications.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 145,
+                    "front": "<h3>During electrical conduit installation, a subcontractor installs a product different from the one specified. Who is responsible for construction means and methods?</h3>",
+                    "back": "<p>The contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 146,
+                    "front": "<h3>During electrical conduit installation, a subcontractor installs a product different from the one specified. Who reviews submittals for conformance with design intent?</h3>",
+                    "back": "<p>The architect.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 147,
+                    "front": "<h3>During electrical conduit installation, a subcontractor installs a product different from the one specified. What should the architect do first after observing potential nonconforming work?</h3>",
+                    "back": "<p>Document the condition and notify the contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 148,
+                    "front": "<h3>During electrical conduit installation, a subcontractor installs a product different from the one specified. Who prepares the schedule of values used in payment applications?</h3>",
+                    "back": "<p>The contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 149,
+                    "front": "<h3>During electrical conduit installation, a subcontractor installs a product different from the one specified. Who certifies contractor payment requests?</h3>",
+                    "back": "<p>The architect.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 150,
+                    "front": "<h3>During masonry wall construction, a subcontractor installs a product different from the one specified. Which document should the contractor submit to request clarification?</h3>",
+                    "back": "<p>Request for Information (RFI).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 151,
+                    "front": "<h3>During masonry wall construction, a subcontractor installs a product different from the one specified. Which document should the architect issue if the clarification does not affect cost or time?</h3>",
+                    "back": "<p>Architect\u2019s Supplemental Instruction (ASI).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 152,
+                    "front": "<h3>During masonry wall construction, a subcontractor installs a product different from the one specified. Which document formally modifies contract cost and time after agreement?</h3>",
+                    "back": "<p>Change Order.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 153,
+                    "front": "<h3>During masonry wall construction, a subcontractor installs a product different from the one specified. Which document directs the contractor to proceed before cost agreement?</h3>",
+                    "back": "<p>Construction Change Directive (CCD).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 154,
+                    "front": "<h3>During masonry wall construction, a subcontractor installs a product different from the one specified. What should the architect review first to determine compliance?</h3>",
+                    "back": "<p>The contract documents and specifications.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 155,
+                    "front": "<h3>During masonry wall construction, a subcontractor installs a product different from the one specified. Who is responsible for construction means and methods?</h3>",
+                    "back": "<p>The contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 156,
+                    "front": "<h3>During masonry wall construction, a subcontractor installs a product different from the one specified. Who reviews submittals for conformance with design intent?</h3>",
+                    "back": "<p>The architect.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 157,
+                    "front": "<h3>During masonry wall construction, a subcontractor installs a product different from the one specified. What should the architect do first after observing potential nonconforming work?</h3>",
+                    "back": "<p>Document the condition and notify the contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 158,
+                    "front": "<h3>During masonry wall construction, a subcontractor installs a product different from the one specified. Who prepares the schedule of values used in payment applications?</h3>",
+                    "back": "<p>The contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 159,
+                    "front": "<h3>During masonry wall construction, a subcontractor installs a product different from the one specified. Who certifies contractor payment requests?</h3>",
+                    "back": "<p>The architect.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 160,
+                    "front": "<h3>During concrete slab placement, a subcontractor installs a product different from the one specified. Which document should the contractor submit to request clarification?</h3>",
+                    "back": "<p>Request for Information (RFI).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 161,
+                    "front": "<h3>During concrete slab placement, a subcontractor installs a product different from the one specified. Which document should the architect issue if the clarification does not affect cost or time?</h3>",
+                    "back": "<p>Architect\u2019s Supplemental Instruction (ASI).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 162,
+                    "front": "<h3>During concrete slab placement, a subcontractor installs a product different from the one specified. Which document formally modifies contract cost and time after agreement?</h3>",
+                    "back": "<p>Change Order.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 163,
+                    "front": "<h3>During concrete slab placement, a subcontractor installs a product different from the one specified. Which document directs the contractor to proceed before cost agreement?</h3>",
+                    "back": "<p>Construction Change Directive (CCD).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 164,
+                    "front": "<h3>During concrete slab placement, a subcontractor installs a product different from the one specified. What should the architect review first to determine compliance?</h3>",
+                    "back": "<p>The contract documents and specifications.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 165,
+                    "front": "<h3>During concrete slab placement, a subcontractor installs a product different from the one specified. Who is responsible for construction means and methods?</h3>",
+                    "back": "<p>The contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 166,
+                    "front": "<h3>During concrete slab placement, a subcontractor installs a product different from the one specified. Who reviews submittals for conformance with design intent?</h3>",
+                    "back": "<p>The architect.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 167,
+                    "front": "<h3>During concrete slab placement, a subcontractor installs a product different from the one specified. What should the architect do first after observing potential nonconforming work?</h3>",
+                    "back": "<p>Document the condition and notify the contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 168,
+                    "front": "<h3>During concrete slab placement, a subcontractor installs a product different from the one specified. Who prepares the schedule of values used in payment applications?</h3>",
+                    "back": "<p>The contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 169,
+                    "front": "<h3>During concrete slab placement, a subcontractor installs a product different from the one specified. Who certifies contractor payment requests?</h3>",
+                    "back": "<p>The architect.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 170,
+                    "front": "<h3>During storefront glazing installation, a subcontractor installs a product different from the one specified. Which document should the contractor submit to request clarification?</h3>",
+                    "back": "<p>Request for Information (RFI).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 171,
+                    "front": "<h3>During storefront glazing installation, a subcontractor installs a product different from the one specified. Which document should the architect issue if the clarification does not affect cost or time?</h3>",
+                    "back": "<p>Architect\u2019s Supplemental Instruction (ASI).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 172,
+                    "front": "<h3>During storefront glazing installation, a subcontractor installs a product different from the one specified. Which document formally modifies contract cost and time after agreement?</h3>",
+                    "back": "<p>Change Order.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 173,
+                    "front": "<h3>During storefront glazing installation, a subcontractor installs a product different from the one specified. Which document directs the contractor to proceed before cost agreement?</h3>",
+                    "back": "<p>Construction Change Directive (CCD).</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 174,
+                    "front": "<h3>During storefront glazing installation, a subcontractor installs a product different from the one specified. What should the architect review first to determine compliance?</h3>",
+                    "back": "<p>The contract documents and specifications.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 175,
+                    "front": "<h3>During storefront glazing installation, a subcontractor installs a product different from the one specified. Who is responsible for construction means and methods?</h3>",
+                    "back": "<p>The contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 176,
+                    "front": "<h3>During storefront glazing installation, a subcontractor installs a product different from the one specified. Who reviews submittals for conformance with design intent?</h3>",
+                    "back": "<p>The architect.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 177,
+                    "front": "<h3>During storefront glazing installation, a subcontractor installs a product different from the one specified. What should the architect do first after observing potential nonconforming work?</h3>",
+                    "back": "<p>Document the condition and notify the contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 178,
+                    "front": "<h3>During storefront glazing installation, a subcontractor installs a product different from the one specified. Who prepares the schedule of values used in payment applications?</h3>",
+                    "back": "<p>The contractor.</p>",
+                    "markedAsCorrect": false
+                },
+                {
+                    "index": 179,
+                    "front": "<h3>During storefront glazing installation, a subcontractor installs a product different from the one specified. Who certifies contractor payment requests?</h3>",
+                    "back": "<p>The architect.</p>",
+                    "markedAsCorrect": false
+                }
+            ]
+        }
         
         this.currentCECard = this.CEcards[0];
         this.currentCE2Card = this.CEcards2[0];
         this.currentCE3Card = this.CEcards3[0];
         this.currentCE4Card = this.CEcards4[0];
         this.currentCE5Card = this.CEcards5[0];
+        this.currentCE6Card = this.CEcards6[0];
     },
   })
 })

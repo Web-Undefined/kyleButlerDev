@@ -38,6 +38,7 @@
 										<option value="3">Which document should be used?</option>
 										<option value="4">Who is responsible?</option>
 										<option value="5">What should the architect do FIRST?</option>
+										<option value="6">Trap + Decision + Case</option>
 									</select>
 								</div>
 
@@ -300,6 +301,57 @@
 									<div class="progress">
 										<div class="bar"
 											:style="`width: ${(currentCE5Card.index+1)/CEcards5.length*100}%; border-radius: 9999px; transition: width 0.3s ease; opacity: 1; background: #0d7377;`">
+										</div>
+									</div>
+								</div>
+
+							<!-- Deck #6 -->
+								<div x-show="currentCEDeck == 6">
+									<div class="card-carousel" aria-roledescription="carousel">
+										
+										<ul class="icons" style="margin: 0;">
+											<li><a @click="previousCE6Card()" title="Previous Card" class="icon solid fa-chevron-left"></a></li>
+										</ul>
+										<div class="business-card" role="button" aria-pressed="false" tabindex="0" aria-label="Business card" style="background-color: #4b4b4b;">
+											<div class="card-inner">
+												<div class="card-face card-front" style="background-color: #4b4b4b;">
+
+													<i x-show="currentCE6Card.markedAsCorrect == false" @click.stop="toggleMarkedCorrect($event, 'CE6')" class="far fa-circle card-icon" title="Mark as correct"></i>
+													<i x-show="currentCE6Card.markedAsCorrect == true" @click.stop="toggleMarkedCorrect($event, 'CE6')" class="far fa-check-circle card-icon green" title="Mark as incorrect"></i>
+
+													<div class="card-content">
+														<div x-html="currentCE6Card.front"></div>
+													</div>
+												</div>
+												<div class="card-face card-back" aria-hidden="true" style="background-color: #333333;">
+
+													<i x-show="currentCE6Card.markedAsCorrect == false" @click.stop="toggleMarkedCorrect($event, 'CE6')" class="far fa-circle card-icon" title="Mark as correct"></i>
+													<i x-show="currentCE6Card.markedAsCorrect == true" @click.stop="toggleMarkedCorrect($event, 'CE6')" class="far fa-check-circle card-icon green" title="Mark as incorrect"></i>
+													
+													<div class="card-content">
+														<div x-html="currentCE6Card.back"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<ul class="icons" style="margin: 0;">
+											<li><a @click="nextCE6Card()" title="Next Card" class="icon solid fa-chevron-right"></a></li>
+										</ul>
+									</div>
+									<div style="display: flex; justify-content: space-around; align-items: center; margin-top: 0.5rem;">
+									
+										<ul class="icons" style="margin: 0;">
+											<li><a @click="backToCE6Start()" title="Back to Start" class="icon solid fa-fast-backward"></a></li>
+										</ul>
+										<p style="margin: 0" class="card-counter">Card <span x-text="currentCE6Card.index + 1"></span> of <span x-text="CEcards6.length"></span></p>
+										<ul class="icons" style="margin: 0;">
+											<li><a @click="shuffleCE6Cards()" title="Shuffle Cards" class="icon solid fa-random"></a></li>
+										</ul>
+									
+									</div>
+									<div class="progress">
+										<div class="bar"
+											:style="`width: ${(currentCE6Card.index+1)/CEcards6.length*100}%; border-radius: 9999px; transition: width 0.3s ease; opacity: 1; background: #4b4b4b;`">
 										</div>
 									</div>
 								</div>
