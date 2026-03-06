@@ -1420,7 +1420,125 @@ document.addEventListener('alpine:init', () => {
                 index: 168,
                 front: '<h3>G716</h3>',
                 back: '<p>Request for Information</p>' 
-            }
+            },{ index: 169, front: "<h3>During a site visit, the architect observes that the contractor has installed a different ceiling tile than specified. The tile appears similar and meets performance requirements. What is the architect’s BEST action?</h3>", back: "<p>Notify the contractor that the installed product does not conform to the contract documents and require a formal substitution request or correction.</p>" },
+
+{ index: 170, front: "<h3>A contractor submits a shop drawing that differs from the construction documents but notes 'field verified'. What should the architect do?</h3>", back: "<p>Reject or return the submittal noting the deviation and request clarification or a substitution request before approval.</p>" },
+
+{ index: 171, front: "<h3>The contractor asks the architect for instructions on how to install a complicated curtain wall detail. What is the architect’s MOST appropriate response?</h3>", back: "<p>Clarify the design intent through documentation but avoid directing construction means or methods.</p>" },
+
+{ index: 172, front: "<h3>During construction, the contractor discovers a discrepancy between the structural and architectural drawings. Work in the area is scheduled for the next day. What should occur FIRST?</h3>", back: "<p>The contractor should submit an RFI requesting clarification before proceeding with the work.</p>" },
+
+{ index: 173, front: "<h3>The contractor submits a pay application including work the architect has not yet observed. What is the architect’s BEST response?</h3>", back: "<p>Certify payment only for the work that can reasonably be verified through site observation.</p>" },
+
+{ index: 174, front: "<h3>During a site visit, the architect observes unsafe scaffolding. What is the architect’s MOST appropriate action?</h3>", back: "<p>Notify the contractor of the observed unsafe condition but do not direct safety procedures.</p>" },
+
+{ index: 175, front: "<h3>The owner asks the architect to approve a change requested by the contractor to reduce project cost. What should the architect evaluate FIRST?</h3>", back: "<p>Whether the proposed change meets design intent and performance requirements.</p>" },
+
+{ index: 176, front: "<h3>The contractor submits a substitution request for a window system because the specified manufacturer has a 16-week delay. What is the architect’s FIRST responsibility?</h3>", back: "<p>Review the proposed substitution to determine whether it meets the performance and design requirements of the contract documents.</p>" },
+
+{ index: 177, front: "<h3>A contractor installs mechanical equipment before submitting required shop drawings. What should the architect do?</h3>", back: "<p>Inform the contractor that the work may need to be removed or reviewed if it does not comply with the contract documents.</p>" },
+
+{ index: 178, front: "<h3>The owner instructs the architect to tell the contractor to proceed with additional work immediately while the price is still being negotiated. Which document should be issued?</h3>", back: "<p>A Construction Change Directive.</p>" },
+
+{ index: 179, front: "<h3>A contractor requests clarification on a specification but proposes a solution within the RFI. What should the architect do?</h3>", back: "<p>Review the proposal and issue clarification confirming whether the solution meets design intent.</p>" },
+
+{ index: 180, front: "<h3>The architect discovers during construction that a drawing dimension is incorrect. The contractor has not yet begun the work. What should the architect do?</h3>", back: "<p>Issue clarification through an Architect’s Supplemental Instruction or RFI response.</p>" },
+
+{ index: 181, front: "<h3>The contractor requests payment for stored materials located in a warehouse. What must the architect verify?</h3>", back: "<p>That the materials are insured, properly stored, and ownership transfers to the owner.</p>" },
+
+{ index: 182, front: "<h3>The contractor asks the architect to review a fabrication detail that includes structural calculations. What should the architect do?</h3>", back: "<p>Review the submittal for conformance with design intent and consult the structural engineer if necessary.</p>" },
+
+{ index: 183, front: "<h3>A contractor refuses to correct defective work claiming the owner previously approved it verbally. What governs whether the work must be corrected?</h3>", back: "<p>The contract documents.</p>" },
+
+{ index: 184, front: "<h3>The contractor asks the architect to verify field measurements for custom millwork. What is the architect’s BEST response?</h3>", back: "<p>Inform the contractor that field verification is the contractor’s responsibility.</p>" },
+
+{ index: 185, front: "<h3>The owner requests a change after substantial completion that affects several finished spaces. What is the appropriate action?</h3>", back: "<p>Evaluate the request and process it through a change order if approved.</p>" },
+
+{ index: 186, front: "<h3>During review of a submittal, the architect notices that the contractor has not stamped the document as reviewed. What should the architect do?</h3>", back: "<p>Return the submittal without review because contractor review is required before submission.</p>" },
+
+{ index: 187, front: "<h3>A contractor proceeds with work despite an unresolved RFI. The work later proves incorrect. Who is responsible?</h3>", back: "<p>The contractor, because they proceeded without clarification.</p>" },
+
+{ index: 188, front: "<h3>The contractor reports an unforeseen underground utility that will require rerouting a foundation. What should occur?</h3>", back: "<p>The contractor should notify the architect and submit documentation for a change to the work.</p>" },
+
+{ index: 189, front: "<h3>The architect receives a substitution request that appears acceptable but changes the building’s color palette. What should the architect consider?</h3>", back: "<p>Whether the substitution affects the architectural design intent.</p>" },
+
+{ index: 190, front: "<h3>The contractor submits a cost proposal for a change order that appears excessive. What should the architect do?</h3>", back: "<p>Review the proposal for reasonableness and request additional documentation if necessary.</p>" },
+
+{ index: 191, front: "<h3>During construction, the architect notices that a contractor has installed more insulation than specified. What determines if the work is acceptable?</h3>", back: "<p>The contract documents.</p>" },
+
+{ index: 192, front: "<h3>The contractor informs the architect that a subcontractor cannot meet schedule requirements. What is the architect’s role?</h3>", back: "<p>Document the issue and notify the owner but not manage subcontractor scheduling.</p>" },
+
+{ index: 193, front: "<h3>The owner asks the architect to certify payment before the architect’s scheduled site visit. What should the architect do?</h3>", back: "<p>Certify payment only after sufficient observation of the completed work.</p>" },
+
+{ index: 194, front: "<h3>A contractor proposes relocating a door to simplify framing. What should the architect evaluate FIRST?</h3>", back: "<p>Whether the change affects design intent, accessibility, or code compliance.</p>" },
+
+{ index: 195, front: "<h3>The contractor claims an RFI response caused a delay in construction. What process should be used to resolve the issue?</h3>", back: "<p>The contractor may submit a claim under contract procedures.</p>" },
+
+{ index: 196, front: "<h3>A contractor installs work based on an assumption because the drawings were unclear. What should have occurred FIRST?</h3>", back: "<p>The contractor should have submitted an RFI requesting clarification.</p>" },
+
+{ index: 197, front: "<h3>The contractor requests early occupancy of part of the building. What must occur first?</h3>", back: "<p>The architect must determine that the portion is substantially complete and responsibilities must be assigned.</p>" },
+
+{ index: 198, front: "<h3>The owner asks the architect to reject a submittal because they dislike the manufacturer. What should the architect consider?</h3>", back: "<p>Whether the submittal complies with the contract documents.</p>" },
+
+{ index: 199, front: "<h3>The contractor submits a substitution request after installation of the product. What should the architect do?</h3>", back: "<p>Review whether the installed product complies with the contract documents and require correction if it does not.</p>" },
+
+{ index: 200, front: "<h3>A contractor discovers a specification requiring a product that no longer exists. What is the appropriate step?</h3>", back: "<p>The contractor should submit a substitution request.</p>" },
+
+{ index: 201, front: "<h3>The architect receives a submittal showing dimensions slightly different from those in the drawings. What determines whether the change is acceptable?</h3>", back: "<p>Whether the change affects design intent and contract requirements.</p>" },
+
+{ index: 202, front: "<h3>The contractor claims that additional reinforcement was required due to code compliance. What must occur before payment for the additional work?</h3>", back: "<p>A change order or other formal contract modification.</p>" },
+
+{ index: 203, front: "<h3>During construction, the architect observes that installed windows appear out of alignment. What is the architect’s BEST action?</h3>", back: "<p>Document the issue and notify the contractor of potential nonconforming work.</p>" },
+
+{ index: 204, front: "<h3>The contractor requests clarification on how to sequence work in a tight site condition. What is the architect’s role?</h3>", back: "<p>The architect may clarify design intent but does not direct construction sequencing.</p>" },
+
+{ index: 205, front: "<h3>A contractor submits a shop drawing that omits information required by the specifications. What should the architect do?</h3>", back: "<p>Return the submittal requesting the missing information.</p>" },
+
+{ index: 206, front: "<h3>The contractor asks whether a detail can be simplified to save labor costs. What should the architect evaluate FIRST?</h3>", back: "<p>Whether the simplified detail still meets design and performance requirements.</p>" },
+
+{ index: 207, front: "<h3>The contractor asks the architect to approve a change during a site visit verbally. What is the appropriate action?</h3>", back: "<p>Require the change to be documented through proper contract modification procedures.</p>" },
+
+{ index: 208, front: "<h3>A contractor proceeds with work after submitting a substitution request but before receiving approval. What is the risk?</h3>", back: "<p>The contractor may be required to remove the work if the substitution is rejected.</p>" },
+
+{ index: 209, front: "<h3>The owner asks the architect to reduce retainage early in the project. What should the architect consider?</h3>", back: "<p>The project progress and contract provisions governing retainage.</p>" },
+
+{ index: 210, front: "<h3>A contractor submits a pay application including punch list work not yet complete. What should the architect do?</h3>", back: "<p>Adjust the payment certification to reflect completed work only.</p>" },
+
+{ index: 211, front: "<h3>The contractor asks the architect whether a product substitution will save money. What is the architect’s primary concern?</h3>", back: "<p>Whether the substitution maintains design intent and performance.</p>" },
+
+{ index: 212, front: "<h3>During construction, the owner requests additional electrical outlets. What is the proper procedure?</h3>", back: "<p>Issue a change order modifying the contract scope.</p>" },
+
+{ index: 213, front: "<h3>A contractor asks the architect to confirm the best way to erect structural steel safely. What is the architect’s response?</h3>", back: "<p>Safety and means of construction are the contractor’s responsibility.</p>" },
+
+{ index: 214, front: "<h3>A contractor submits a substitution request without supporting documentation. What should the architect do?</h3>", back: "<p>Reject or return the request and require proper documentation.</p>" },
+
+{ index: 215, front: "<h3>The architect suspects a contractor has overstated completion percentages on a payment application. What should the architect do?</h3>", back: "<p>Verify progress through observation and certify payment only for confirmed work.</p>" },
+
+{ index: 216, front: "<h3>The contractor installs a product that exceeds performance requirements but differs from specifications. Is it automatically acceptable?</h3>", back: "<p>No. The work must comply with the contract documents unless formally approved.</p>" },
+
+{ index: 217, front: "<h3>The contractor requests approval of a shop drawing showing a change to improve constructability. What must the architect confirm?</h3>", back: "<p>That the change does not affect design intent or performance.</p>" },
+
+{ index: 218, front: "<h3>A contractor asks the architect whether a structural beam can be reduced in size to save cost. What should the architect do?</h3>", back: "<p>Consult the structural engineer before considering the change.</p>" },
+
+{ index: 219, front: "<h3>During a site visit, the architect observes work completed differently from the drawings but structurally sound. What governs acceptance?</h3>", back: "<p>The contract documents.</p>" },
+
+{ index: 220, front: "<h3>The contractor asks the architect to interpret ambiguous contract language during construction. What should the architect do?</h3>", back: "<p>Provide an interpretation consistent with the contract documents.</p>" },
+
+{ index: 221, front: "<h3>The owner wants to accelerate the schedule midway through construction. What must occur?</h3>", back: "<p>A change order adjusting contract time and potentially cost.</p>" },
+
+{ index: 222, front: "<h3>A contractor refuses to correct work claiming it will delay the schedule. What governs whether correction is required?</h3>", back: "<p>The contract documents.</p>" },
+
+{ index: 223, front: "<h3>The architect receives a substitution request that reduces cost but slightly changes appearance. What must be evaluated?</h3>", back: "<p>Impact on design intent and owner approval.</p>" },
+
+{ index: 224, front: "<h3>A contractor submits a pay application including stored materials that were not specified for off-site storage. What should the architect do?</h3>", back: "<p>Review the contract requirements before certifying payment.</p>" },
+
+{ index: 225, front: "<h3>The contractor installs work based on outdated drawings. Who is responsible?</h3>", back: "<p>The contractor is responsible for using the most current contract documents.</p>" },
+
+{ index: 226, front: "<h3>The contractor proposes a change that affects fire-rated assemblies. What must occur before approval?</h3>", back: "<p>Verification of code compliance.</p>" },
+
+{ index: 227, front: "<h3>The owner asks the architect to approve an untested product suggested by the contractor. What should the architect consider?</h3>", back: "<p>Whether the product meets specified performance criteria.</p>" },
+
+{ index: 228, front: "<h3>The contractor claims that correcting defective work would cause project delay. What determines whether correction is required?</h3>", back: "<p>The contract documents.</p>" }
         ]
 
         this.currentCECard = this.CEcards[0];
