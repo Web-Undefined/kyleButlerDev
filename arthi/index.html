@@ -59,11 +59,19 @@
 										<div class="business-card" role="button" aria-pressed="false" tabindex="0" aria-label="Business card">
 											<div class="card-inner">
 												<div class="card-face card-front">
+
+													<i x-show="currentCECard.markedAsCorrect == false" @click.stop="toggleMarkedCorrect($event, 'CE')" class="far fa-circle card-icon" title="Mark as correct"></i>
+													<i x-show="currentCECard.markedAsCorrect == true" @click.stop="toggleMarkedCorrect($event, 'CE')" class="far fa-check-circle card-icon green" title="Mark as incorrect"></i>
+
 													<div class="card-content">
 														<div x-html="currentCECard.front"></div>
 													</div>
 												</div>
 												<div class="card-face card-back" aria-hidden="true">
+
+													<i x-show="currentCECard.markedAsCorrect == false" @click.stop="toggleMarkedCorrect($event, 'CE')" class="far fa-circle card-icon" title="Mark as correct"></i>
+													<i x-show="currentCECard.markedAsCorrect == true" @click.stop="toggleMarkedCorrect($event, 'CE')" class="far fa-check-circle card-icon green" title="Mark as incorrect"></i>
+
 													<div class="card-content">
 														<div x-html="currentCECard.back"></div>
 													</div>
@@ -102,11 +110,19 @@
 										<div class="business-card" role="button" aria-pressed="false" tabindex="0" aria-label="Business card" style="background-color: #2d5a27;">
 											<div class="card-inner">
 												<div class="card-face card-front" style="background-color: #2d5a27;">
+													
+													<i x-show="currentCE2Card.markedAsCorrect == false" @click.stop="toggleMarkedCorrect($event, 'CE2')" class="far fa-circle card-icon" title="Mark as correct"></i>
+													<i x-show="currentCE2Card.markedAsCorrect == true" @click.stop="toggleMarkedCorrect($event, 'CE2')" class="far fa-check-circle card-icon green" title="Mark as incorrect"></i>
+
 													<div class="card-content">
 														<div x-html="currentCE2Card.front"></div>
 													</div>
 												</div>
 												<div class="card-face card-back" aria-hidden="true" style="background-color: #1e3a1a;">
+
+													<i x-show="currentCE2Card.markedAsCorrect == false" @click.stop="toggleMarkedCorrect($event, 'CE2')" class="far fa-circle card-icon" title="Mark as correct"></i>
+													<i x-show="currentCE2Card.markedAsCorrect == true" @click.stop="toggleMarkedCorrect($event, 'CE2')" class="far fa-check-circle card-icon green" title="Mark as incorrect"></i>
+
 													<div class="card-content">
 														<div x-html="currentCE2Card.back"></div>
 													</div>
@@ -145,11 +161,19 @@
 										<div class="business-card" role="button" aria-pressed="false" tabindex="0" aria-label="Business card" style="background-color: #6b3fa0;">
 											<div class="card-inner">
 												<div class="card-face card-front" style="background-color: #6b3fa0;">
+
+													<i x-show="currentCE3Card.markedAsCorrect == false" @click.stop="toggleMarkedCorrect($event, 'CE3')" class="far fa-circle card-icon" title="Mark as correct"></i>
+													<i x-show="currentCE3Card.markedAsCorrect == true" @click.stop="toggleMarkedCorrect($event, 'CE3')" class="far fa-check-circle card-icon green" title="Mark as incorrect"></i>
+
 													<div class="card-content">
 														<div x-html="currentCE3Card.front"></div>
 													</div>
 												</div>
 												<div class="card-face card-back" aria-hidden="true" style="background-color: #4a2570;">
+
+													<i x-show="currentCE3Card.markedAsCorrect == false" @click.stop="toggleMarkedCorrect($event, 'CE3')" class="far fa-circle card-icon" title="Mark as correct"></i>
+													<i x-show="currentCE3Card.markedAsCorrect == true" @click.stop="toggleMarkedCorrect($event, 'CE3')" class="far fa-check-circle card-icon green" title="Mark as incorrect"></i>
+
 													<div class="card-content">
 														<div x-html="currentCE3Card.back"></div>
 													</div>
@@ -188,11 +212,19 @@
 										<div class="business-card" role="button" aria-pressed="false" tabindex="0" aria-label="Business card" style="background-color: #c77d33;">
 											<div class="card-inner">
 												<div class="card-face card-front" style="background-color: #c77d33;">
+
+													<i x-show="currentCE4Card.markedAsCorrect == false" @click.stop="toggleMarkedCorrect($event, 'CE4')" class="far fa-circle card-icon" title="Mark as correct"></i>
+													<i x-show="currentCE4Card.markedAsCorrect == true" @click.stop="toggleMarkedCorrect($event, 'CE4')" class="far fa-check-circle card-icon green" title="Mark as incorrect"></i>
+
 													<div class="card-content">
 														<div x-html="currentCE4Card.front"></div>
 													</div>
 												</div>
 												<div class="card-face card-back" aria-hidden="true" style="background-color: #8c5a2c;">
+
+													<i x-show="currentCE4Card.markedAsCorrect == false" @click.stop="toggleMarkedCorrect($event, 'CE4')" class="far fa-circle card-icon" title="Mark as correct"></i>
+													<i x-show="currentCE4Card.markedAsCorrect == true" @click.stop="toggleMarkedCorrect($event, 'CE4')" class="far fa-check-circle card-icon green" title="Mark as incorrect"></i>
+													
 													<div class="card-content">
 														<div x-html="currentCE4Card.back"></div>
 													</div>
@@ -231,11 +263,19 @@
 										<div class="business-card" role="button" aria-pressed="false" tabindex="0" aria-label="Business card" style="background-color: #0d7377;">
 											<div class="card-inner">
 												<div class="card-face card-front" style="background-color: #0d7377;">
+
+													<i x-show="currentCE5Card.markedAsCorrect == false" @click.stop="toggleMarkedCorrect($event, 'CE5')" class="far fa-circle card-icon" title="Mark as correct"></i>
+													<i x-show="currentCE5Card.markedAsCorrect == true" @click.stop="toggleMarkedCorrect($event, 'CE5')" class="far fa-check-circle card-icon green" title="Mark as incorrect"></i>
+
 													<div class="card-content">
 														<div x-html="currentCE5Card.front"></div>
 													</div>
 												</div>
 												<div class="card-face card-back" aria-hidden="true" style="background-color: #054956;">
+
+													<i x-show="currentCE5Card.markedAsCorrect == false" @click.stop="toggleMarkedCorrect($event, 'CE5')" class="far fa-circle card-icon" title="Mark as correct"></i>
+													<i x-show="currentCE5Card.markedAsCorrect == true" @click.stop="toggleMarkedCorrect($event, 'CE5')" class="far fa-check-circle card-icon green" title="Mark as incorrect"></i>
+													
 													<div class="card-content">
 														<div x-html="currentCE5Card.back"></div>
 													</div>

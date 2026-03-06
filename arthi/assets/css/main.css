@@ -1849,3 +1849,25 @@ overflow: auto;
 		margin-right: auto;
 	}
 }
+
+.card-icon {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    opacity: 0.8;
+    z-index: 1;
+    transition: transform 0.2s ease;
+}
+
+.card-icon:hover {
+    transform: scale(1.2);
+}
+
+.card-face {
+    position: relative; /* Ensure positioning context for absolute icon */
+}
+
+.green {
+	color: #28a745; /* Bootstrap green */
+}
