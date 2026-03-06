@@ -31,50 +31,94 @@
 							<div class="inner" x-show="currentExamType == 'CE'">
 								<h1 style="text-transform: none;">CE Flashcards</h1>
 
-								<div class="card-carousel" aria-roledescription="carousel">
-								
-									<ul class="icons" style="margin: 0;">
-										<li><a @click="previousCECard()" title="Previous Card" class="icon solid fa-chevron-left"></a></li>
-									</ul>
+								<ul class="actions" style="margin-bottom: 0; align-items: center; justify-content: center;">
+									<li><a @click="setCEDeck(1)" class="button">Deck #1</a></li>
+									<li><a @click="setCEDeck(2)" class="button">Deck #2</a></li>
+								</ul>
 
-									<div class="business-card" role="button" aria-pressed="false" tabindex="0" aria-label="Business card">
-										<div class="card-inner">
-											<div class="card-face card-front">
-												<div class="card-content">
-													<div x-html="currentCECard.front"></div>
+								<!-- Deck #1 -->
+								<div x-show`="currentCEDeck == 1">
+									<div class="card-carousel" aria-roledescription="carousel">
+									
+										<ul class="icons" style="margin: 0;">
+											<li><a @click="previousCECard()" title="Previous Card" class="icon solid fa-chevron-left"></a></li>
+										</ul>
+										<div class="business-card" role="button" aria-pressed="false" tabindex="0" aria-label="Business card">
+											<div class="card-inner">
+												<div class="card-face card-front">
+													<div class="card-content">
+														<div x-html="currentCECard.front"></div>
+													</div>
 												</div>
-											</div>
-											<div class="card-face card-back" aria-hidden="true">
-												<div class="card-content">
-													<div x-html="currentCECard.back"></div>
+												<div class="card-face card-back" aria-hidden="true">
+													<div class="card-content">
+														<div x-html="currentCECard.back"></div>
+													</div>
 												</div>
 											</div>
 										</div>
+										<ul class="icons" style="margin: 0;">
+											<li><a @click="nextCECard()" title="Next Card" class="icon solid fa-chevron-right"></a></li>
+										</ul>
 									</div>
-
-									<ul class="icons" style="margin: 0;">
-										<li><a @click="nextCECard()" title="Next Card" class="icon solid fa-chevron-right"></a></li>
-									</ul>
-
+									<div style="display: flex; justify-content: space-around; align-items: center; margin-top: 0.5rem;">
+									
+										<ul class="icons" style="margin: 0;">
+											<li><a @click="backToCEStart()" title="Back to Start" class="icon solid fa-fast-backward"></a></li>
+										</ul>
+										<p style="margin: 0" class="card-counter">Card <span x-text="currentCECard.index + 1"></span> of <span x-text="CEcards.length"></span></p>
+										<ul class="icons" style="margin: 0;">
+											<li><a @click="shuffleCECards()" title="Shuffle Cards" class="icon solid fa-random"></a></li>
+										</ul>
+									
+									</div>
+									<div class="progress">
+										<div class="bar"
+											:style="`width: ${(currentCECard.index+1)/CEcards.length*100}%; border-radius: 9999px; transition: width 0.3s ease; opacity: 1;`">
+										</div>
+									</div>
 								</div>
 
-								<div style="display: flex; justify-content: space-around; align-items: center; margin-top: 0.5rem;">
+								<!-- Deck #2 -->
+								<div x-show`="currentCEDeck == 2">
+									<div class="card-carousel" aria-roledescription="carousel">
 									
-									<ul class="icons" style="margin: 0;">
-										<li><a @click="backToCEStart()" title="Back to Start" class="icon solid fa-fast-backward"></a></li>
-									</ul>
-
-									<p style="margin: 0" class="card-counter">Card <span x-text="currentCECard.index + 1"></span> of <span x-text="CEcards.length"></span></p>
-
-									<ul class="icons" style="margin: 0;">
-										<li><a @click="shuffleCECards()" title="Shuffle Cards" class="icon solid fa-random"></a></li>
-									</ul>
+										<ul class="icons" style="margin: 0;">
+											<li><a @click="previousCE2Card()" title="Previous Card" class="icon solid fa-chevron-left"></a></li>
+										</ul>
+										<div class="business-card" role="button" aria-pressed="false" tabindex="0" aria-label="Business card">
+											<div class="card-inner">
+												<div class="card-face card-front">
+													<div class="card-content">
+														<div x-html="currentCE2Card.front"></div>
+													</div>
+												</div>
+												<div class="card-face card-back" aria-hidden="true">
+													<div class="card-content">
+														<div x-html="currentCE2Card.back"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<ul class="icons" style="margin: 0;">
+											<li><a @click="nextCE2Card()" title="Next Card" class="icon solid fa-chevron-right"></a></li>
+										</ul>
+									</div>
+									<div style="display: flex; justify-content: space-around; align-items: center; margin-top: 0.5rem;">
 									
-								</div>
-
-								<div class="progress">
-									<div class="bar"
-										:style="`width: ${(currentCECard.index+1)/CEcards.length*100}%; border-radius: 9999px; transition: width 0.3s ease; opacity: 1;`">
+										<ul class="icons" style="margin: 0;">
+											<li><a @click="backToCE2Start()" title="Back to Start" class="icon solid fa-fast-backward"></a></li>
+										</ul>
+										<p style="margin: 0" class="card-counter">Card <span x-text="currentCE2Card.index + 1"></span> of <span x-text="CEcards2.length"></span></p>
+										<ul class="icons" style="margin: 0;">
+											<li><a @click="shuffleCE2Cards()" title="Shuffle Cards" class="icon solid fa-random"></a></li>
+										</ul>
+									
+									</div>
+									<div class="progress">
+										<div class="bar"
+											:style="`width: ${(currentCE2Card.index+1)/CEcards2.length*100}%; border-radius: 9999px; transition: width 0.3s ease; opacity: 1;`">
+										</div>
 									</div>
 								</div>
 							</div>

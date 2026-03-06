@@ -2,10 +2,16 @@ document.addEventListener('alpine:init', () => {
   Alpine.store('flashcards', {
     cards: [],
     index: 0,
+    index2: 0,
     correct: 0,
     incorrect: 0,
     CEcards: [],
     CEcards2: [],
+    currentCEDeck: 1,
+
+    setCEDeck(deckNumber) {
+        this.currentCEDeck = deckNumber;
+    },
 
     firstTry() {
         document.querySelectorAll('.business-card').forEach(card => {
@@ -1418,6 +1424,7 @@ document.addEventListener('alpine:init', () => {
         ]
 
         this.currentCECard = this.CEcards[0];
+        this.currentCE2Card = this.CEcards2[0];
     },
 
     currentExamType: 'CE',
@@ -1425,11 +1432,18 @@ document.addEventListener('alpine:init', () => {
         this.currentExamType = type;
     },
 
+    currentCE2Card: {},
     currentCECard: {},
     nextCECard() {
         if (this.index < this.CEcards.length - 1) {
             this.index++;
             this.currentCECard = this.CEcards[this.index];
+        }
+    },
+    nextCE2Card() {
+        if (this.index2 < this.CEcards2.length - 1) {
+            this.index2++;
+            this.currentCE2Card = this.CEcards2[this.index2];
         }
     },
     previousCECard() {
@@ -1438,10 +1452,20 @@ document.addEventListener('alpine:init', () => {
             this.currentCECard = this.CEcards[this.index];
         }
     },
+    previousCE2Card() {
+        if (this.index2 > 0) {
+            this.index2--;
+            this.currentCE2Card = this.CEcards2[this.index2];
+        }
+    },
 
     backToCEStart() {
         this.index = 0;
         this.currentCECard = this.CEcards[this.index];
+    },
+    backToCE2Start() {
+        this.index2 = 0;
+        this.currentCE2Card = this.CEcards2[this.index2];
     },
 
     shuffleCECards() {
@@ -1454,6 +1478,18 @@ document.addEventListener('alpine:init', () => {
 
         this.CEcards.forEach(card => {
             card.index = this.CEcards.indexOf(card)
+        })
+    },
+    shuffleCE2Cards() {
+        for (let i = this.CEcards2.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [this.CEcards2[i], this.CEcards2[j]] = [this.CEcards2[j], this.CEcards2[i]];
+        }
+        this.index2 = 0;
+        this.currentCE2Card = this.CEcards2[this.index2];
+
+        this.CEcards2.forEach(card => {
+            card.index = this.CEcards2.indexOf(card)
         })
     },
     
