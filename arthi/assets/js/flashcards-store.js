@@ -181,7 +181,7 @@ document.addEventListener('alpine:init', () => {
         }
     },
 
-    firstTry() {
+    firstRun() {
         document.querySelectorAll('.business-card').forEach(card => {
             const toggle = () => {
                 card.classList.toggle('is-flipped');
