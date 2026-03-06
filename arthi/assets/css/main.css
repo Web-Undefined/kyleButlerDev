@@ -1852,12 +1852,16 @@ overflow: auto;
 
 .card-icon {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
-    font-size: 1.5rem;
-    opacity: 0.8;
-    z-index: 1;
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 1.25rem;
+    opacity: 0.9;
+    z-index: 2;
     transition: transform 0.2s ease;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    padding: 0.25rem;
+    backdrop-filter: blur(2px);
 }
 
 .card-icon:hover {
