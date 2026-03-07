@@ -443,6 +443,44 @@
 		<!-- BG -->
 			<div id="bg"></div>
 
+		<!-- Quick Menu -->
+		<div class="quick-menu" x-data="{ open: false }" @keydown.escape.window="open = false" @click.outside="open = false">
+			<button
+				type="button"
+				class="quick-menu-toggle"
+				@click.stop="open = !open"
+				:aria-expanded="open.toString()"
+				aria-controls="quick-menu-panel"
+				aria-label="Open quick menu"
+			>
+				<i class="fas fa-bars" aria-hidden="true"></i>
+				<span>Menu</span>
+			</button>
+
+			<div
+				id="quick-menu-panel"
+				class="quick-menu-panel"
+				x-show="open"
+				x-transition.origin.top.right
+				x-cloak
+			>
+				<p class="quick-menu-heading">Resources</p>
+				<ul class="quick-menu-links">
+					<li><a href="https://www.ncarb.org/pass-the-are" target="_blank" rel="noopener noreferrer">NCARB ARE Guide</a></li>
+					<li><a href="https://are5community.ncarb.org/hc/en-us" target="_blank" rel="noopener noreferrer">NCARB Community</a></li>
+					<li><a href="https://www.aia.org" target="_blank" rel="noopener noreferrer">AIA</a></li>
+				</ul>
+
+				<p class="quick-menu-heading">Features</p>
+				<ul class="quick-menu-links">
+					<!-- <li><a href="#" @click.prevent="setExamType('CE'); open = false">Go To CE Decks</a></li>
+					<li><a href="#" @click.prevent="setExamType('PjM'); open = false">Go To PjM</a></li>
+					<li><a href="#" @click.prevent="setExamType('PA'); open = false">Go To PA</a></li> -->
+					<li><a href="#" @click="localStorage.clear(); location.reload();">Hard Reset Application</a></li>
+				</ul>
+			</div>
+		</div>
+
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
