@@ -61,6 +61,7 @@
 											<div class="card-inner">
 												<div class="card-face card-front">
 
+													<i class="fas fa-sort-amount-down-alt card-icon-left" @click.stop="sortByCorrect($event, '')" title="Sort by correct answers"></i>
 													<i x-show="currentCECard.markedAsCorrect == false" @click.stop="toggleMarkedCorrect($event, 'CE')" class="far fa-circle card-icon" title="Mark as correct"></i>
 													<i x-show="currentCECard.markedAsCorrect == true" @click.stop="toggleMarkedCorrect($event, 'CE')" class="far fa-check-circle card-icon green" title="Mark as incorrect"></i>
 
@@ -70,6 +71,7 @@
 												</div>
 												<div class="card-face card-back" aria-hidden="true">
 
+													<i class="fas fa-sort-amount-down-alt card-icon-left" @click.stop="sortByCorrect($event, '')" title="Sort by correct answers"></i>
 													<i x-show="currentCECard.markedAsCorrect == false" @click.stop="toggleMarkedCorrect($event, 'CE')" class="far fa-circle card-icon" title="Mark as correct"></i>
 													<i x-show="currentCECard.markedAsCorrect == true" @click.stop="toggleMarkedCorrect($event, 'CE')" class="far fa-check-circle card-icon green" title="Mark as incorrect"></i>
 
@@ -112,6 +114,7 @@
 											<div class="card-inner">
 												<div class="card-face card-front" style="background-color: #2d5a27;">
 													
+													<i class="fas fa-sort-amount-down-alt card-icon-left" @click.stop="sortByCorrect($event, '2')" title="Sort by correct answers"></i>
 													<i x-show="currentCE2Card.markedAsCorrect == false" @click.stop="toggleMarkedCorrect($event, 'CE2')" class="far fa-circle card-icon" title="Mark as correct"></i>
 													<i x-show="currentCE2Card.markedAsCorrect == true" @click.stop="toggleMarkedCorrect($event, 'CE2')" class="far fa-check-circle card-icon green" title="Mark as incorrect"></i>
 
@@ -121,6 +124,7 @@
 												</div>
 												<div class="card-face card-back" aria-hidden="true" style="background-color: #1e3a1a;">
 
+													<i class="fas fa-sort-amount-down-alt card-icon-left" @click.stop="sortByCorrect($event, '2')" title="Sort by correct answers"></i>
 													<i x-show="currentCE2Card.markedAsCorrect == false" @click.stop="toggleMarkedCorrect($event, 'CE2')" class="far fa-circle card-icon" title="Mark as correct"></i>
 													<i x-show="currentCE2Card.markedAsCorrect == true" @click.stop="toggleMarkedCorrect($event, 'CE2')" class="far fa-check-circle card-icon green" title="Mark as incorrect"></i>
 
@@ -163,6 +167,7 @@
 											<div class="card-inner">
 												<div class="card-face card-front" style="background-color: #6b3fa0;">
 
+													<i class="fas fa-sort-amount-down-alt card-icon-left" @click.stop="sortByCorrect($event, '3')" title="Sort by correct answers"></i>
 													<i x-show="currentCE3Card.markedAsCorrect == false" @click.stop="toggleMarkedCorrect($event, 'CE3')" class="far fa-circle card-icon" title="Mark as correct"></i>
 													<i x-show="currentCE3Card.markedAsCorrect == true" @click.stop="toggleMarkedCorrect($event, 'CE3')" class="far fa-check-circle card-icon green" title="Mark as incorrect"></i>
 
@@ -172,6 +177,7 @@
 												</div>
 												<div class="card-face card-back" aria-hidden="true" style="background-color: #4a2570;">
 
+													<i class="fas fa-sort-amount-down-alt card-icon-left" @click.stop="sortByCorrect($event, '3')" title="Sort by correct answers"></i>
 													<i x-show="currentCE3Card.markedAsCorrect == false" @click.stop="toggleMarkedCorrect($event, 'CE3')" class="far fa-circle card-icon" title="Mark as correct"></i>
 													<i x-show="currentCE3Card.markedAsCorrect == true" @click.stop="toggleMarkedCorrect($event, 'CE3')" class="far fa-check-circle card-icon green" title="Mark as incorrect"></i>
 
@@ -214,6 +220,7 @@
 											<div class="card-inner">
 												<div class="card-face card-front" style="background-color: #c77d33;">
 
+													<i class="fas fa-sort-amount-down-alt card-icon-left" @click.stop="sortByCorrect($event, '4')" title="Sort by correct answers"></i>
 													<i x-show="currentCE4Card.markedAsCorrect == false" @click.stop="toggleMarkedCorrect($event, 'CE4')" class="far fa-circle card-icon" title="Mark as correct"></i>
 													<i x-show="currentCE4Card.markedAsCorrect == true" @click.stop="toggleMarkedCorrect($event, 'CE4')" class="far fa-check-circle card-icon green" title="Mark as incorrect"></i>
 
@@ -223,6 +230,7 @@
 												</div>
 												<div class="card-face card-back" aria-hidden="true" style="background-color: #8c5a2c;">
 
+													<i class="fas fa-sort-amount-down-alt card-icon-left" @click.stop="sortByCorrect($event, '4')" title="Sort by correct answers"></i>
 													<i x-show="currentCE4Card.markedAsCorrect == false" @click.stop="toggleMarkedCorrect($event, 'CE4')" class="far fa-circle card-icon" title="Mark as correct"></i>
 													<i x-show="currentCE4Card.markedAsCorrect == true" @click.stop="toggleMarkedCorrect($event, 'CE4')" class="far fa-check-circle card-icon green" title="Mark as incorrect"></i>
 													
@@ -265,6 +273,7 @@
 											<div class="card-inner">
 												<div class="card-face card-front" style="background-color: #0d7377;">
 
+													<i class="fas fa-sort-amount-down-alt card-icon-left" @click.stop="sortByCorrect($event, '5')" title="Sort by correct answers"></i>
 													<i x-show="currentCE5Card.markedAsCorrect == false" @click.stop="toggleMarkedCorrect($event, 'CE5')" class="far fa-circle card-icon" title="Mark as correct"></i>
 													<i x-show="currentCE5Card.markedAsCorrect == true" @click.stop="toggleMarkedCorrect($event, 'CE5')" class="far fa-check-circle card-icon green" title="Mark as incorrect"></i>
 
@@ -274,6 +283,7 @@
 												</div>
 												<div class="card-face card-back" aria-hidden="true" style="background-color: #054956;">
 
+													<i class="fas fa-sort-amount-down-alt card-icon-left" @click.stop="sortByCorrect($event, '5')" title="Sort by correct answers"></i>
 													<i x-show="currentCE5Card.markedAsCorrect == false" @click.stop="toggleMarkedCorrect($event, 'CE5')" class="far fa-circle card-icon" title="Mark as correct"></i>
 													<i x-show="currentCE5Card.markedAsCorrect == true" @click.stop="toggleMarkedCorrect($event, 'CE5')" class="far fa-check-circle card-icon green" title="Mark as incorrect"></i>
 													
@@ -316,6 +326,7 @@
 											<div class="card-inner">
 												<div class="card-face card-front" style="background-color: #4b4b4b;">
 
+													<i class="fas fa-sort-amount-down-alt card-icon-left" @click.stop="sortByCorrect($event, '6')" title="Sort by correct answers"></i>
 													<i x-show="currentCE6Card.markedAsCorrect == false" @click.stop="toggleMarkedCorrect($event, 'CE6')" class="far fa-circle card-icon" title="Mark as correct"></i>
 													<i x-show="currentCE6Card.markedAsCorrect == true" @click.stop="toggleMarkedCorrect($event, 'CE6')" class="far fa-check-circle card-icon green" title="Mark as incorrect"></i>
 
@@ -325,6 +336,7 @@
 												</div>
 												<div class="card-face card-back" aria-hidden="true" style="background-color: #333333;">
 
+													<i class="fas fa-sort-amount-down-alt card-icon-left" @click.stop="sortByCorrect($event, '6')" title="Sort by correct answers"></i>
 													<i x-show="currentCE6Card.markedAsCorrect == false" @click.stop="toggleMarkedCorrect($event, 'CE6')" class="far fa-circle card-icon" title="Mark as correct"></i>
 													<i x-show="currentCE6Card.markedAsCorrect == true" @click.stop="toggleMarkedCorrect($event, 'CE6')" class="far fa-check-circle card-icon green" title="Mark as incorrect"></i>
 													
@@ -401,6 +413,22 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+		<!-- Sort Notification Overlay -->
+		<div id="sort-notification" class="sort-notification" style="display: none;">
+			<div class="sort-notification-content">
+				<i class="fas fa-check-circle"></i>
+				<span>Cards sorted by correct answers</span>
+			</div>
+		</div>
+
+		<!-- Shuffle Notification Overlay -->
+		<div id="shuffle-notification" class="shuffle-notification" style="display: none;">
+			<div class="shuffle-notification-content">
+				<i class="fas fa-random"></i>
+				<span>Cards shuffled successfully</span>
+			</div>
+		</div>
 
 	</body>
 </html>

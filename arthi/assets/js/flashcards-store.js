@@ -142,6 +142,9 @@ document.addEventListener('alpine:init', () => {
         this.CEcards.forEach(card => {
             card.index = this.CEcards.indexOf(card)
         })
+
+        // Show shuffle notification
+        this.showShuffleNotification();
     },
     shuffleCE2Cards() {
         for (let i = this.CEcards2.length - 1; i > 0; i--) {
@@ -154,6 +157,9 @@ document.addEventListener('alpine:init', () => {
         this.CEcards2.forEach(card => {
             card.index = this.CEcards2.indexOf(card)
         })
+
+        // Show shuffle notification
+        this.showShuffleNotification();
     },
     shuffleCE3Cards() {
         for (let i = this.CEcards3.length - 1; i > 0; i--) {
@@ -166,6 +172,9 @@ document.addEventListener('alpine:init', () => {
         this.CEcards3.forEach(card => {
             card.index = this.CEcards3.indexOf(card)
         })
+
+        // Show shuffle notification
+        this.showShuffleNotification();
     },
     shuffleCE4Cards() {
         for (let i = this.CEcards4.length - 1; i > 0; i--) {
@@ -178,6 +187,9 @@ document.addEventListener('alpine:init', () => {
         this.CEcards4.forEach(card => {
             card.index = this.CEcards4.indexOf(card)
         })
+
+        // Show shuffle notification
+        this.showShuffleNotification();
     },
     shuffleCE5Cards() {
         for (let i = this.CEcards5.length - 1; i > 0; i--) {
@@ -190,6 +202,9 @@ document.addEventListener('alpine:init', () => {
         this.CEcards5.forEach(card => {
             card.index = this.CEcards5.indexOf(card)
         })
+
+        // Show shuffle notification
+        this.showShuffleNotification();
     },
     shuffleCE6Cards() {
         for (let i = this.CEcards6.length - 1; i > 0; i--) {
@@ -202,6 +217,9 @@ document.addEventListener('alpine:init', () => {
         this.CEcards6.forEach(card => {
             card.index = this.CEcards6.indexOf(card)
         })
+
+        // Show shuffle notification
+        this.showShuffleNotification();
     },
 
     toggleMarkedCorrect(event, deckType) {
@@ -209,6 +227,93 @@ document.addEventListener('alpine:init', () => {
         const currentCard = this[`current${deckType}Card`];
         if (currentCard) {
             currentCard.markedAsCorrect = !currentCard.markedAsCorrect;
+        }
+    },
+
+    showShuffleNotification() {
+        const notification = document.getElementById('shuffle-notification');
+        const content = document.querySelector('.shuffle-notification-content');
+
+        if (notification && content) {
+            // Reset any previous animation classes
+            notification.classList.remove('fade-out');
+            content.classList.remove('slide-out');
+
+            notification.style.display = 'flex';
+
+            // Function to dismiss notification
+            const dismissNotification = () => {
+                notification.classList.add('fade-out');
+                content.classList.add('slide-out');
+                setTimeout(() => {
+                    notification.style.display = 'none';
+                    // Remove event listener after dismissal
+                    notification.removeEventListener('click', dismissNotification);
+                }, 300);
+            };
+
+            // Add click-to-dismiss functionality
+            notification.addEventListener('click', dismissNotification);
+
+            // Auto-dismiss after 2.7 seconds if not clicked
+            setTimeout(() => {
+                // Only auto-dismiss if notification is still visible
+                if (notification.style.display !== 'none') {
+                    dismissNotification();
+                }
+            }, 2700);
+        }
+    },
+
+    sortByCorrect(event, deckType) {
+        console.log(`Sorting deck ${deckType} by markedAsCorrect`);
+        event.stopPropagation();
+        const deckKey = `CEcards${deckType}`;
+        this[deckKey] = this[deckKey].sort((a, b) => a.markedAsCorrect - b.markedAsCorrect);
+        this[deckKey].forEach((card) => {
+            card.index = this[deckKey].indexOf(card);
+        });
+
+        const indexKey = `index${deckType}`;
+        this[indexKey] = 0;
+        this[`currentCE${deckType}Card`] = this[deckKey][this[indexKey]];
+
+        // Show sort notification
+        this.showSortNotification();
+    },
+
+    showSortNotification() {
+        const notification = document.getElementById('sort-notification');
+        const content = document.querySelector('.sort-notification-content');
+
+        if (notification && content) {
+            // Reset any previous animation classes
+            notification.classList.remove('fade-out');
+            content.classList.remove('slide-out');
+
+            notification.style.display = 'flex';
+
+            // Function to dismiss notification
+            const dismissNotification = () => {
+                notification.classList.add('fade-out');
+                content.classList.add('slide-out');
+                setTimeout(() => {
+                    notification.style.display = 'none';
+                    // Remove event listener after dismissal
+                    notification.removeEventListener('click', dismissNotification);
+                }, 300);
+            };
+
+            // Add click-to-dismiss functionality
+            notification.addEventListener('click', dismissNotification);
+
+            // Auto-dismiss after 2.7 seconds if not clicked
+            setTimeout(() => {
+                // Only auto-dismiss if notification is still visible
+                if (notification.style.display !== 'none') {
+                    dismissNotification();
+                }
+            }, 2700);
         }
     },
 

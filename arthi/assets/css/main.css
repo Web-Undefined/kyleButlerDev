@@ -1559,7 +1559,7 @@ input, select, textarea {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		padding: 1rem 1.5rem;
+		padding: 1rem 1.5rem 1rem 1.5rem;
 		backface-visibility: hidden;
 		border-radius: inherit;
 		color: #fff;
@@ -1831,7 +1831,7 @@ overflow: auto;
   display: flex;
   align-items: center;    /* vertical centering */
   justify-content: center; /* horizontal centering */
-  padding: 1rem 1.5rem;
+  padding: 2.5rem 1.5rem 1rem 1.5rem;
   backface-visibility: hidden;
   border-radius: inherit;
   color: #fff;
@@ -1868,10 +1868,139 @@ overflow: auto;
     transform: scale(1.2);
 }
 
-.card-face {
-    position: relative; /* Ensure positioning context for absolute icon */
+.card-icon-left {
+    position: absolute;
+    top: 0.5rem;
+    right: 2.5rem;
+    font-size: 1.25rem;
+    opacity: 0.9;
+    z-index: 2;
+    transition: transform 0.2s ease;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    padding: 0.25rem;
+    backdrop-filter: blur(2px);
+}
+
+.card-icon-left:hover {
+    transform: scale(1.2);
 }
 
 .green {
 	color: #28a745; /* Bootstrap green */
+}
+
+/* Sort Notification Overlay */
+.sort-notification {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 2rem;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.sort-notification.fade-out {
+    animation: fadeOut 0.3s ease-in-out forwards;
+}
+
+.sort-notification-content {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1rem;
+    color: #333;
+    animation: slideIn 0.3s ease-out;
+}
+
+.sort-notification-content.slide-out {
+    animation: slideOut 0.3s ease-out forwards;
+}
+
+.sort-notification-content i {
+    color: #28a745;
+    font-size: 1.25rem;
+}
+
+.shuffle-notification {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 2rem;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.shuffle-notification.fade-out {
+    animation: fadeOut 0.3s ease-in-out forwards;
+}
+
+.shuffle-notification-content {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1rem;
+    color: #333;
+    animation: slideIn 0.3s ease-out;
+}
+
+.shuffle-notification-content.slide-out {
+    animation: slideOut 0.3s ease-out forwards;
+}
+
+.shuffle-notification-content i {
+    color: #28a745;
+    font-size: 1.25rem;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@keyframes slideOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(20px);
+    }
 }
