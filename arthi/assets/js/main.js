@@ -31,6 +31,97 @@
 			}, 100);
 		});
 
+	// Smoothly animate #header .content height as visible .inner content changes.
+		(function() {
+			var contentEl = document.querySelector('#header .content');
+
+			if (!contentEl)
+				return;
+
+			var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+			var animationMs = 320;
+			var resizeObserver = null;
+			var mutationObserver = null;
+			var rafId = null;
+
+			contentEl.style.overflow = 'hidden';
+			if (!reduceMotion)
+				contentEl.style.transition = 'height ' + animationMs + 'ms cubic-bezier(0.22, 1, 0.36, 1)';
+
+			var getVisibleInner = function() {
+				var innerEls = contentEl.querySelectorAll('.inner');
+
+				for (var i = 0; i < innerEls.length; i++) {
+					var el = innerEls[i];
+					if (window.getComputedStyle(el).display !== 'none')
+						return el;
+				}
+
+				return null;
+			};
+
+			var applyHeight = function(animate) {
+				var visibleInner = getVisibleInner();
+				var targetHeight = visibleInner ? Math.ceil(visibleInner.getBoundingClientRect().height) : 0;
+				var currentHeight = Math.ceil(contentEl.getBoundingClientRect().height);
+
+				if (targetHeight === currentHeight)
+					return;
+
+				if (reduceMotion || !animate)
+					contentEl.style.height = targetHeight + 'px';
+				else {
+					contentEl.style.height = currentHeight + 'px';
+					contentEl.offsetHeight;
+					contentEl.style.height = targetHeight + 'px';
+				}
+			};
+
+			var scheduleHeightUpdate = function(animate) {
+				if (rafId)
+					window.cancelAnimationFrame(rafId);
+
+				rafId = window.requestAnimationFrame(function() {
+					rafId = null;
+					applyHeight(animate);
+				});
+			};
+
+			if ('ResizeObserver' in window) {
+				resizeObserver = new ResizeObserver(function() {
+					scheduleHeightUpdate(true);
+				});
+				resizeObserver.observe(contentEl);
+				contentEl.querySelectorAll('.inner').forEach(function(el) {
+					resizeObserver.observe(el);
+				});
+			}
+
+			if ('MutationObserver' in window) {
+				mutationObserver = new MutationObserver(function() {
+					scheduleHeightUpdate(true);
+				});
+				mutationObserver.observe(contentEl, {
+					attributes: true,
+					childList: true,
+					subtree: true,
+					attributeFilter: ['style', 'class', 'x-show']
+				});
+			}
+
+			window.addEventListener('resize', function() {
+				scheduleHeightUpdate(false);
+			});
+
+			window.setTimeout(function() {
+				scheduleHeightUpdate(false);
+			}, 0);
+
+			window.setTimeout(function() {
+				scheduleHeightUpdate(false);
+			}, 150);
+		})();
+
 	// Fix: Flexbox min-height bug on IE.
 		if (browser.name == 'ie') {
 
