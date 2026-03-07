@@ -61,6 +61,9 @@
 											<div class="card-inner">
 												<div class="card-face card-front">
 
+													<i class="fas fa-fast-backward card-icon-top-left" @click.stop="backToCEStart()" title="Back to Start"></i>
+													<i class="fas fa-random card-icon-top-left-2" @click.stop="shuffleCECards()" title="Shuffle Cards"></i>
+
 													<i class="fas fa-sort-amount-down-alt card-icon-left" @click.stop="sortByCorrect($event, '')" title="Sort by correct answers"></i>
 													<i x-show="currentCECard.markedAsCorrect == false" @click.stop="toggleMarkedCorrect($event, 'CE')" class="far fa-circle card-icon" title="Mark as correct"></i>
 													<i x-show="currentCECard.markedAsCorrect == true" @click.stop="toggleMarkedCorrect($event, 'CE')" class="far fa-check-circle card-icon green" title="Mark as incorrect"></i>
@@ -70,6 +73,9 @@
 													</div>
 												</div>
 												<div class="card-face card-back" aria-hidden="true">
+
+													<i class="fas fa-fast-backward card-icon-top-left" @click.stop="backToCEStart()" title="Back to Start"></i>
+													<i class="fas fa-random card-icon-top-left-2" @click.stop="shuffleCECards()" title="Shuffle Cards"></i>
 
 													<i class="fas fa-sort-amount-down-alt card-icon-left" @click.stop="sortByCorrect($event, '')" title="Sort by correct answers"></i>
 													<i x-show="currentCECard.markedAsCorrect == false" @click.stop="toggleMarkedCorrect($event, 'CE')" class="far fa-circle card-icon" title="Mark as correct"></i>
@@ -87,13 +93,13 @@
 									</div>
 									<div style="display: flex; justify-content: space-around; align-items: center; margin-top: 0.5rem;">
 									
-										<ul class="icons" style="margin: 0;">
+										<!-- <ul class="icons" style="margin: 0;">
 											<li><a @click="backToCEStart()" title="Back to Start" class="icon solid fa-fast-backward"></a></li>
-										</ul>
+										</ul> -->
 										<p style="margin: 0" class="card-counter">Card <span x-text="currentCECard.index + 1"></span> of <span x-text="CEcards.length"></span></p>
-										<ul class="icons" style="margin: 0;">
+										<!-- <ul class="icons" style="margin: 0;">
 											<li><a @click="shuffleCECards()" title="Shuffle Cards" class="icon solid fa-random"></a></li>
-										</ul>
+										</ul> -->
 									
 									</div>
 									<div class="progress">
@@ -113,6 +119,9 @@
 										<div class="business-card" role="button" aria-pressed="false" tabindex="0" aria-label="Business card" style="background-color: #2d5a27;">
 											<div class="card-inner">
 												<div class="card-face card-front" style="background-color: #2d5a27;">
+
+													<i class="fas fa-fast-backward card-icon-top-left" @click.stop="backToCE2Start()" title="Back to Start"></i>
+													<i class="fas fa-random card-icon-top-left-2" @click.stop="shuffleCE2Cards()" title="Shuffle Cards"></i>
 													
 													<i class="fas fa-sort-amount-down-alt card-icon-left" @click.stop="sortByCorrect($event, '2')" title="Sort by correct answers"></i>
 													<i x-show="currentCE2Card.markedAsCorrect == false" @click.stop="toggleMarkedCorrect($event, 'CE2')" class="far fa-circle card-icon" title="Mark as correct"></i>
@@ -123,6 +132,9 @@
 													</div>
 												</div>
 												<div class="card-face card-back" aria-hidden="true" style="background-color: #1e3a1a;">
+
+													<i class="fas fa-fast-backward card-icon-top-left" @click.stop="backToCE2Start()" title="Back to Start"></i>
+													<i class="fas fa-random card-icon-top-left-2" @click.stop="shuffleCE2Cards()" title="Shuffle Cards"></i>
 
 													<i class="fas fa-sort-amount-down-alt card-icon-left" @click.stop="sortByCorrect($event, '2')" title="Sort by correct answers"></i>
 													<i x-show="currentCE2Card.markedAsCorrect == false" @click.stop="toggleMarkedCorrect($event, 'CE2')" class="far fa-circle card-icon" title="Mark as correct"></i>
@@ -140,13 +152,13 @@
 									</div>
 									<div style="display: flex; justify-content: space-around; align-items: center; margin-top: 0.5rem;">
 									
-										<ul class="icons" style="margin: 0;">
+										<!-- <ul class="icons" style="margin: 0;">
 											<li><a @click="backToCE2Start()" title="Back to Start" class="icon solid fa-fast-backward"></a></li>
-										</ul>
+										</ul> -->
 										<p style="margin: 0" class="card-counter">Card <span x-text="currentCE2Card.index + 1"></span> of <span x-text="CEcards2.length"></span></p>
-										<ul class="icons" style="margin: 0;">
+										<!-- <ul class="icons" style="margin: 0;">
 											<li><a @click="shuffleCE2Cards()" title="Shuffle Cards" class="icon solid fa-random"></a></li>
-										</ul>
+										</ul> -->
 									
 									</div>
 									<div class="progress">
@@ -167,6 +179,9 @@
 											<div class="card-inner">
 												<div class="card-face card-front" style="background-color: #6b3fa0;">
 
+													<i class="fas fa-fast-backward card-icon-top-left" @click.stop="backToCE3Start()" title="Back to Start"></i>
+													<i class="fas fa-random card-icon-top-left-2" @click.stop="shuffleCE3Cards()" title="Shuffle Cards"></i>
+
 													<i class="fas fa-sort-amount-down-alt card-icon-left" @click.stop="sortByCorrect($event, '3')" title="Sort by correct answers"></i>
 													<i x-show="currentCE3Card.markedAsCorrect == false" @click.stop="toggleMarkedCorrect($event, 'CE3')" class="far fa-circle card-icon" title="Mark as correct"></i>
 													<i x-show="currentCE3Card.markedAsCorrect == true" @click.stop="toggleMarkedCorrect($event, 'CE3')" class="far fa-check-circle card-icon green" title="Mark as incorrect"></i>
@@ -176,6 +191,9 @@
 													</div>
 												</div>
 												<div class="card-face card-back" aria-hidden="true" style="background-color: #4a2570;">
+
+													<i class="fas fa-fast-backward card-icon-top-left" @click.stop="backToCE3Start()" title="Back to Start"></i>
+													<i class="fas fa-random card-icon-top-left-2" @click.stop="shuffleCE3Cards()" title="Shuffle Cards"></i>
 
 													<i class="fas fa-sort-amount-down-alt card-icon-left" @click.stop="sortByCorrect($event, '3')" title="Sort by correct answers"></i>
 													<i x-show="currentCE3Card.markedAsCorrect == false" @click.stop="toggleMarkedCorrect($event, 'CE3')" class="far fa-circle card-icon" title="Mark as correct"></i>
@@ -193,13 +211,13 @@
 									</div>
 									<div style="display: flex; justify-content: space-around; align-items: center; margin-top: 0.5rem;">
 										
-										<ul class="icons" style="margin: 0;">
+										<!-- <ul class="icons" style="margin: 0;">
 											<li><a @click="backToCE3Start()" title="Back to Start" class="icon solid fa-fast-backward"></a></li>
-										</ul>
+										</ul> -->
 										<p style="margin: 0" class="card-counter">Card <span x-text="currentCE3Card.index + 1"></span> of <span x-text="CEcards3.length"></span></p>
-										<ul class="icons" style="margin: 0;">
+										<!-- <ul class="icons" style="margin: 0;">
 											<li><a @click="shuffleCE3Cards()" title="Shuffle Cards" class="icon solid fa-random"></a></li>
-										</ul>
+										</ul> -->
 										
 									</div>
 									<div class="progress">
@@ -220,6 +238,9 @@
 											<div class="card-inner">
 												<div class="card-face card-front" style="background-color: #c77d33;">
 
+													<i class="fas fa-fast-backward card-icon-top-left" @click.stop="backToCE4Start()" title="Back to Start"></i>
+													<i class="fas fa-random card-icon-top-left-2" @click.stop="shuffleCE4Cards()" title="Shuffle Cards"></i>
+
 													<i class="fas fa-sort-amount-down-alt card-icon-left" @click.stop="sortByCorrect($event, '4')" title="Sort by correct answers"></i>
 													<i x-show="currentCE4Card.markedAsCorrect == false" @click.stop="toggleMarkedCorrect($event, 'CE4')" class="far fa-circle card-icon" title="Mark as correct"></i>
 													<i x-show="currentCE4Card.markedAsCorrect == true" @click.stop="toggleMarkedCorrect($event, 'CE4')" class="far fa-check-circle card-icon green" title="Mark as incorrect"></i>
@@ -229,6 +250,9 @@
 													</div>
 												</div>
 												<div class="card-face card-back" aria-hidden="true" style="background-color: #8c5a2c;">
+
+													<i class="fas fa-fast-backward card-icon-top-left" @click.stop="backToCE4Start()" title="Back to Start"></i>
+													<i class="fas fa-random card-icon-top-left-2" @click.stop="shuffleCE4Cards()" title="Shuffle Cards"></i>
 
 													<i class="fas fa-sort-amount-down-alt card-icon-left" @click.stop="sortByCorrect($event, '4')" title="Sort by correct answers"></i>
 													<i x-show="currentCE4Card.markedAsCorrect == false" @click.stop="toggleMarkedCorrect($event, 'CE4')" class="far fa-circle card-icon" title="Mark as correct"></i>
@@ -246,13 +270,13 @@
 									</div>
 									<div style="display: flex; justify-content: space-around; align-items: center; margin-top: 0.5rem;">
 										
-										<ul class="icons" style="margin: 0;">
+										<!-- <ul class="icons" style="margin: 0;">
 											<li><a @click="backToCE4Start()" title="Back to Start" class="icon solid fa-fast-backward"></a></li>
-										</ul>
+										</ul> -->
 										<p style="margin: 0" class="card-counter">Card <span x-text="currentCE4Card.index + 1"></span> of <span x-text="CEcards4.length"></span></p>
-										<ul class="icons" style="margin: 0;">
+										<!-- <ul class="icons" style="margin: 0;">
 											<li><a @click="shuffleCE4Cards()" title="Shuffle Cards" class="icon solid fa-random"></a></li>
-										</ul>
+										</ul> -->
 										
 									</div>
 									<div class="progress">
@@ -273,6 +297,9 @@
 											<div class="card-inner">
 												<div class="card-face card-front" style="background-color: #0d7377;">
 
+													<i class="fas fa-fast-backward card-icon-top-left" @click.stop="backToCE5Start()" title="Back to Start"></i>
+													<i class="fas fa-random card-icon-top-left-2" @click.stop="shuffleCE5Cards()" title="Shuffle Cards"></i>
+
 													<i class="fas fa-sort-amount-down-alt card-icon-left" @click.stop="sortByCorrect($event, '5')" title="Sort by correct answers"></i>
 													<i x-show="currentCE5Card.markedAsCorrect == false" @click.stop="toggleMarkedCorrect($event, 'CE5')" class="far fa-circle card-icon" title="Mark as correct"></i>
 													<i x-show="currentCE5Card.markedAsCorrect == true" @click.stop="toggleMarkedCorrect($event, 'CE5')" class="far fa-check-circle card-icon green" title="Mark as incorrect"></i>
@@ -282,6 +309,9 @@
 													</div>
 												</div>
 												<div class="card-face card-back" aria-hidden="true" style="background-color: #054956;">
+
+													<i class="fas fa-fast-backward card-icon-top-left" @click.stop="backToCE5Start()" title="Back to Start"></i>
+													<i class="fas fa-random card-icon-top-left-2" @click.stop="shuffleCE5Cards()" title="Shuffle Cards"></i>
 
 													<i class="fas fa-sort-amount-down-alt card-icon-left" @click.stop="sortByCorrect($event, '5')" title="Sort by correct answers"></i>
 													<i x-show="currentCE5Card.markedAsCorrect == false" @click.stop="toggleMarkedCorrect($event, 'CE5')" class="far fa-circle card-icon" title="Mark as correct"></i>
@@ -299,13 +329,13 @@
 									</div>
 									<div style="display: flex; justify-content: space-around; align-items: center; margin-top: 0.5rem;">
 									
-										<ul class="icons" style="margin: 0;">
+										<!-- <ul class="icons" style="margin: 0;">
 											<li><a @click="backToCE5Start()" title="Back to Start" class="icon solid fa-fast-backward"></a></li>
-										</ul>
+										</ul> -->
 										<p style="margin: 0" class="card-counter">Card <span x-text="currentCE5Card.index + 1"></span> of <span x-text="CEcards5.length"></span></p>
-										<ul class="icons" style="margin: 0;">
+										<!-- <ul class="icons" style="margin: 0;">
 											<li><a @click="shuffleCE5Cards()" title="Shuffle Cards" class="icon solid fa-random"></a></li>
-										</ul>
+										</ul> -->
 									
 									</div>
 									<div class="progress">
@@ -326,6 +356,9 @@
 											<div class="card-inner">
 												<div class="card-face card-front" style="background-color: #4b4b4b;">
 
+													<i class="fas fa-fast-backward card-icon-top-left" @click.stop="backToCE6Start()" title="Back to Start"></i>
+													<i class="fas fa-random card-icon-top-left-2" @click.stop="shuffleCE6Cards()" title="Shuffle Cards"></i>
+
 													<i class="fas fa-sort-amount-down-alt card-icon-left" @click.stop="sortByCorrect($event, '6')" title="Sort by correct answers"></i>
 													<i x-show="currentCE6Card.markedAsCorrect == false" @click.stop="toggleMarkedCorrect($event, 'CE6')" class="far fa-circle card-icon" title="Mark as correct"></i>
 													<i x-show="currentCE6Card.markedAsCorrect == true" @click.stop="toggleMarkedCorrect($event, 'CE6')" class="far fa-check-circle card-icon green" title="Mark as incorrect"></i>
@@ -335,6 +368,9 @@
 													</div>
 												</div>
 												<div class="card-face card-back" aria-hidden="true" style="background-color: #333333;">
+
+													<i class="fas fa-fast-backward card-icon-top-left" @click.stop="backToCE6Start()" title="Back to Start"></i>
+													<i class="fas fa-random card-icon-top-left-2" @click.stop="shuffleCE6Cards()" title="Shuffle Cards"></i>
 
 													<i class="fas fa-sort-amount-down-alt card-icon-left" @click.stop="sortByCorrect($event, '6')" title="Sort by correct answers"></i>
 													<i x-show="currentCE6Card.markedAsCorrect == false" @click.stop="toggleMarkedCorrect($event, 'CE6')" class="far fa-circle card-icon" title="Mark as correct"></i>
@@ -352,13 +388,13 @@
 									</div>
 									<div style="display: flex; justify-content: space-around; align-items: center; margin-top: 0.5rem;">
 									
-										<ul class="icons" style="margin: 0;">
+										<!-- <ul class="icons" style="margin: 0;">
 											<li><a @click="backToCE6Start()" title="Back to Start" class="icon solid fa-fast-backward"></a></li>
-										</ul>
+										</ul> -->
 										<p style="margin: 0" class="card-counter">Card <span x-text="currentCE6Card.index + 1"></span> of <span x-text="CEcards6.length"></span></p>
-										<ul class="icons" style="margin: 0;">
+										<!-- <ul class="icons" style="margin: 0;">
 											<li><a @click="shuffleCE6Cards()" title="Shuffle Cards" class="icon solid fa-random"></a></li>
-										</ul>
+										</ul> -->
 									
 									</div>
 									<div class="progress">
