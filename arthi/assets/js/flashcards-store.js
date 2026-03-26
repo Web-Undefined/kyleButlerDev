@@ -7,6 +7,8 @@ document.addEventListener('alpine:init', () => {
     index4: 0,
     index5: 0,
     index6: 0,
+    index7: 0,
+    index8: 0,
     correct: 0,
     incorrect: 0,
     CEcards: Alpine.$persist([]),
@@ -15,6 +17,9 @@ document.addEventListener('alpine:init', () => {
     CEcards4: Alpine.$persist([]),
     CEcards5: Alpine.$persist([]),
     CEcards6: Alpine.$persist([]),
+    CEcards7: Alpine.$persist([]),
+    CEcards8: Alpine.$persist([]),
+
     currentCEDeck: 1,
 
     setCEDeck(deckNumber) {
@@ -32,6 +37,8 @@ document.addEventListener('alpine:init', () => {
     currentCE4Card: {},
     currentCE5Card: {},
     currentCE6Card: {},
+    currentCE7Card: {},
+    currentCE8Card: {},
     nextCECard() {
         if (this.index < this.CEcards.length - 1) {
             this.index++;
@@ -68,6 +75,19 @@ document.addEventListener('alpine:init', () => {
             this.currentCE6Card = this.CEcards6[this.index6];
         }
     },
+    nextCE7Card() {
+        if (this.index7 < this.CEcards7.length - 1) {
+            this.index7++;
+            this.currentCE7Card = this.CEcards7[this.index7];
+        }
+    },
+    nextCE8Card() {
+        if (this.index8 < this.CEcards8.length - 1) {
+            this.index8++;
+            this.currentCE8Card = this.CEcards8[this.index8];
+        }
+    },
+
 
     previousCECard() {
         if (this.index > 0) {
@@ -105,6 +125,19 @@ document.addEventListener('alpine:init', () => {
             this.currentCE6Card = this.CEcards6[this.index6];
         }
     },
+    previousCE7Card() {
+        if (this.index7 > 0) {
+            this.index7--;
+            this.currentCE7Card = this.CEcards7[this.index7];
+        }
+    },
+    previousCE8Card() {
+        if (this.index8 > 0) {
+            this.index8--;
+            this.currentCE8Card = this.CEcards8[this.index8];
+        }
+    },
+
 
     backToCEStart() {
         this.index = 0;
@@ -130,6 +163,15 @@ document.addEventListener('alpine:init', () => {
         this.index6 = 0;
         this.currentCE6Card = this.CEcards6[this.index6];
     },
+    backToCE7Start() {
+        this.index7 = 0;
+        this.currentCE7Card = this.CEcards7[this.index7];
+    },
+    backToCE8Start() {
+        this.index8 = 0;
+        this.currentCE8Card = this.CEcards8[this.index8];
+    },
+
 
     shuffleCECards() {
         for (let i = this.CEcards.length - 1; i > 0; i--) {
@@ -221,6 +263,37 @@ document.addEventListener('alpine:init', () => {
         // Show shuffle notification
         this.showShuffleNotification();
     },
+    shuffleCE7Cards() {
+        for (let i = this.CEcards7.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [this.CEcards7[i], this.CEcards7[j]] = [this.CEcards7[j], this.CEcards7[i]];
+        }
+        this.index7 = 0;
+        this.currentCE7Card = this.CEcards7[this.index7];
+
+        this.CEcards7.forEach(card => {
+            card.index = this.CEcards7.indexOf(card)
+        })
+
+        // Show shuffle notification
+        this.showShuffleNotification();
+    },
+    shuffleCE8Cards() {
+        for (let i = this.CEcards8.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [this.CEcards8[i], this.CEcards8[j]] = [this.CEcards8[j], this.CEcards8[i]];
+        }
+        this.index8 = 0;
+        this.currentCE8Card = this.CEcards8[this.index8];
+
+        this.CEcards8.forEach(card => {
+            card.index = this.CEcards8.indexOf(card)
+        })
+
+        // Show shuffle notification
+        this.showShuffleNotification();
+    },
+
 
     toggleMarkedCorrect(event, deckType) {
         event.stopPropagation();
@@ -3406,6 +3479,680 @@ document.addEventListener('alpine:init', () => {
                 }
             ]
         }
+
+        if(this.CEcards7.length == 0) {
+            this.CEcards7 = [
+                {
+                "index": 0,
+                "front": "<h3>In a traditional design-bid-build project, the owner holds separate contracts with which two parties?</h3>",
+                "back": "<p>The architect and the contractor.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 1,
+                "front": "<h3>In design-bid-build, who prepares the drawings and specifications used for bidding?</h3>",
+                "back": "<p>The architect.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 2,
+                "front": "<h3>During design-bid-build, who assists the owner in obtaining bids from contractors?</h3>",
+                "back": "<p>The architect.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 3,
+                "front": "<h3>In design-bid-build, who holds the construction contract with the contractor?</h3>",
+                "back": "<p>The owner.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 4,
+                "front": "<h3>In design-bid-build, how does communication between owner and contractor typically flow during construction?</h3>",
+                "back": "<p>Through the architect.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 5,
+                "front": "<h3>In design-bid-build, who is responsible for reviewing contractor payment applications?</h3>",
+                "back": "<p>The architect.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 6,
+                "front": "<h3>In design-bid-build, who determines substantial completion?</h3>",
+                "back": "<p>The architect.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 7,
+                "front": "<h3>In design-bid-build, who is responsible for construction means and methods?</h3>",
+                "back": "<p>The contractor.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 8,
+                "front": "<h3>In design-build project delivery, how many primary contracts does the owner typically hold?</h3>",
+                "back": "<p>One, with the design-builder.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 9,
+                "front": "<h3>In design-build, who is responsible for both design and construction?</h3>",
+                "back": "<p>The design-builder.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 10,
+                "front": "<h3>In design-build, who does the architect typically contract with?</h3>",
+                "back": "<p>The design-builder.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 11,
+                "front": "<h3>In design-build, does the architect typically have a direct contract with the owner?</h3>",
+                "back": "<p>No.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 12,
+                "front": "<h3>In design-build, who is the single point of responsibility to the owner?</h3>",
+                "back": "<p>The design-builder.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 13,
+                "front": "<h3>Compared to design-bid-build, how does the architect’s role typically change in design-build?</h3>",
+                "back": "<p>The architect often becomes a subcontractor to the design-builder.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 14,
+                "front": "<h3>In design-build, who is responsible for design errors affecting construction?</h3>",
+                "back": "<p>The design-builder.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 15,
+                "front": "<h3>In Construction Manager as Adviser (CMa), who holds the construction contracts?</h3>",
+                "back": "<p>The owner.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 16,
+                "front": "<h3>In CMa delivery, what is the primary role of the construction manager?</h3>",
+                "back": "<p>To advise the owner, not to perform construction.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 17,
+                "front": "<h3>In CMa, who performs the construction work?</h3>",
+                "back": "<p>Multiple prime contractors hired by the owner.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 18,
+                "front": "<h3>In Construction Manager as Constructor (CMc), who holds the construction contract?</h3>",
+                "back": "<p>The owner contracts with the construction manager.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 19,
+                "front": "<h3>In CMc, what additional role does the construction manager take on?</h3>",
+                "back": "<p>The construction manager acts as the contractor.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 20,
+                "front": "<h3>In CMc, who typically provides a guaranteed maximum price (GMP)?</h3>",
+                "back": "<p>The construction manager.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 21,
+                "front": "<h3>In CMc, who holds subcontracts with trade contractors?</h3>",
+                "back": "<p>The construction manager.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 22,
+                "front": "<h3>In Integrated Project Delivery (IPD), how are relationships structured differently from traditional delivery?</h3>",
+                "back": "<p>Owner, architect, and contractor share a multi-party agreement.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 23,
+                "front": "<h3>In IPD, how are risks and rewards typically handled?</h3>",
+                "back": "<p>They are shared among key project participants.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 24,
+                "front": "<h3>In IPD, what is a key benefit of having a multi-party agreement?</h3>",
+                "back": "<p>Improved collaboration among all parties.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 25,
+                "front": "<h3>In IPD using a Single Purpose Entity (SPE), what is created?</h3>",
+                "back": "<p>A separate legal entity to deliver the project.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 26,
+                "front": "<h3>In design-bid-build, who acts as the owner’s representative during construction?</h3>",
+                "back": "<p>The architect.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 27,
+                "front": "<h3>In design-build, who coordinates subcontractors?</h3>",
+                "back": "<p>The design-builder.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 28,
+                "front": "<h3>In design-bid-build, who is responsible for bidding the project?</h3>",
+                "back": "<p>The contractor submits bids, but the architect assists the owner.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 29,
+                "front": "<h3>In design-bid-build, what is the sequence of phases?</h3>",
+                "back": "<p>Design, then bidding, then construction.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 30,
+                "front": "<h3>In design-build, how does communication flow compared to design-bid-build?</h3>",
+                "back": "<p>Directly between owner and design-builder.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 31,
+                "front": "<h3>In design-bid-build, who is liable for design adequacy?</h3>",
+                "back": "<p>The owner (via the architect’s documents).</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 32,
+                "front": "<h3>In design-build, who assumes responsibility for design adequacy?</h3>",
+                "back": "<p>The design-builder.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 33,
+                "front": "<h3>In CMa, does the construction manager perform actual construction work?</h3>",
+                "back": "<p>No.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 34,
+                "front": "<h3>In CMc, does the construction manager perform construction work?</h3>",
+                "back": "<p>Yes.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 35,
+                "front": "<h3>In IPD, what is the primary goal of integrating all parties early?</h3>",
+                "back": "<p>To improve efficiency and reduce risk.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 36,
+                "front": "<h3>In design-bid-build, who provides construction bonds?</h3>",
+                "back": "<p>The contractor (with a surety).</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 37,
+                "front": "<h3>In design-bid-build, who prepares contract documents for bidding?</h3>",
+                "back": "<p>The architect.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 38,
+                "front": "<h3>In design-build, why is there reduced risk of coordination errors?</h3>",
+                "back": "<p>Because one entity is responsible for both design and construction.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 39,
+                "front": "<h3>In design-bid-build, who reviews shop drawings?</h3>",
+                "back": "<p>The architect.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 40,
+                "front": "<h3>In design-build, who reviews shop drawings?</h3>",
+                "back": "<p>The design-builder (internally).</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 41,
+                "front": "<h3>In design-bid-build, what role does the architect play during construction?</h3>",
+                "back": "<p>Contract administrator.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 42,
+                "front": "<h3>In design-build, what happens to the architect’s independence from the contractor?</h3>",
+                "back": "<p>It is reduced or eliminated.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 43,
+                "front": "<h3>In IPD, what is a key contractual difference from other delivery methods?</h3>",
+                "back": "<p>A single multi-party agreement.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 44,
+                "front": "<h3>In CMc, who holds financial risk for construction cost overruns?</h3>",
+                "back": "<p>The construction manager.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 45,
+                "front": "<h3>In CMa, who holds financial risk for construction cost overruns?</h3>",
+                "back": "<p>The owner.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 46,
+                "front": "<h3>In design-build, what is a major advantage for the owner?</h3>",
+                "back": "<p>A single point of responsibility.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 47,
+                "front": "<h3>In design-bid-build, what is a major advantage for the owner?</h3>",
+                "back": "<p>The architect acts as an independent advocate.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 48,
+                "front": "<h3>In IPD, what aligns incentives among project participants?</h3>",
+                "back": "<p>Shared risk and reward structure.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 49,
+                "front": "<h3>In design-bid-build, why are drawings and specifications critical before bidding?</h3>",
+                "back": "<p>They define the scope for competitive bids.</p>",
+                "markedAsCorrect": false
+                }
+            ]
+        }
+
+        if(this.CEcards8.length == 0) {
+            this.CEcards8 = [
+                {
+                "index": 0,
+                "front": "<h3>Under AIA Document B101, what is the primary relationship established?</h3>",
+                "back": "<p>The agreement between the owner and the architect.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 1,
+                "front": "<h3>Under AIA Document A101, who are the contracting parties?</h3>",
+                "back": "<p>The owner and the contractor.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 2,
+                "front": "<h3>AIA Document A201 is incorporated into both A101 and B101. What is its primary purpose?</h3>",
+                "back": "<p>To establish general conditions governing construction, including roles and procedures.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 3,
+                "front": "<h3>Which AIA document outlines bidding procedures and instructions to contractors?</h3>",
+                "back": "<p>A701.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 4,
+                "front": "<h3>In a design-bid-build project using B101, A101, and A201, who interprets the contract documents?</h3>",
+                "back": "<p>The architect.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 5,
+                "front": "<h3>Under A201, who is responsible for construction means and methods?</h3>",
+                "back": "<p>The contractor.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 6,
+                "front": "<h3>A contractor submits a claim for additional cost under A201. What governs the procedure?</h3>",
+                "back": "<p>The claims process outlined in A201.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 7,
+                "front": "<h3>Under B101, during which phase does the architect assist with bidding?</h3>",
+                "back": "<p>The procurement phase.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 8,
+                "front": "<h3>Under A101, what determines how the contractor is paid?</h3>",
+                "back": "<p>The basis of payment defined in the agreement (e.g., stipulated sum).</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 9,
+                "front": "<h3>A101 references A201. What does this relationship imply?</h3>",
+                "back": "<p>A201 provides the governing conditions for the construction contract.</p>",
+                "markedAsCorrect": false
+                },
+
+                {
+                "index": 10,
+                "front": "<h3>Under B101, what is the architect’s responsibility during construction?</h3>",
+                "back": "<p>Contract administration and observation of the work.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 11,
+                "front": "<h3>Under A201, who reviews and certifies applications for payment?</h3>",
+                "back": "<p>The architect.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 12,
+                "front": "<h3>Which document establishes the contractor’s obligation to perform the work?</h3>",
+                "back": "<p>A101.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 13,
+                "front": "<h3>Under A201, what is the contractor required to do before proceeding with unclear work?</h3>",
+                "back": "<p>Request clarification through an RFI.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 14,
+                "front": "<h3>Under B101, what are the five phases of basic services?</h3>",
+                "back": "<p>Schematic Design, Design Development, Construction Documents, Procurement, and Construction.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 15,
+                "front": "<h3>Which document governs insurance and bonds when used with A101?</h3>",
+                "back": "<p>The Exhibit A to A101.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 16,
+                "front": "<h3>Under A201, who is responsible for site safety?</h3>",
+                "back": "<p>The contractor.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 17,
+                "front": "<h3>Under A201, what happens if work does not conform to the contract documents?</h3>",
+                "back": "<p>The contractor must correct the work.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 18,
+                "front": "<h3>Under B101, who represents the owner during construction?</h3>",
+                "back": "<p>The architect.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 19,
+                "front": "<h3>Under A701, what is the purpose of bid security requirements?</h3>",
+                "back": "<p>To ensure contractors submit serious and binding bids.</p>",
+                "markedAsCorrect": false
+                },
+
+                {
+                "index": 20,
+                "front": "<h3>Which AIA document is considered the “keystone” for construction administration procedures?</h3>",
+                "back": "<p>A201.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 21,
+                "front": "<h3>Under A201, who has authority to reject nonconforming work?</h3>",
+                "back": "<p>The architect.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 22,
+                "front": "<h3>Under A101, what defines the contract sum?</h3>",
+                "back": "<p>The agreed amount for construction work.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 23,
+                "front": "<h3>Under B101, what type of services are “additional services”?</h3>",
+                "back": "<p>Services not included in basic services that arise during the project.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 24,
+                "front": "<h3>Under A201, who coordinates subcontractors?</h3>",
+                "back": "<p>The contractor.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 25,
+                "front": "<h3>Under A201, what is required before final payment is issued?</h3>",
+                "back": "<p>Completion of the work and submission of closeout documents.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 26,
+                "front": "<h3>Under A101, what type of project commonly uses a stipulated sum?</h3>",
+                "back": "<p>Design-bid-build projects with a fixed price.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 27,
+                "front": "<h3>Under A201, who evaluates claims for additional time or cost?</h3>",
+                "back": "<p>The architect initially reviews them.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 28,
+                "front": "<h3>Under B101, what determines the architect’s compensation?</h3>",
+                "back": "<p>The terms defined in the owner-architect agreement.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 29,
+                "front": "<h3>Under A701, what is the purpose of instructions to bidders?</h3>",
+                "back": "<p>To standardize the bidding process.</p>",
+                "markedAsCorrect": false
+                },
+
+                {
+                "index": 30,
+                "front": "<h3>Under A201, who is responsible for temporary protection of the work?</h3>",
+                "back": "<p>The contractor.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 31,
+                "front": "<h3>Under B101, what role does the architect play in evaluating contractor payment requests?</h3>",
+                "back": "<p>The architect certifies payment.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 32,
+                "front": "<h3>Under A201, what is required if concealed work is found to be nonconforming?</h3>",
+                "back": "<p>The contractor must uncover and correct it.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 33,
+                "front": "<h3>Under A101 and A201, who is responsible for scheduling the work?</h3>",
+                "back": "<p>The contractor.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 34,
+                "front": "<h3>Under B101, who provides design services during the construction documents phase?</h3>",
+                "back": "<p>The architect.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 35,
+                "front": "<h3>Under A201, what is the contractor required to review before beginning work?</h3>",
+                "back": "<p>The contract documents.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 36,
+                "front": "<h3>Under A101, what type of agreement is used for a fixed-price contract?</h3>",
+                "back": "<p>Stipulated sum agreement.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 37,
+                "front": "<h3>Under B101, what is included in basic services?</h3>",
+                "back": "<p>Design and construction administration services.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 38,
+                "front": "<h3>Under A201, who is responsible for correcting defective work discovered after completion?</h3>",
+                "back": "<p>The contractor within the correction period.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 39,
+                "front": "<h3>Under A201, who determines substantial completion?</h3>",
+                "back": "<p>The architect.</p>",
+                "markedAsCorrect": false
+                },
+
+                {
+                "index": 40,
+                "front": "<h3>Under A101 and A201, what governs changes in the work?</h3>",
+                "back": "<p>Change Orders and Construction Change Directives.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 41,
+                "front": "<h3>Under B101, what phase includes contract administration?</h3>",
+                "back": "<p>The construction phase.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 42,
+                "front": "<h3>Under A201, who is responsible for coordinating inspections?</h3>",
+                "back": "<p>The contractor.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 43,
+                "front": "<h3>Under A201, what is the architect’s role regarding means and methods?</h3>",
+                "back": "<p>The architect is not responsible.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 44,
+                "front": "<h3>Under A101, what document defines the contract time?</h3>",
+                "back": "<p>The owner-contractor agreement.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 45,
+                "front": "<h3>Under A201, what must the contractor do before substituting a product?</h3>",
+                "back": "<p>Obtain approval.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 46,
+                "front": "<h3>Under B101, who coordinates consultants?</h3>",
+                "back": "<p>The architect.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 47,
+                "front": "<h3>Under A201, who bears risk for construction errors?</h3>",
+                "back": "<p>The contractor.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 48,
+                "front": "<h3>Under A101 and A201, what governs payment procedures?</h3>",
+                "back": "<p>The contract and general conditions.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 49,
+                "front": "<h3>Under B101, who establishes the design intent of the project?</h3>",
+                "back": "<p>The architect.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 50,
+                "front": "<h3>Under A201, what is required for substantial completion to be achieved?</h3>",
+                "back": "<p>The project must be usable for its intended purpose.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 51,
+                "front": "<h3>Under A201, who is responsible for correcting work during the one-year correction period?</h3>",
+                "back": "<p>The contractor.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 52,
+                "front": "<h3>Under A101, what determines whether GMP is used?</h3>",
+                "back": "<p>The selected agreement type (e.g., A102 for GMP).</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 53,
+                "front": "<h3>Under B101, what triggers additional services?</h3>",
+                "back": "<p>Changes or conditions not included in basic services.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 54,
+                "front": "<h3>Under A201, who is responsible for supervising the work?</h3>",
+                "back": "<p>The contractor.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 55,
+                "front": "<h3>Under A201, what happens if the contractor proceeds without clarifying discrepancies?</h3>",
+                "back": "<p>The contractor assumes responsibility.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 56,
+                "front": "<h3>Under A101, what type of relationship does the contractor have with subcontractors?</h3>",
+                "back": "<p>The contractor holds subcontracts.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 57,
+                "front": "<h3>Under B101, who is responsible for coordinating design consultants?</h3>",
+                "back": "<p>The architect.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 58,
+                "front": "<h3>Under A201, what is required before final completion?</h3>",
+                "back": "<p>Completion of punch list items.</p>",
+                "markedAsCorrect": false
+                },
+                {
+                "index": 59,
+                "front": "<h3>Under A201, who has initial authority to interpret the contract documents?</h3>",
+                "back": "<p>The architect.</p>",
+                "markedAsCorrect": false
+                }
+                ]
+        }
         
         this.currentCECard = this.CEcards[0];
         this.currentCE2Card = this.CEcards2[0];
@@ -3413,6 +4160,8 @@ document.addEventListener('alpine:init', () => {
         this.currentCE4Card = this.CEcards4[0];
         this.currentCE5Card = this.CEcards5[0];
         this.currentCE6Card = this.CEcards6[0];
+        this.currentCE7Card = this.CEcards7[0];
+        this.currentCE8Card = this.CEcards8[0];
     },
   })
 })

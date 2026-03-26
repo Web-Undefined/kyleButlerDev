@@ -39,6 +39,8 @@
 										<option value="4">Who is responsible?</option>
 										<option value="5">What should the architect do FIRST?</option>
 										<option value="6">Trap + Decision + Case</option>
+										<option value="7">Contract Relationship Diagrams</option>
+										<option value="8">AIA Document Crossover</option>
 									</select>
 								</div>
 
@@ -48,6 +50,9 @@
 									<li><a @click="setCEDeck(3)" class="button">Deck #3</a></li>
 									<li><a @click="setCEDeck(4)" class="button">Deck #4</a></li>
 									<li><a @click="setCEDeck(5)" class="button">Deck #5</a></li>
+									<li><a @click="setCEDeck(6)" class="button">Deck #6</a></li>
+									<li><a @click="setCEDeck(7)" class="button">Deck #7</a></li>
+									<li><a @click="setCEDeck(8)" class="button">Deck #8</a></li>
 								</ul> -->
 
 								<!-- Deck #1 -->
@@ -345,7 +350,7 @@
 									</div>
 								</div>
 
-							<!-- Deck #6 -->
+								<!-- Deck #6 -->
 								<div x-show="currentCEDeck == 6">
 									<div class="card-carousel" aria-roledescription="carousel">
 										
@@ -400,6 +405,124 @@
 									<div class="progress">
 										<div class="bar"
 											:style="`width: ${(currentCE6Card.index+1)/CEcards6.length*100}%; border-radius: 9999px; transition: width 0.3s ease; opacity: 1; background: #4b4b4b;`">
+										</div>
+									</div>
+								</div>
+
+								<!-- Deck #7 -->
+								<div x-show="currentCEDeck == 7">
+									<div class="card-carousel" aria-roledescription="carousel">
+										
+										<ul class="icons" style="margin: 0;">
+											<li><a @click="previousCE7Card()" title="Previous Card" class="icon solid fa-chevron-left"></a></li>
+										</ul>
+										<div class="business-card" role="button" aria-pressed="false" tabindex="0" aria-label="Business card" style="background-color: #1f4e79;">
+											<div class="card-inner">
+												<div class="card-face card-front" style="background-color: #1f4e79;">
+
+													<i class="fas fa-fast-backward card-icon-top-left" @click.stop="backToCE7Start()" title="Back to Start"></i>
+													<i class="fas fa-random card-icon-top-left-2" @click.stop="shuffleCE7Cards()" title="Shuffle Cards"></i>
+
+													<i class="fas fa-sort-amount-down-alt card-icon-left" @click.stop="sortByCorrect($event, '7')" title="Sort by correct answers"></i>
+													<i x-show="currentCE7Card.markedAsCorrect == false" @click.stop="toggleMarkedCorrect($event, 'CE7')" class="far fa-circle card-icon" title="Mark as correct"></i>
+													<i x-show="currentCE7Card.markedAsCorrect == true" @click.stop="toggleMarkedCorrect($event, 'CE7')" class="far fa-check-circle card-icon green" title="Mark as incorrect"></i>
+
+													<div class="card-content">
+														<div x-html="currentCE7Card.front"></div>
+													</div>
+												</div>
+												<div class="card-face card-back" aria-hidden="true" style="background-color: #163a5c;">
+
+													<i class="fas fa-fast-backward card-icon-top-left" @click.stop="backToCE7Start()" title="Back to Start"></i>
+													<i class="fas fa-random card-icon-top-left-2" @click.stop="shuffleCE7Cards()" title="Shuffle Cards"></i>
+
+													<i class="fas fa-sort-amount-down-alt card-icon-left" @click.stop="sortByCorrect($event, '7')" title="Sort by correct answers"></i>
+													<i x-show="currentCE7Card.markedAsCorrect == false" @click.stop="toggleMarkedCorrect($event, 'CE7')" class="far fa-circle card-icon" title="Mark as correct"></i>
+													<i x-show="currentCE7Card.markedAsCorrect == true" @click.stop="toggleMarkedCorrect($event, 'CE7')" class="far fa-check-circle card-icon green" title="Mark as incorrect"></i>
+													
+													<div class="card-content">
+														<div x-html="currentCE7Card.back"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<ul class="icons" style="margin: 0;">
+											<li><a @click="nextCE7Card()" title="Next Card" class="icon solid fa-chevron-right"></a></li>
+										</ul>
+									</div>
+									<div style="display: flex; justify-content: space-around; align-items: center; margin-top: 0.5rem;">
+									
+										<!-- <ul class="icons" style="margin: 0;">
+											<li><a @click="backToCE7Start()" title="Back to Start" class="icon solid fa-fast-backward"></a></li>
+										</ul> -->
+										<p style="margin: 0" class="card-counter">Card <span x-text="currentCE7Card.index + 1"></span> of <span x-text="CEcards7.length"></span></p>
+										<!-- <ul class="icons" style="margin: 0;">
+											<li><a @click="shuffleCE7Cards()" title="Shuffle Cards" class="icon solid fa-random"></a></li>
+										</ul> -->
+									
+									</div>
+									<div class="progress">
+										<div class="bar"
+											:style="`width: ${(currentCE7Card.index+1)/CEcards7.length*100}%; border-radius: 9999px; transition: width 0.3s ease; opacity: 1; background: #1f4e79;`">
+										</div>
+									</div>
+								</div>
+
+								<!-- Deck #8 -->
+								<div x-show="currentCEDeck == 8">
+									<div class="card-carousel" aria-roledescription="carousel">
+										
+										<ul class="icons" style="margin: 0;">
+											<li><a @click="previousCE8Card()" title="Previous Card" class="icon solid fa-chevron-left"></a></li>
+										</ul>
+										<div class="business-card" role="button" aria-pressed="false" tabindex="0" aria-label="Business card" style="background-color: #7a2e3a;">
+											<div class="card-inner">
+												<div class="card-face card-front" style="background-color: #7a2e3a;">
+
+													<i class="fas fa-fast-backward card-icon-top-left" @click.stop="backToCE8Start()" title="Back to Start"></i>
+													<i class="fas fa-random card-icon-top-left-2" @click.stop="shuffleCE8Cards()" title="Shuffle Cards"></i>
+
+													<i class="fas fa-sort-amount-down-alt card-icon-left" @click.stop="sortByCorrect($event, '8')" title="Sort by correct answers"></i>
+													<i x-show="currentCE8Card.markedAsCorrect == false" @click.stop="toggleMarkedCorrect($event, 'CE8')" class="far fa-circle card-icon" title="Mark as correct"></i>
+													<i x-show="currentCE8Card.markedAsCorrect == true" @click.stop="toggleMarkedCorrect($event, 'CE8')" class="far fa-check-circle card-icon green" title="Mark as incorrect"></i>
+
+													<div class="card-content">
+														<div x-html="currentCE8Card.front"></div>
+													</div>
+												</div>
+												<div class="card-face card-back" aria-hidden="true" style="background-color: #5a1f2a;">
+
+													<i class="fas fa-fast-backward card-icon-top-left" @click.stop="backToCE8Start()" title="Back to Start"></i>
+													<i class="fas fa-random card-icon-top-left-2" @click.stop="shuffleCE8Cards()" title="Shuffle Cards"></i>
+
+													<i class="fas fa-sort-amount-down-alt card-icon-left" @click.stop="sortByCorrect($event, '8')" title="Sort by correct answers"></i>
+													<i x-show="currentCE8Card.markedAsCorrect == false" @click.stop="toggleMarkedCorrect($event, 'CE8')" class="far fa-circle card-icon" title="Mark as correct"></i>
+													<i x-show="currentCE8Card.markedAsCorrect == true" @click.stop="toggleMarkedCorrect($event, 'CE8')" class="far fa-check-circle card-icon green" title="Mark as incorrect"></i>
+													
+													<div class="card-content">
+														<div x-html="currentCE8Card.back"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<ul class="icons" style="margin: 0;">
+											<li><a @click="nextCE8Card()" title="Next Card" class="icon solid fa-chevron-right"></a></li>
+										</ul>
+									</div>
+									<div style="display: flex; justify-content: space-around; align-items: center; margin-top: 0.5rem;">
+									
+										<!-- <ul class="icons" style="margin: 0;">
+											<li><a @click="backToCE8Start()" title="Back to Start" class="icon solid fa-fast-backward"></a></li>
+										</ul> -->
+										<p style="margin: 0" class="card-counter">Card <span x-text="currentCE8Card.index + 1"></span> of <span x-text="CEcards8.length"></span></p>
+										<!-- <ul class="icons" style="margin: 0;">
+											<li><a @click="shuffleCE8Cards()" title="Shuffle Cards" class="icon solid fa-random"></a></li>
+										</ul> -->
+									
+									</div>
+									<div class="progress">
+										<div class="bar"
+											:style="`width: ${(currentCE8Card.index+1)/CEcards8.length*100}%; border-radius: 9999px; transition: width 0.3s ease; opacity: 1; background: #7a2e3a;`">
 										</div>
 									</div>
 								</div>
